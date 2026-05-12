@@ -12,4 +12,4 @@ Created and maintained by Matt Stenquist - @internetdialup (IG,X, Threads)
 Feel free to fork this GitHub to your liking. Just a bunch of .md files that AI agents ingest and read. Skills, workflows, directives, and more.
 
 #### Updates
-Last updated Monday - May 11th
+Last updated Monday - May 11th (files will start being populated through this week) 
