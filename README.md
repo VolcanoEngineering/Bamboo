@@ -1,7 +1,7 @@
 # Repository.md
 A collection of .md files for your AI agents and projects to house
 
-## The Readme fo AI systems.
+## The Readme for AI systems.
 
 Why create this file? Well, I've been pair coding with my virtual friend - AI. And I needed a set of consistent standardization that I could carry over project to project without having to rework, and restructure things constantly. Saving me time and energy to focus on what matters most. The build, the product, the experience. While knowing, I've already established a robust pipeline of documents in previous projects that kept my sanity in check, my Agents running effiencetly, and that we could cross the finish line with clarity, structure, and efficency. 
 
