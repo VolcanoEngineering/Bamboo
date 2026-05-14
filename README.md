@@ -1,5 +1,5 @@
-# Repository.md
-A collection of .md files for your AI agents and projects to house
+# Documentation.md
+A collection of .md files for your AI agents and projects to use
 
 ## The Readme for AI systems.
 
