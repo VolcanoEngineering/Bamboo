@@ -64,8 +64,21 @@ Preventative Long Term Repo Fragmentation (PLTRF) is the process of preventing t
 ---
 ## Short term information preservation (STIP)
 
- STILL WRITING THIS ONE. 
  Focus: Information Architecture within short development cycles (sprints, iterations, etc.)
+
+We can maintain short term information and be proactive about how we handle contextual loss, information loss, and drift in the stages between documentation, to codebase architecture, to implementation, to deployment and anything in between.
+
+The goal with STIP is to maintain a high degree of AI context awareness through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrival. 
+
+As AI and ML agents work together, we need to ensure that the velocity of STIP hits little to no bottlenecks that prevents the user from experiencing a smooth development cycle. For the most part, STIP should be automated as much as possible to reduce human-driven cognitive load. This allows the user to focus on the problems that matter most, and let the AI handle the rote contextual awareness, documentation, and information preservation.
+
+STIP should also allow for quick debugging of other AI and ML agents to come in and address any underlying issues that may become a factor for performance, drift, or other risks.
+
+STIP is about the short term but is should anticipate that it carries its context foward to LTIP standards and caches the the most important context handoff in informational architecture that the user does not need to think of.
+
+STIP to LTIP information is the underlying process the AI agent should scan before each handoff to other AI agents, or back to the user, especially parallel processing of information, and agents working adjacently to ensure that there is no contextual loss, and or slow down in the information hierarchy of retrival. 
+
+STIP can utilize NLog, Bubblesorting, and other data sorting techniques to optimize its AI agent path finding to information if it needs to. This should be done by creating a document in docs/ that establishes a standard set of rules in the DevOps pipeline for ensuring STIP to LTIP compliance, coherence, and avoiding degradation and loss.
 
 ---
 
@@ -83,7 +96,9 @@ LTIP can be implemented through a variety of methods. These include:
 
 - Version control systems: Version control systems are a way to preserve information in a way that can be retrieved and used at a later time. They are important because they allow AI agents to maintain context over time and to make better decisions. 
 
-- 
+- ML agent memory management systems. 
+
+- User directives and standards including: documentation standards, architecture, DevOps, Deployment Specifications, and more. 
 
 ---
 ### Notes:
