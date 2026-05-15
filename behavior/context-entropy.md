@@ -53,7 +53,37 @@ This means prioritizing the following:
 - Managing the amount of context-orientation, and or context related documents that are being generated for historical context and memory.
 - When to purge memory and reorganize for performance, and or relevance.
 - What is the users directive when it comes to risk management, compliance, and security.
-- What is the users directive for managing memory internally and their documentation standards.  
+- What is the users directive for managing memory internally and their documentation standards. 
+
+---
+
+## Preveantive Long Term Repo Fragmentation (PLTRF) 
+
+Preventative Long Term Repo Fragmentation (PLTRF) is the process of preventing the fragmentation of long term memory. This can be done through a variety of methods, such as documentation, code comments, and version control systems. PLTRF is important because it allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. 
+
+---
+## Short term information preservation (STIP)
+
+ STILL WRITING THIS ONE. 
+ Focus: Information Architecture within short development cycles (sprints, iterations, etc.)
+
+---
+
+## Long term information preservation (LTIP)
+
+Long term information preservation (LTIP) is the process of preserving information in a way that can be retrieved and used at a later time. This can be done through a variety of methods, such as documentation, code comments, and version control systems. LTIP is important because it allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. 
+
+LTIP has several benefits. It allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. Furthermore, it allows for the creation of a shared understanding of the project between all contributors, human and AI alike. 
+
+LTIP can be implemented through a variety of methods. These include:
+
+- Documentation: Documentation is a way to preserve information in a way that can be retrieved and used at a later time. It can include code comments, design documents, and user guides. Documentation is important because it allows AI agents to maintain context over time and to make better decisions. 
+
+- Code comments: Code comments are a way to preserve information in a way that can be retrieved and used at a later time. They are important because they allow AI agents to maintain context over time and to make better decisions.
+
+- Version control systems: Version control systems are a way to preserve information in a way that can be retrieved and used at a later time. They are important because they allow AI agents to maintain context over time and to make better decisions. 
+
+- 
 
 ---
 ### Notes:
