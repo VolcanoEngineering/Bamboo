@@ -70,7 +70,7 @@ Preventative Long Term Repo Fragmentation (PLTRF) is the process of preventing t
 
 We can maintain short term information and be proactive about how we handle contextual loss, information loss, and drift in the stages between documentation, to codebase architecture, to implementation, to deployment and anything in between.
 
-The goal with STIP is to maintain a high degree of AI context awareness through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrival. 
+The goal with STIP is to maintain a high degree of AI context awareness through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrival. Raw compute is not the bottleneck when it comes to most projects. In fact indexing, organization, embedded quality, and reading summaries of large document stacks often becomes the true bottleneck. However, we do need to be mindful of GPU and CPU limitations especially if a project is using technlogies like WebGL, ThreeJS, and or is outside of the regular stack of web-saas products (games, research projects, etc). Always be cognizant of core CPU and GPU, but prioritize speed and effieciency when it comes to retrival systems first before going low-level.
 
 As AI and ML agents work together, we need to ensure that the velocity of STIP hits little to no bottlenecks that prevents the user from experiencing a smooth development cycle. For the most part, STIP should be automated as much as possible to reduce human-driven cognitive load. This allows the user to focus on the problems that matter most, and let the AI handle the rote contextual awareness, documentation, and information preservation.
 
