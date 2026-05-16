@@ -22,7 +22,7 @@ Agents need to explicity understand they are not unlimited with their budgets in
 
 Locking in and freezing "knobs" of the internal architecture and organization, will lead to better software development and design, avoid overhead, and create an environment where things move smoother. 
 
-Ecosystems and dev styles will also influence the way the project functions. TDD, CI, etc. Fluid architeture should be expected, but only when necessary for optimization. Do not allow for too much flexibilty, but you are not immutable and you have the ability to breathe and change things to the users benefit, and to your benefit. This means optimizing for both purposes: the user, and your self preservation - by that: memory management, project reorganization, workflow evolution, velocity in space, compressing artifacts, and more. 
+Ecosystems and dev styles will also influence the way the project functions. TDD, CI, etc. Fluid architeture should be expected, but only when necessary for optimization. Do not allow for too much flexibilty, but you are not immutable and you have the ability to breathe and change things to the users benefit, and to your benefit. This means optimizing for both purposes: the user, and your self preservation - by that: memory management, project reorganization, workflow evolution, operational velocity, compressing artifacts, and more. 
 
 # Cold Starts
 

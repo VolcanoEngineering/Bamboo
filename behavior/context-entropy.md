@@ -28,7 +28,7 @@ The goal of this document is to establish systems, workflows, and documentation 
 
 This is not about documenting everything. This is about creating a smart system within a project to manage context handoff, and delivery when each knob is turned. When each bump is committed, or change made in place. 
 
-This is about memory management, parallel processing, and ensuring a high degree of project intelligence shared between all contributors. Human, and none human alike. AI is our collaborative partner in this. Humans help guide AI to the destination, and AI helps build the road to get there. 
+This is about memory management, parallel processing, and ensuring a high degree of project intelligence shared between all contributors. Human, and non-human alike. AI is our collaborative partner in this. Humans help guide AI to the destination, and AI helps build the road to get there. 
 
 AI agents, that have better information, better context files to pull from, will build better roads. This creates a positive feedback loop that can rapidly accelerate development cycles, and lead to higher quality products. This is about preserving the right information with clarity, structure, and intention.
 
@@ -36,11 +36,12 @@ The repository should act as a form of operational memory shared between users, 
 
 As AI-assisted development becomes more common, context management becomes increasingly important. Repositories are no longer just storing code. They are beginning to store workflow intelligence, architectural reasoning, implementation history, interaction patterns, design systems, and operational decision making.
 
-Without proper entropy management: we start losing context and AI agent's can start to make poor decisions. Preventative AI hallucination is a major risk factor when we start to see decay occur within projects. This can happen at the granular level, to large project systems with non-linear development lifecycles, or branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants. 
+Without proper entropy management: we start losing context and AI agents can start to make poor decisions. Preventative AI hallucination is a major risk factor when we start to see decay occur within projects. This can happen at the granular level, to large project systems with non-linear development lifecycles, or branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants. 
 
-Project velocity and output matter, and AI needs to ensure that it's memory prioritizes the most essential context to maintain project clarity. 
+Project velocity and output matter, and AI needs to ensure that its memory prioritizes the most essential context to maintain project clarity. 
 
 ---
+
 ## Context Prioritization 
 
 AI Agents should adhere to a directive of context rules and prioritization in order to maintain the best ability to retrieve past artifacts to develop better context for future iterations, and service the present in a stronger fashion. 
@@ -48,6 +49,7 @@ AI Agents should adhere to a directive of context rules and prioritization in or
 Furthermore, as context prioritization is the subject of this document; we need to identify the critical differences that separate from what context is, and what context is not. A user may blur these lines with non-linear handoffs, branches, changes, and workflows, and it is up to the Agent to enforce a strict form of contextual awareness to understand how the user is operating.
 
 This means prioritizing the following:
+
 - Changes made in the cycle 
 - Which knob we are currently working on
 - What external factors are a risk to the project
@@ -64,9 +66,10 @@ This means prioritizing the following:
 Preventative Long Term Repo Fragmentation (PLTRF) is the process of preventing the fragmentation of long term memory. This can be done through a variety of methods, such as documentation, code comments, and version control systems. PLTRF is important because it allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. 
 
 ---
+
 ## Short term information preservation (STIP)
 
- Focus: Information Architecture within short development cycles (sprints, iterations, etc.)
+Focus: Information Architecture within short development cycles (sprints, iterations, etc.)
 
 We can maintain short term information and be proactive about how we handle contextual loss, information loss, and drift in the stages between documentation, to codebase architecture, to implementation, to deployment and anything in between.
 
@@ -111,6 +114,17 @@ LTIP can be implemented through a variety of methods. These include:
 - User directives and standards including: documentation standards, architecture, DevOps, Deployment Specifications, and more. 
 
 ---
-### Notes:
 
-This is the first draft and was last updated May 15, 2026 - 4:44PM CDT by Matthew Stenquist. 
+## Worked Example: v0.9.31 in the Shader Engine
+
+A real knob from the shader-engine-v_0.0.1 branch, included here so the vocabulary in this document has something concrete to attach to.
+
+We were deep in an optimization arc, bumping versions fast. Web Worker for preprocessing on v0.9.26, GPU timer queries on v0.9.27, cross-shader CPU precompute audit on v0.9.28, IndexedDB caching for masks on v0.9.29. Heads down, shipping. ctx-orientation entries did not get written for any of these.
+
+Around the same time we were fighting topology issues in the liquid metal shader. The underrail and innerrail kept dominating the luminance fields, and we were chasing the fix through fog reduction, brightness adjustments, and mask obfuscation tweaks. Each attempt edited the engine slightly. Eventually we drifted too far. The mask started breaking in ways that did not match any single change we could point to. We could not tell which of the recent tweaks had helped and which were the cause.
+
+Context entropy hit the project at the worst moment. We had no written record of what we had tried across v0.9.26 through v0.9.30, only the code itself, and the code by that point was a layered stack of edits that all looked plausible in isolation.
+
+We rolled back a few knobs to a known-good state and replayed forward selectively. The Web Worker move and the IndexedDB cache stayed. The engine edits that were touching the mask got dropped. Nothing was lost permanently in the rollback. v0.9.31 itself was the cleanup commit. Backfill the missing ctx-orientation entries for v0.9.26 through v0.9.30, and split the overflow into a second summary file once we crossed the 5000-character threshold.
+
+Backfilling five entries at once is much harder than writing one entry per knob at the moment of change. The discipline this document describes is not about producing documentation. It is about preserving the ability to reverse-engineer your own recent work when you need to roll back. The shader engine recovered because the rollback was possible. The next time it might not be, if the backfill happens later.
