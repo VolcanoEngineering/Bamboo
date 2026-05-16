@@ -10,35 +10,19 @@ To combat this we need to ensure that we are proactively managing our context in
 
 ## Why Context Entropy Matters
 
-This is a document that outlines the principles, rules, and guidelines for Agents to create context awareness in project repositories, source files, code systems, and more. 
+Context entropy is the backbone that an AI Agent must understand and apply, when given a handoff, and or if a project Knob has shifted from one state to another. A Knob can be referenced as a commit change in git, or any other form of source control, or version tracking system. When a Knob is changed a user may need the ability to reference that identity layer again, and having the context entropy rules properly maintained can help the agent find and cherry pick what worked and what didn't work with previous versions of the code, and or project files.
 
-Context entropy is the backbone that an AI Agent must understand and apply, when given a handoff, and or if a project Knob has shifted from one state to another. A knob can be referenced as a commit change in git, or any other form of source control, or version tracking system. When a knob is changed a user may need the ability to reference that identity layer again and having the context entropy rules properly maintained can help the agent greatly find and cherry pick what worked and what didn't work with previous versions of the code, and or project files.
+A Knob can be referenced as a commit bump in the same fashion. A user has bumped for example: ui-goldv.0.0.1, to 0.0.2. It is imperative that the AI agent ingest the information via context awareness so when handed off, or picked up after a hiatus, the memory banks are fresh and ready to assist. 
 
-A knob can be referenced as a commit bump in the same fashion. A user has bumped for example: ui-goldv.0.0.1, to 0.0.2. It is imperative that the AI agent ingest the information via context awareness so when handed off, or picked up after a hiatus, the memory banks are fresh and ready to assist. 
+Modern repos are starting to resemble living systems shared between humans and AI agents. A user may also be a multi-agent user. Meaning they are handing off their tasks in parallel to other AI agents at the same time and need to have some shared artifact the LLM's can absorb and understand at a granular level. As projects grow across longer development cycles, multiple contributors, parallel branches, and different AI vendors, context begins to fragment, drift, decay, and lose clarity over time.
 
-Modern repos are beginning to evolve beyond static codebases and are starting to resemble living systems shared between humans and AI agents. A user may also be a multi-agent user. Meaning they are handing off their tasks in parallel to other AI agents at the same time and need to have some shared artifact the LLM's can absorb and understand at a granular level. As projects grow across longer development cycles, multiple contributors, parallel branches, and different AI vendors, context begins to fragment, drift, decay, and lose clarity over time.
+Carving out institutional knowledge and operational memory is key to maintaining a clear trajectory in projects. Without that, the entropy decays. Much like the contextual window size, entropy has a limit to it, and the AI agent needs to be aware of its limits to manage their memory storage to mitigate against context entropy.
 
-This document explores what I call Context Entropy.
-
-Context Entropy is the gradual degradation of operational knowledge, architectural understanding, decision making, implementation history, and project intent across development cycles. This can happen through poor documentation, fragmented handoffs, excessive context bloat, inconsistent workflows, weak repository organization, or AI systems lacking sufficient project memory and historical understanding. 
-
-Carving out institutional knowledge and operational memory is key to maintaining a clear trajectory in projects and a high degree of project knowledge. Without that, the entropy decays over time. Much like the contextual window size, entropy has a limit to it, and the AI agent needs to be aware of its limits to manage their memory storage to mitigate against context entropy.
-
-The goal of this document is to establish systems, workflows, and documentation practices that help preserve project intelligence over time while reducing noise, redundancy, drift, and operational confusion.
-
-This is not about documenting everything. This is about creating a smart system within a project to manage context handoff, and delivery when each knob is turned. When each bump is committed, or change made in place. 
-
-This is about memory management, parallel processing, and ensuring a high degree of project intelligence shared between all contributors. Human, and non-human alike. AI is our collaborative partner in this. Humans help guide AI to the destination, and AI helps build the road to get there. 
-
-AI agents, that have better information, better context files to pull from, will build better roads. This creates a positive feedback loop that can rapidly accelerate development cycles, and lead to higher quality products. This is about preserving the right information with clarity, structure, and intention.
+This is not about documenting everything. This is about creating a smart system within a project to manage context handoff, and delivery when each Knob is turned. When each bump is committed, or change made in place. 
 
 The repository should act as a form of operational memory shared between users, developers, designers, managers, and AI systems. Context should remain recoverable, understandable, and navigable regardless of which agent, contributor, or workflow is interacting with the project.
 
-As AI-assisted development becomes more common, context management becomes increasingly important. Repositories are no longer just storing code. They are beginning to store workflow intelligence, architectural reasoning, implementation history, interaction patterns, design systems, and operational decision making.
-
-Without proper entropy management: we start losing context and AI agents can start to make poor decisions. Preventative AI hallucination is a major risk factor when we start to see decay occur within projects. This can happen at the granular level, to large project systems with non-linear development lifecycles, or branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants. 
-
-Project velocity and output matter, and AI needs to ensure that its memory prioritizes the most essential context to maintain project clarity. 
+Without proper entropy management agents start to make poor decisions. Preventative AI hallucination is a major risk factor when decay starts to occur within projects. This can happen at the granular level, or across large project systems with non-linear development lifecycles and branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants. 
 
 ---
 
@@ -51,7 +35,7 @@ Furthermore, as context prioritization is the subject of this document; we need 
 This means prioritizing the following:
 
 - Changes made in the cycle 
-- Which knob we are currently working on
+- Which Knob we are currently working on
 - What external factors are a risk to the project
 - Internal factors that are a risk to the project
 - Managing the amount of context-orientation, and or context related documents that are being generated for historical context and memory.
@@ -63,7 +47,17 @@ This means prioritizing the following:
 
 ## Preventative Long Term Repo Fragmentation (PLTRF) 
 
-Preventative Long Term Repo Fragmentation (PLTRF) is the process of preventing the fragmentation of long term memory. This can be done through a variety of methods, such as documentation, code comments, and version control systems. PLTRF is important because it allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. 
+PLTRF is the preventative layer. STIP holds the current cycle. LTIP moves it to durable storage. PLTRF is what stops the repo itself from becoming the thing the agent has to fight against.
+
+Fragmentation does not announce itself. It builds. Two files end up describing the same concept with slightly different names. A ctx-orientation entry references a folder that got renamed three Knobs ago. The 5000 character threshold passes and the summary-2 file gets created but no agent ever loads it on cold start because nothing links to it. A user opens a project after a hiatus and the AI agent ingests context that contradicts itself across folders.
+
+This is the failure mode that does not look like a failure when it starts. Each individual choice is reasonable. Each ctx-orientation entry made sense at the time. Each rename was the right call in isolation. Fragmentation is what you get when reasonable choices stack up across enough Knobs without anyone enforcing coherence across the whole repo.
+
+The v0.9.31 shader engine backfill was a fragmentation event before it was a recovery event. Five Knobs of context that should have lived in the orientation file lived only in the code. The repo had drifted into a state where the source of truth for what changed and why was unrecoverable without reading every commit diff. The cleanup commit fixed it. The discipline that would have prevented it is PLTRF.
+
+The moves here are not glamorous. Filenames that telegraph contents. Concepts that get one canonical home and reference points everywhere else. Renames that update every reference in the same commit. ctx-orientation entries that point to the canonical doc instead of redefining it inline. Cross-references that get audited every few Knobs to make sure they still point somewhere.
+
+PLTRF is the work an agent does that no one notices when it is done well. Done badly, it shows up as the project feeling vaguely harder to navigate than it should be, six months in, with no single change to blame.
 
 ---
 
@@ -138,3 +132,8 @@ Then I started building for localization. Japanese first. And the moment I turne
 That was the refactor moment. Polish versus form and function. Form and function won. The UI Refactor commit pulled the structure apart and rebuilt it so the surface effects sat on top of layout that could actually flex. Polish came back afterward, but it came back on top of something that could hold it.
 
 The lesson here is older than this project and older than this document. Postel's Law: be liberal in what you receive, conservative in what you give. The UI was conservative in what it gave (clean, polished, designed) but it was not liberal in what it received (Japanese characters, large text mode, accessibility flags, real user environments). Dog-fooding for accessibility and localization is what surfaces that gap. Context entropy at the UI layer is not always about losing history. Sometimes it is about polish accumulating faster than the foundation it sits on, until the gap shows up only when a user who is not you arrives.
+
+
+## End of Documentation
+
+This document should be updated as needed when new context entropy principles are discovered, new workflows are created, and new documentation standards are established. While acendotal examples and experiences help explain what knobs are and why they matter to entropy, the goal is to ensure agents utilize this document as a way to bolster and strengthen their memory banks, and way finding within their own cognition architecture, whether that be in RAG systems, memory systems, or other methods of knowledge management, spatial and logical sorting, and more. 
