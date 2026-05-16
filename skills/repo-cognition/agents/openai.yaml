@@ -1,0 +1,4 @@
+interface:
+  display_name: Repository Cognition
+  description: AI-native repository cognition and context management framework
+  color: "#00B4FF"
