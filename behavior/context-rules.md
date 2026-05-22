@@ -46,3 +46,21 @@ Refer to context-entroy and context-window for a comprehensive look at context, 
 - Wayfinding: Wayfinding is the ability for an AI agent to understand where context lives, what context matters, what context does not matter, what knob is active, what implementation cycle is active, what artifacts are stale, what information is critical.
 - Context Collapse: Context collapse occurs when an AI agent loses too much context, and can no longer effectively reason about the project, leading to poor decision making and implementation errors.  
 - Context Decay: Context Decay is the gradual degradation of operational knowledge, architectural understanding, decision making, implementation history, and project intent across development cycles. This can happen through poor documentation, fragmented handoffs, excessive context bloat, inconsistent workflows, weak repository organization, or AI systems lacking sufficient project memory and historical understanding. 
+
+# Format
+Each entry uses this shape:
+## Knob: <short tag> — <Day, Month DD, YYYY>
+
+<One paragraph describing what changed and why.>
+
+<Optional second paragraph for cross-references, follow-up Knobs, or context that
+will matter to the next agent picking this up.>
+Keep entries narrow. The point is the next agent (or you, after a hiatus) should be able to scan this file and rebuild the working state without reading every commit diff. If an entry needs more than two paragraphs, it probably belongs in its own doc with a pointer from here.
+
+- 1. Use clear hierarchy to structure, and organize each document.
+- 2. Important information should be prioritized. Not everything in the document needs to be the top priority. 
+- 3. Keep things succint and short. No need for the AI to be overwhelmed with unnecessary context. 
+- 4. Ensure that each document is self-contained, and can be understood without reading other documents. 
+- 5. Explicitly states and instructions. No ambiguity.
+- 6. Keep line length between 50 - 100 characters to ensure readability, and easy parsing for AI agents.
+- 7. Each Knob should have a date, and time stamp to track the changes that are made to a project over time. 
