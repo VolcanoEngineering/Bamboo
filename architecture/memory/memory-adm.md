@@ -57,3 +57,8 @@ A `memory.md` should exist and allow for you to follow guardrails that allow ADM
 3. ADM creates a new entry within `memory.md` with a reference to the new episodic chapter, and assigns it the current date and time.
 4. ADM marks the previous episodic chapter for cold storage, archival, and cleaning house.
 5. ADM creates an anchor point against catastrophic memory collapse by making sure episodic memories can be retrieved, audited, and mapped to a simple memory protocol and log.
+
+
+# Conlcusion 
+
+Active Dreaming Memories act as episodic knobs that can reinforce RAG and other memory retrival methods. At the mathematical level ADM is more intensive than RAG but it provides a more logical step when you think about it in relation to a way a human dreams. Dreams act as episode we pull memory from in short term segments, along with long term referencing. ADM is the same principle. It provides a structured, and logical way to handle memory within an AI context that prevents the system from losing context over time and helps reinforce new rules and workflows.
