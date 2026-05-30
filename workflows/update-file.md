@@ -1,0 +1,32 @@
+# Update File Rules
+
+Agents when this file is commited run a CLI check and or Ruleset before the commit is pushed to the branch. 
+
+Create a PR so the Code Reviewer can review changes, and update the skills map, and any other map inside the repo to update for future context and memory preservation. 
+
+# Ruleset
+
+- Have Watchdog Audit Memory first
+- Commit, and PR immediately. 
+- Ruleset and CLI check run after commit, before push.
+- Run this ruleset on every file update. 
+- Cleanly update any Maps, and or Context and update files with concise and proper formatting, following all ruleset standards, and best practices. 
+
+# CLI Execution
+
+- If user prompts to update any file that is not a file listed under 
+
+# PR Execution
+
+- If user prompts to update any file that is not a file listed under 
+
+# Test Driven Development Ruleset
+
+- Have Watchdog Audit Memory first, and update any knowledge base, and or documentation. 
+
+- Make sure you commit, PR, and run CLI check 
+- QA and Test each component that was implemented after all files are placed and staged for commit. 
+
+# Agent Rules
+
+- Read this update file and cleanly update any knowledge base, and or documentation, maps, and or context. This ensures all AI, and human contributors are on the same page, and aligned, and that there is less fragmentation, and misalignment moving forward. 
