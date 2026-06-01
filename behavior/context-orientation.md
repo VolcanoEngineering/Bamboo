@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: typo pass + memory-tal rename — Sunday, May 31, 2026
+
+Ran a correction pass over `context-rules.md` and the `architecture/memory/` docs. Scope was objective errors only. Misspellings, a few broken grammar spots that made a sentence hard to parse, nothing else. Left the voice alone on purpose. The run-ons, the fragments, the period-as-emphasis, the "and or" constructions, the dropped possessive apostrophes, and the all-caps emphasis in `context-rules.md` all stay. A pass that flattened those would read like a machine wrote it, which is the opposite of the point. `memory-rag.md` and `memory-crud.md` were already clean and went untouched.
+
+Renamed the orphan `memory-tsq.md` to `memory-tal.md`, which was the name intended. It was an empty zero-byte file with an acronym nothing explained. Gave it a short planned-stub header naming its scope, temporal memory queries, and mapped it in `repo-organization.md` as planned. It is not loaded by anything yet. Still open after this Knob: the empty unmapped `development/` folder, and the unsettled question of whether `repo-cognition` ships standalone, which decides whether the `references/` stubs stay or get deleted.
+
+---
+
 ## Knob: references dedup + glossary split — Sunday, May 31, 2026
 
 Killed the duplication in `skills/repo-cognition/references/`. The four reference docs were byte for byte copies of the `behavior/` docs, which is the exact fragmentation PLTRF exists to prevent. Replaced each with a short pointer stub that names its canonical home in `behavior/` and redirects there. Repointed `SKILL.md` and the Claude, Codex, and Gemini overlays to load from `../../behavior/` directly, so agents get one hop to source instead of reading a mirror that can drift. Updated `repo-organization.md` so the map calls them pointers, not mirrors.

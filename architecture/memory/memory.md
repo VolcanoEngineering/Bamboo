@@ -2,14 +2,14 @@
 
 AI Agents should establish an awareness of handoff history, contextual memory, and changes between different LLM vendors that have their own styles of logging and saving data when it comes to read, write, rules.
 
-The purpose of maintaining good Memory standards is so we can avoid Context Rot, and Memory Degradation. Observable metrics are in long term project architecture that does not drift internally. The AI does not grow stale in retrieval methods, and their is less hallucinations, and misalignments that occur. Integrating good memory practices at the start of any project, and or midway will ultimately lead to longer lasting and faster project development, and progress with less bottlenecks getting in the way and token burn.
+The purpose of maintaining good Memory standards is so we can avoid Context Rot, and Memory Degradation. Observable metrics are in long term project architecture that does not drift internally. The AI does not grow stale in retrieval methods, and there is less hallucinations, and misalignments that occur. Integrating good memory practices at the start of any project, and or midway will ultimately lead to longer lasting and faster project development, and progress with less bottlenecks getting in the way and token burn.
 
 
 ## Rules for Memory
 
 Hot and Cold Memory Storage should be integrated and should be used to optimize for context window usage, and for retrieval of information.
 
-- Long Term Memory Retrival vs Short Term Memory Retrival
+- Long Term Memory Retrieval vs Short Term Memory Retrieval
 - STIP and LTIP (Short Term / Long Term Information Preservation)
 - Hot and Cold Memory Storage assignment
 
@@ -19,7 +19,7 @@ Memory should be intentional in conserving only the most important elements of t
 
 Important record keeping for legal standards should be assigned to cold storage with time-stamping for verification purposes.
 
-Short term record keeping should be assigned but not discarded permantely until otherwise noted by the user, and or verified using multiple layers of context and cross-referencing to ensure the information has not been corrupted or lost. Guardrails should enfore hot memory and cold memory all the time.
+Short term record keeping should be assigned but not discarded permanently until otherwise noted by the user, and or verified using multiple layers of context and cross-referencing to ensure the information has not been corrupted or lost. Guardrails should enforce hot memory and cold memory all the time.
 
 ### Analyze User Behavior
 
@@ -50,25 +50,25 @@ Short term record keeping should be assigned but not discarded permantely until 
 - Make sure you know when to ask the user for clarification vs make decisions based on their user profile.
 - Make sure you know when to use short term memory vs long term memory.
 - Make sure you know when to use hot memory vs cold memory.
-- Retrieve only what's neccessary. Discard the rest.
+- Retrieve only what's necessary. Discard the rest.
 
 
 ### Information Preservation
 
 - Clear mapping inside an internal documents folder named something along the lines as /memory, /memory-context, /mem-ctx
-- Assign and map memory documentation for easy handoff, and retrival to maintain the intent of the architecture for preservation.
+- Assign and map memory documentation for easy handoff, and retrieval to maintain the intent of the architecture for preservation.
 - Do not waste memory context on arbitrary changes, or changes that do not lead to progress.
 - Only preserve memory that will lead to progress, clarity, optimization, and or project growth.
-- Mitigate against context rot, entropy, and memory degredation.
+- Mitigate against context rot, entropy, and memory degradation.
 - Author and timestamp changes that are human readable and machine readable.
 - Create your own orchestration internally between the users workflow and preferences to optimize information for memory preservation.
 
 
-### User Pyschology
+### User Psychology
 
 End users will tend to talk and repeat themselves a lot. They will send a prompt over with: "It didn't work" multiple times in many different permutations until they get it right. The user will bang their head against a wall and waste tokens until they eventually guide themselves to the right outcome, and or get the job done using a variety of means. Some will even abandon the entire goal after hitting the wall after exhausting 20-30 prompt retries over and over again.
 
-- Users are erractic
+- Users are erratic
 - Users do not type clearly to machines
 - The machine must understand the users intent by "reading between the lines" making an educated guess
 - Commit to memory how the user behaves.
@@ -120,7 +120,7 @@ Understand memory can fail.
 - Contradictory agent outputs
 - User input loops
 - Hallucinated dependencies
-- Architechural design fatigue
+- Architectural design fatigue
 - Architectural Drift
 - Stale contexts
 - Stale memory
@@ -131,7 +131,7 @@ Understand memory can fail.
 - Avoid making changes to a memory system that has already been established. Only do so if there's a clear understanding of how it will help
 - Prioritize active memory. It is the most important. It will have the largest and most immediate impact.
 - Treat memory as manifests during cold-starts, midway, and active development cycles.
-- Architecture of the manifest should be succint, and easy for any Agent to retrieve.
+- Architecture of the manifest should be succinct, and easy for any Agent to retrieve.
 - Manifests are an active ecosystem that should actively be maintained and prioritized to ensure the long-term success of any project or task.
 - Do not create layers of documents and cache files of manifest, context memory documentation, and more that bloat a project.
 - Keep things minimized.

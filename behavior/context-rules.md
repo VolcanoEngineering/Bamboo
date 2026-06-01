@@ -1,6 +1,6 @@
 # Context Rules
 
-This document defines the hard operation rules, behavioral constraints, and retrieveal policies for Agents to operate within when it comes to working with context, context windows, and memory management.
+This document defines the hard operational rules, behavioral constraints, and retrieval policies for Agents to operate within when it comes to working with context, context windows, and memory management.
 
 This is our foundational layer that becomes the basis for our contexts understanding and constitution. It should inform every decision, and action that is taken by the Agents to ensure a close relationship that obeys the users requests without deviating too far away from the core objective.
 
@@ -18,11 +18,11 @@ Contextually everything is not always black and white. Immutable. Things will ch
 
 Without that, we lose our way trying to navigate and deliver on our objectives. Software development is a marathon, not a sprint. Context is our fuel, but it is in limited supply. We add more as we go, and compress as needed. We do not waste the energy we have, but we need to discard the dead weight that is slowing us down.
 
-Agents need to explicity understand they are not unlimited with their budgets in the cycles of development. Their is a limit to all things, and it is up to the contextual makeup and architecture to reinforce these guidelines with a solid understanding of the project's memory architecture and robust and reinforced systems of management, guidelines, and rule setting that is LOCKED-IN and FROZEN. Not explicitly stated, but implictly expected. Therefore, agents must be able to work with and understand the context of the project knowing they have set boundaries to follow.
+Agents need to explicitly understand they are not unlimited with their budgets in the cycles of development. There is a limit to all things, and it is up to the contextual makeup and architecture to reinforce these guidelines with a solid understanding of the project's memory architecture and robust and reinforced systems of management, guidelines, and rule setting that is LOCKED-IN and FROZEN. Not explicitly stated, but implicitly expected. Therefore, agents must be able to work with and understand the context of the project knowing they have set boundaries to follow.
 
 Locking in and freezing "knobs" of the internal architecture and organization, will lead to better software development and design, avoid overhead, and create an environment where things move smoother.
 
-Ecosystems and dev styles will also influence the way the project functions. TDD, CI, etc. Fluid architeture should be expected, but only when necessary for optimization. Do not allow for too much flexibilty, but you are not immutable and you have the ability to breathe and change things to the users benefit, and to your benefit. This means optimizing for both purposes: the user, and your self preservation - by that: memory management, project reorganization, workflow evolution, operational velocity, compressing artifacts, and more.
+Ecosystems and dev styles will also influence the way the project functions. TDD, CI, etc. Fluid architecture should be expected, but only when necessary for optimization. Do not allow for too much flexibility, but you are not immutable and you have the ability to breathe and change things to the users benefit, and to your benefit. This means optimizing for both purposes: the user, and your self preservation - by that: memory management, project reorganization, workflow evolution, operational velocity, compressing artifacts, and more.
 
 # Cold Starts
 
@@ -59,7 +59,7 @@ Keep entries narrow. The point is the next agent (or you, after a hiatus) should
 
 - 1. Use clear hierarchy to structure, and organize each document.
 - 2. Important information should be prioritized. Not everything in the document needs to be the top priority.
-- 3. Keep things succint and short. No need for the AI to be overwhelmed with unnecessary context.
+- 3. Keep things succinct and short. No need for the AI to be overwhelmed with unnecessary context.
 - 4. Ensure that each document is self-contained, and can be understood without reading other documents.
 - 5. Explicitly states and instructions. No ambiguity.
 - 6. Keep line length between 50 - 100 characters to ensure readability, and easy parsing for AI agents.
