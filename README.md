@@ -4,7 +4,7 @@ Canonical documentation and agent-governance starter for AI-assisted repositorie
 
 ## What This Repo Is
 
-`Repository-md` is the source repo for a reusable documentation system. It is meant to be forked or copied into project repos so agents and humans inherit the same operating rules, shared vocabulary, and handoff patterns across vendors.
+`Documentation-md` is the source repo for a reusable documentation system. It is meant to be forked or copied into project repos so agents and humans inherit the same operating rules, shared vocabulary, and handoff patterns across vendors.
 
 The policy source lives in `Documentation.md`.
 Agents start in `AGENT.md`.
