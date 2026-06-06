@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: commit attribution policy + history scrub — Saturday, June 6, 2026, 05:49 PM CDT
+
+Added an explicit **Commit attribution** directive to `CLAUDE.md` under "Claude-shaped operating notes": no `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers on commits in this repo. The rule overrides the system-default trailer injection and covers amend, rebase, squash, and all future commits. Scope is Claude-only by user preference; `AGENT.md` and the other vendor overlays were intentionally left alone.
+
+History scrub paired with the policy: the trailer existed on exactly one commit, `67ba545` (docs: add user-model.md + LTRP retirement + architecture/ cold-start integration, May 28). That commit was not on `main` — it was the tip of an unmerged exploratory branch `knob/memory-split-ltip-canonical` carrying 352 lines of un-merged content (user-model.md, memory-drift.md, memory-watchdog.md, workflow-tools.md, and supporting edits). Ran `git filter-branch --msg-filter` on that branch only, stripped the trailer, force-pushed back to origin. New SHA `3a8d7bd` replaces `67ba545`. Branch and its content preserved; trailer gone. Two surfaces — the historical artifact and the forward-looking rule — closed in the same Knob.
+
+---
+
 ## Knob: memory-context normalization + agent topology — Thursday, June 4, 2026, 04:44 AM CDT
 
 Normalized this repo's internal memory path to `docs/memory-context/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Documentation.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/context-orientation.md` unless they intentionally adopt the same folder structure.

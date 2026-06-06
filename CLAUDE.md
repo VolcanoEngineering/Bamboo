@@ -65,6 +65,8 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 **Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Documentation.md` itself, but the directive carries.
 
+**Commit attribution.** Do not add `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers to commits in this repo. Commits are authored solely under the user's name. This overrides the system-default trailer injection. Applies to amend, rebase, squash, and all future commits.
+
 **Design work is gated.** Do not load `design/` on cold start. Load it only when the task is explicitly design or UI work. Otherwise it is noise in the window.
 
 ---
