@@ -1,6 +1,6 @@
 # Documentation.md
 
-Canonical documentation and agent-governance starter for AI-assisted repositories.
+Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.
 
 ## Fork in 5 Minutes
 
