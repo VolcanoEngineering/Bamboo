@@ -6,6 +6,20 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ---
 
+## Knob: Watchdog persona + Skill upgrade — Sunday, June 7, 2026, 03:20 AM CDT
+
+The Watchdog finally has a face. Pulled the character, voice, and aggression-level dial out of the three different places they were scatered across — `memory-watchdog.md`, `agent-topology.md`, `agent-identity.md` — and into a canonical `architecture/memory/watchdog-persona.md`. The persona doc is where the dial lives now. Project owners set the float (0.0–1.0), the Skill reads it on each pass. Default is 0.5. Bands defined in the persona doc for what passive vs standard vs strict vs paranoid actually mean operationally.
+
+Rewrote `skills/memory-watchdog/SKILL.md` so it's actually runnable, not just a description of what the Watchdog should do. Added the Aggression Level section at the top — agents check the persona for the current project's float before they run a pass, then apply rule strictness accordingly. Existing operational content (the Watchdog Pass, the Map Hygiene rules, the search patterns) stays, but it's now persona-aware. Skill loads the persona first.
+
+Cleaned up `memory-watchdog.md` so it stops restating the personality. It carries the concept now — what the Watchdog IS and what it does — and points at the persona doc for voice and the Skill for runtime. The "why does the Watchdog have to be a file" question got a canonical answer in the persona doc, so the concept doc just summarizes and points.
+
+Added a Watchdog entry to `ctx-lexicon.md` pointing at all three homes (persona, concept, runtime). Updated `repo-organization.md` to add `watchdog-persona.md` to the architecture/memory tree and tie the three files together in their descriptions.
+
+This is the biggest authoring move in the refinement sequence. Closes the design-without-implementation gap for the Watchdog — it's now actually a thing an agent can run, not just something the docs talk about.
+
+---
+
 ## Knob: README tagline swap — Sunday, June 7, 2026, 03:00 AM CDT
 
 Swapped the line under the README title. Old version read like a brochure — *Canonical documentation and agent-governance starter for AI-assisted repositories.* New version reads like me: *Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.* Same scope, different vibe. The README is the first thing a forker sees and the old line was doing it no favors.

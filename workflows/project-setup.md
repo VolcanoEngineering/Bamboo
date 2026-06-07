@@ -1,6 +1,6 @@
 # Project Setup
 
-This workflow is procedural and **first-time only**. It explains how to initialize a new repo using the `Documentation.md` system. Durable policy lives in `Documentation.md`, not here. For ongoing context governance after the repo is up — the 5000-character rule, the 20-document threshold, Git push/pull discipline, branch and worktree naming, Token usage at the project level — see `workflows/project-context.md`.
+This workflow is procedural and **first-time only**. It explains how to initialize a new repo using the `Documentation.md` system. Durable policy lives in `Documentation.md`, not here. For ongoing context governance after the repo is up — the 5000-character rule, the 20-document threshold, Git push/pull discipline, branch and worktree naming, Token usage at the project level — see `workflows/project-context.md`. For resyncing the fork to a later canonical change (renames, new docs, moved folders), see `workflows/fork-resync.md`.
 
 ## Goal
 

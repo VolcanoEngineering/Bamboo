@@ -127,6 +127,7 @@ DevOps and project lifecycle patterns. Forkable, overridable per project. If a f
 - `project-setup.md` — **first-time** project initialization procedure. How to apply the `Documentation.md` contract in a new repo without redefining the policy. 8-step bootstrap.
 - `project-context.md` — **ongoing** context governance once the repo is running. The 5000-char threshold, the 20-document threshold, Git push/pull rules for handoff, branch and worktree naming, Token discipline at the project level. Setup-only content lives in `project-setup.md`; ongoing-only content lives here.
 - `cpp.md` — Context Preservation Protocol. The workflow that keeps project memory alive across the big transitions — branch closes, phase rollovers, production deploys. Triggers, anti-patterns, archiving standards. Used to live as a section inside `architecture/workflow-tools.md`; got its own home when the named concept earned it.
+- `fork-resync.md` — how to resync a downstream fork to a canonical structural change (renames, new docs, moved folders). Pairs with `project-setup.md` (first sync) — this doc covers every sync after. Single atomic commit per fork; never rewrite historical Knob entries to match new naming.
 
 Both docs are written for the project-fork case, not for `Documentation.md` itself. The `Documentation.md` repo follows the same rules but applies them to its own evolution as a documentation library.
 
