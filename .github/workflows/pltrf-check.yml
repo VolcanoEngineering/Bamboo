@@ -1,0 +1,95 @@
+name: PLTRF Check
+
+# Asserts every file path mentioned in the cold-start cascade exists on
+# disk. Catches the broken-pointer failure mode that ctx-entropy.md
+# warns about — silently, in CI, before a fresh agent stumbles into it.
+#
+# Only flags paths that start with a known repo top-level folder
+# (behavior/, architecture/, agent-architecture/, docs/, skills/,
+# workflows/, design/, .github/). Bare filenames in prose ("SKILL.md"),
+# sequence patterns ("-3.md"), template placeholders ("ctx-NAME.md"),
+# and external-fork examples (Trading-MCP-Algo/CHANGELOG.md) are
+# intentionally ignored because resolving them requires context the
+# check does not have.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-pointers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan cold-start docs for broken file pointers
+        run: |
+          set -uo pipefail
+
+          # Intentional placeholders — files referenced on purpose that
+          # don't exist on disk yet. Downstream-fork defaults and
+          # planned/Backlog entries. Add to this list when introducing a
+          # new intentional missing reference; remove when the file
+          # lands.
+          SKIP_LIST=(
+            "docs/ctx-orientation.md"
+          )
+
+          # Only check paths that start with one of these top-level
+          # folders. This is the boundary between "real repo-relative
+          # path" and "bare filename in prose."
+          VALID_PREFIX='^(behavior|architecture|agent-architecture|docs|skills|workflows|design|\.github)/'
+
+          is_skipped() {
+            local needle="$1"
+            for s in "${SKIP_LIST[@]}"; do
+              [[ "$needle" == "$s" ]] && return 0
+            done
+            return 1
+          }
+
+          SCAN_FILES=(
+            "CLAUDE.md"
+            "AGENT.md"
+            "Documentation.md"
+            "README.md"
+            "docs/repo-organization.md"
+          )
+          for f in behavior/ctx-*.md; do
+            [ -f "$f" ] && SCAN_FILES+=("$f")
+          done
+
+          MISSING_COUNT=0
+
+          for SOURCE in "${SCAN_FILES[@]}"; do
+            if [ ! -f "$SOURCE" ]; then
+              echo "::error::Source file missing: $SOURCE"
+              MISSING_COUNT=$((MISSING_COUNT + 1))
+              continue
+            fi
+
+            BACKTICK_PATHS=$(grep -oE '`[a-zA-Z0-9_./-]+\.md`' "$SOURCE" 2>/dev/null | tr -d '`' | sort -u | grep -E "$VALID_PREFIX" || true)
+            LINK_PATHS=$(grep -oE '\]\([a-zA-Z0-9_./-]+\.md[^)]*\)' "$SOURCE" 2>/dev/null | sed -E 's/^\]\(([^)#]+).*/\1/' | sort -u | grep -E "$VALID_PREFIX" || true)
+            ALL_PATHS=$(printf "%s\n%s\n" "$BACKTICK_PATHS" "$LINK_PATHS" | sort -u | grep -v '^$' || true)
+
+            while IFS= read -r P; do
+              [ -z "$P" ] && continue
+              CLEAN="${P%%#*}"
+              [[ "$CLEAN" =~ ^https?:// ]] && continue
+              [ -z "$CLEAN" ] && continue
+              if is_skipped "$CLEAN"; then continue; fi
+              if [ ! -f "$CLEAN" ]; then
+                echo "::error file=$SOURCE::Broken pointer in $SOURCE: references \`$CLEAN\` but file does not exist on disk."
+                MISSING_COUNT=$((MISSING_COUNT + 1))
+              fi
+            done <<< "$ALL_PATHS"
+          done
+
+          echo ""
+          if [ $MISSING_COUNT -gt 0 ]; then
+            echo "PLTRF check failed: $MISSING_COUNT broken pointer(s) detected."
+            echo "Fix the references, create the missing files, or add intentional placeholders to SKIP_LIST in this workflow."
+            exit 1
+          fi
+          echo "PLTRF check passed: all referenced files exist on disk."

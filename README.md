@@ -64,6 +64,8 @@ This repo keeps its own operational log under `docs/memory-ctx/`, but the defaul
 
 Created and maintained by Matt Stenquist.
 
+Map hygiene is enforced in CI — every push runs `.github/workflows/pltrf-check.yml`, which scans the cold-start cascade and fails the build if any referenced file is missing from disk. PLTRF discipline plus a safety net.
+
 ## Recent Milestones
 
 - 2026-06-03: Introduced a literal root `Documentation.md` and separated policy from README and cold-start routing.

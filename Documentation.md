@@ -67,6 +67,7 @@ This source repo uses `docs/memory-ctx/` for its own operational memory because 
 - Keep repo-specific implementation guidance local to that repo. Do not push local conventions back into the canonical base unless they are truly reusable.
 - When folders or canonical files move, update every reference in the same change.
 - When a new reusable Skill or module appears, update the relevant maps in the same change.
+- Map hygiene is enforced automatically. The `.github/workflows/pltrf-check.yml` action scans the cold-start cascade (`CLAUDE.md`, `AGENT.md`, this file, `README.md`, `docs/repo-organization.md`, and the `behavior/ctx-*.md` family) on every push and PR and fails the build if any referenced file is missing from disk. Intentional placeholders go in the action's `SKIP_LIST`.
 
 ## 5. Optional Modules
 
