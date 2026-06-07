@@ -62,6 +62,8 @@ This file is the home for the working glossary. It moved out of `ctx-rules.md` w
 
 - **MMS** — Memory Management System. How each agent scores, tiers, isolates, and summarizes its own working memory while running. Canonical: `agent-architecture/agent-mms.md`.
 
+- **Watchdog** — the file-level auditor that guards repo memory against drift, broken references, missing Knob entries, and rot. Has a character, a voice, and an aggression float (0.0–1.0). Canonical persona: `architecture/memory/watchdog-persona.md`. Concept: `architecture/memory/memory-watchdog.md`. Runtime prompt: `skills/memory-watchdog/SKILL.md`.
+
 ---
 
 # When to update this file

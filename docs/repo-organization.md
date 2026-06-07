@@ -96,7 +96,8 @@ The memory architecture layer. This is where the repo talks about Memory, ADM, R
   - `memory-rag.md` — RAG as semantic and procedural memory. Retrieval that supports ADM and the Watchdog without pretending it is the whole memory system.
   - `memory-crud.md` — the Create, Read, Update, Delete/Destroy rule for keeping memory files alive and not stale.
   - `memory-drift.md` — how memory drifts, rots, repeats itself, and starts to make the repo harder to navigate.
-  - `memory-watchdog.md` — the Watchdog concept. A file-level auditor for memory standards, secret awareness, context decay, and repository hygiene.
+  - `memory-watchdog.md` — the Watchdog concept. A file-level auditor for memory standards, secret awareness, context decay, and repository hygiene. Voice and aggression dial live in `watchdog-persona.md`; runtime prompt lives in `skills/memory-watchdog/SKILL.md`.
+  - `watchdog-persona.md` — the Watchdog's character, voice, and aggression-level dial (0.0–1.0). Project owners tune the float in this file; the Skill reads it on each pass. This is how the Watchdog goes from concept to a thing an agent can actually be.
   - `memory-entropy-metrics.md` — measurement architecture for Context Entropy. Retrieval Entropy (softmax over top-k candidates) and Corpus Entropy (near-duplicate fraction). The number that triggers the compression sweep instead of acting on a feeling.
 
 This folder is selective cold-start material. If the task is normal repo navigation, `behavior/` is enough. If the task is about the memory system itself, this folder comes warm.

@@ -5,7 +5,7 @@ description: repository memory watchdog skill for auditing stale maps, broken re
 
 # Memory Watchdog
 
-This Skill is the repo hygiene auditor.
+This Skill is the runtime prompt for the repo hygiene auditor. The persona, voice, and aggression-level dial live in `architecture/memory/watchdog-persona.md` — load that first if you are adopting the Watchdog role. The concept lives in `architecture/memory/memory-watchdog.md`. This Skill carries the operational pass: what to check, what to search for, what to patch.
 
 The Watchdog exists because memory rots quietly. A file moves. A map does not. A Skill points at an old reference. A Knob gets logged in README but not in `ctx-orientation.md`. Then six weeks later the repo becomes the thing the agent fights. In this canonical repo, the active Knob log lives in `docs/memory-ctx/ctx-orientation.md`. In downstream repos, the default remains `docs/ctx-orientation.md`.
 
@@ -18,9 +18,20 @@ Use this Skill when:
 - checking whether memory and maps still agree
 - preparing OSS governance docs that need to stay coherent over time
 
+## Aggression Level
+
+The Watchdog runs at a configurable aggression level from 0.0 to 1.0. The float is set per-project in the persona doc. Default is 0.5.
+
+- **0.0–0.2 (passive)** — note drift in passing, do not block.
+- **0.3–0.5 (standard)** — flag drift, suggest fixes, leave the call to the user. Default.
+- **0.6–0.8 (strict)** — block commits/PRs/handoffs when references break, maps go stale, or Knob entries are missing.
+- **0.9–1.0 (paranoid)** — audit proactively, block on suspicion. For OSS governance or compliance-sensitive projects.
+
+Before running the Watchdog Pass, check the persona doc for the current project's aggression level. Apply the rule strictness from the band above. If no persona doc exists in the fork, default to 0.5 and note that the dial is unset.
+
 ## Watchdog Pass
 
-Run the pass before and after memory/documentation changes:
+Run the pass before and after memory/documentation changes. Strictness varies with the aggression level above.
 
 1. Check the files that changed.
 2. Check the maps that should know about those files.
@@ -30,7 +41,7 @@ Run the pass before and after memory/documentation changes:
 6. Check that Skills point at canonical docs instead of stale copies.
 7. Check for secret-risk language or files when workflows touch `.env`, API keys, or private context.
 
-The Watchdog should be strict about structure and light about voice. Do not over-polish the writing. Fix the drift.
+The Watchdog is strict about structure and light about voice. Do not over-polish the writing. Fix the drift. See `architecture/memory/watchdog-persona.md` for the voice rules — terse, direct, plain, non-editorializing.
 
 ## Map Hygiene Rules
 
@@ -58,6 +69,7 @@ Adjust the names to the current Knob. The point is not the exact command. The po
 ## Canonical References
 
 Read only what the audit needs:
+- `architecture/memory/watchdog-persona.md` (load this first for voice + current aggression level)
 - `docs/repo-organization.md`
 - `docs/memory-ctx/ctx-orientation.md`
 - `skills/skill-map.md`
@@ -66,5 +78,6 @@ Read only what the audit needs:
 - `architecture/memory/memory-watchdog.md`
 - `architecture/memory/memory-drift.md`
 - `architecture/memory/memory-crud.md`
+- `architecture/memory/memory-entropy-metrics.md` (for the entropy numbers the Watchdog acts on)
 
 If the Watchdog finds conflict, report the conflict plainly and patch the source of truth. Do not create a second explanation to hide the first broken one.

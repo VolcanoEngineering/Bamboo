@@ -2,6 +2,8 @@
 
 The Memory Watchdog is an internal system for Agents, and LLM's to reference when they need to understand the current state of the project, and its memory architecture. The watchdog itself acts as a gatekeeper that permits LLM's to do certain operations and or actions within the codebase.
 
+This doc carries the *concept*. The Watchdog's **character, voice, and aggression-level dial** live in `architecture/memory/watchdog-persona.md`. The Watchdog's **runtime prompt** (what it actually does on a pass) lives in `skills/memory-watchdog/SKILL.md`. Load the persona doc when adopting the role; load the Skill when running the audit.
+
 - It guards the memory
 - It preserves the memory
 - Understands when the memory is drifting and alerts internally the LLM and externally to the user that context is decaying
@@ -32,17 +34,6 @@ The Memory Watchdog is an internal system for Agents, and LLM's to reference whe
 
 ### Why does the Watchdog have to be a file?
 
-- The Watchdog needs to act as an internal ecosystem but as a file that a user can go in and tweak
-- Internally in the file should be adjustable values on how aggressive the Watchdog is in auditing and memory optimization
-- It needs to be a one stop shop for memory standards and memory optimization
-- Think of it like a user manual, but for your memory
-- The Watchdog file can be tweaked with float values on its aggression level for Gatekeeping
-- Example: Gatekeeping Aggression (0.0 - 1.0) = 0.8 [This means the watchdog will be 80% aggressive in its gatekeeping]
-- The Watchdog eventually develops its own scoring metric as it learns the projects scope and analyzes the code itself
-- Internally, the watchdog is a large prompt that runs internally in the Agent.
-- This allows the Agent to understand its own memory and context and to act accordingly.
-- These internal prompts are what drive the agents memory optimization and memory gatekeeping.
-- The Watchdog should not create lag internally and or cause processes to slow down.
-- If processes are being slowed the Watchdog needs to reevaluate how aggressive things are and reprioritize what it is auditing.
+Answered canonically in `architecture/memory/watchdog-persona.md`. Short version: a prompt buried in agent runtime cannot be tuned, version-controlled, audited, or replaced. A file can. The aggression float, audit standards, and the persona itself all live in the persona doc so they can evolve as the project does.
 
-The Watchdog is the auditor internally. It needs to be the gatekeeper of preventing bad practices from forming. It needs to be the protector of context and memory. It needs to be the strategist of memory optimization. And it needs to be the first resource for understanding the memory architecture of the project. It is the shepherd that guides the sheep to the gates at night. Protecting. Watching. Serving. 🐕
+The Watchdog is the auditor internally. The gatekeeper of preventing bad practices from forming. The protector of context and memory. The strategist of memory optimization. The first resource for understanding the memory architecture of the project. Voice and persona details live in `watchdog-persona.md`.
