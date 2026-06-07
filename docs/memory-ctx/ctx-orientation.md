@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: agent-mms filled + memory-adm Backlog section — Sunday, June 7, 2026, 02:15 AM CDT
+
+First Knob in the post–Vision Synthesis refinement sequence. Filled `agent-architecture/agent-mms.md` with the Agent Memory Management System content: Memory Value Scores (0.0–1.0 scoring of artifacts against the active Knob), hot/warm/cold tiering at the per-agent level that feeds the same LTIP/CWM disciplines from `behavior/`, Watchdog interaction via the repo memory layer (agents stay sovereign over their own working memory until handoff), parallel-agent memory isolation rules that mirror the anti-conflict rules in `agent-topology.md`, and the three summarization triggers (Knob transition, compaction event, handoff). The file went from a 1-line placeholder to a full sibling of `agent-identity.md` and `agent-topology.md`.
+
+Same Knob restructured `architecture/memory/memory-adm.md`. The "Planned, not yet written" references to `memory-context-preservation.md` and `memory-manifest.md` moved into a dedicated `# Backlog` section with one-line rationale each. They read as deliberate design intent now instead of broken pointers an agent might chase. Updated the pointer descriptions in `docs/repo-organization.md` (agent-mms.md is now a real doc, not a placeholder) and `agent-architecture/agent-identity.md` (the intro line that names the trio of agent-architecture docs now names MMS too).
+
+---
+
 ## Knob: lived signal refinements — lexicon, format flex, narrate rule, README recipe — Sunday, June 7, 2026, 02:02 AM CDT
 
 Applied the refinements from the Lived Signal Report in one atomic move. Created `behavior/ctx-lexicon.md` as the single canonical decoder ring for terminology (Knob, Bump, Entropy, Wayfinding, Decay, Drift, Bloat, Collapse, Saturation, Active Working Memory, Repository Memory, CTX) and operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD). The glossary that used to live inside `ctx-rules.md` moved here in full — agents and humans now have one place to decode the vocabulary instead of mining it from prose. Cold-start order in `CLAUDE.md`, `AGENT.md`, and `docs/repo-organization.md` now points at the lexicon as item 5.

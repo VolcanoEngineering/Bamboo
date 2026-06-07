@@ -66,7 +66,7 @@ Multi-agent operating model docs. **Skip on cold-start unless the project has a 
 
 - `agent-identity.md` — how an agent adopts a role-shaped working identity.
 - `agent-topology.md` — the coordination model for a practical startup tech squad: role lanes, ownership, handoffs, escalation, and anti-conflict rules.
-- `agent-mms.md` — reserved for future agent memory-management system work.
+- `agent-mms.md` — the Agent Memory Management System. How each agent scores its own working memory (Memory Value Scores), how MVS feeds hot/warm/cold tiering at the per-agent level, how the Watchdog interacts via the repo memory layer, parallel-agent memory isolation rules, and the three summarization triggers (Knob transition, compaction event, handoff).
 
 ---
 

@@ -38,10 +38,12 @@ A `memory.md` should exist and allow for you to follow guardrails that allow ADM
 - Memory Drift - memory-drift.md
 - Memory Watchdog - memory-watchdog.md
 
-Planned, not yet written. Do not try to load these. They are named here so the intent is on record, not so an agent goes looking for a file that is not there.
+# Backlog
 
-- Memory Context Preservation - memory-context-preservation.md
-- Memory Manifest - memory-manifest.md
+Files that are named here on purpose so the design intent stays on record. They do not exist yet. Do not load them or follow their paths. When the concepts earn their own canonical home, they will land here and move out of this section.
+
+- **Memory Context Preservation** (`memory-context-preservation.md`) — the cross-Knob preservation protocol for when memory has to survive long hiatuses, branch switches, or full project restarts. Currently the relevant rules live inside `ctx-entropy.md` (LTIP) and `workflow-tools.md` (CPP); a dedicated doc would consolidate them.
+- **Memory Manifest** (`memory-manifest.md`) — the runtime view of what is in active memory at any moment. Currently the concept lives implicitly across the agent topology and Watchdog audit pipeline; a manifest doc would name the artifact so agents and the Watchdog can verify against the same surface.
 
 # ADM Conflict Memory Resolutions
 - LLM can hallucinate. Active Dreaming, creates memories into episodic chapters over time.
