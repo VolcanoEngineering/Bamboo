@@ -8,6 +8,24 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: lived signal refinements — lexicon, format flex, narrate rule, README recipe — Sunday, June 7, 2026, 02:02 AM CDT
+
+Applied the refinements from the Lived Signal Report in one atomic move. Created `behavior/ctx-lexicon.md` as the single canonical decoder ring for terminology (Knob, Bump, Entropy, Wayfinding, Decay, Drift, Bloat, Collapse, Saturation, Active Working Memory, Repository Memory, CTX) and operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD). The glossary that used to live inside `ctx-rules.md` moved here in full — agents and humans now have one place to decode the vocabulary instead of mining it from prose. Cold-start order in `CLAUDE.md`, `AGENT.md`, and `docs/repo-organization.md` now points at the lexicon as item 5.
+
+Loosened the Knob entry format in `ctx-rules.md`. The rigid `## Knob: Title — Date` template was the single biggest signal in the fork audit — every fork ignored it and grew its own shape. The Format section now lists three invariants (date, narrative, cross-refs) and five tested shape variants pulled from real forks: Knob block, semver release block, agent handoff signature, dated priority block, and guardrail/runbook entry. Forkers pick the shape that fits their project; stay consistent inside one log to avoid drift.
+
+Demoted `architecture/` and `agent-architecture/` to explicit advanced add-on status across the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Documentation.md`, `docs/repo-organization.md`). The audit showed zero of seven downstream forks adopted either folder. Single-agent projects and projects without an ADM/RAG memory layer skip both on cold start. Folders stay in place physically; only the gating language sharpened.
+
+Added a vendor-neutral **narrate-compression directive** as section 8 of `AGENT.md`, with a mirroring bullet in `CLAUDE.md`. Auto-compaction has been silent by default; the new rule says when an agent compresses (or detects imminent compression), it states which orientation log it will re-read and what active Knob it will reconstitute from. Closes the Phase C invisibility gap from the Lived Signal audit — the user reported Claude saying the log helped during compaction, but the transcripts came up empty because Claude never said so out loud.
+
+Strengthened the **Commit attribution** bullet in `CLAUDE.md` with the rationale: contributors on GitHub are publicly visible, and seeing Claude in the list credit-shifts the work away from the user. Treat the user as the visible author; Claude is the ghost-writer and publisher, not the credited contributor. The rule already existed from the prior Knob; this Bump just locks in the *why*.
+
+Added a **Fork in 5 Minutes** section to the top of `README.md`, ghost-written in a warmer voice per user direction. Replaces the previous "How To Adopt It" section. Walks a forker through what to copy, what to skip, the two edits to make, and the one rule that survives every fork (every Bump earns a dated entry). Closes the productization gap surfaced in the honest assessment — forks were standardless because the recipe wasn't written down.
+
+Two orphan pointers from the prior `memory-context/` → `memory-ctx/` rename were also fixed in `docs/repo-organization.md` (the tree diagram and the docs/ section). PLTRF discipline pass. No `Co-Authored-By: Claude` trailer.
+
+---
+
 ## Knob: ctx- rename + CTX acronym + ghost-writer policy — Saturday, June 6, 2026, 06:27 PM CDT
 
 Refactored the `context-` filename prefix to `ctx-` across the repo and renamed the `docs/memory-context/` folder to `docs/memory-ctx/`. Twelve files moved via `git mv` (six in `behavior/`, two in `docs/memory-ctx/`, four in `skills/repo-cognition/references/`) plus the folder itself. Path and identifier references in every doc inside the Documentation.md radius — CLAUDE.md, AGENT.md, README.md, Documentation.md, docs/repo-organization.md, the skill files, the workflow docs, and the architecture/memory docs — were updated in lockstep so no orphan pointers were left behind. The standalone word "context" in prose was preserved per the user's rule; only doc-name references and folder paths flipped.

@@ -4,17 +4,23 @@ ctx-utility.md is the map for behavior/. It points at where the canonical concep
 
 Each doc gets a short description, and a list of the named concepts inside it. One sentence each, maybe two. Just enough to orient.
 
-This is not a glossary. The terminology lives inside ctx-rules.md for now. When the vocabulary outgrows that home, the glossary spawns its own file.
+This is not a glossary. The glossary lives in `ctx-lexicon.md` as of June 2026 — it spawned its own file when the vocabulary outgrew its embedded home inside `ctx-rules.md`.
 
-Order is weighted by importance and topic load. ctx-rules.md first as the foundational layer, then ctx-entropy.md, ctx-window.md, and ctx-token-limits.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
+Order is weighted by importance and topic load. ctx-rules.md first as the foundational layer, then ctx-lexicon.md as the decoder ring, then ctx-entropy.md, ctx-window.md, and ctx-token-limits.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
 
-Updates trigger on file-level growth. When a large new context-NAME file spawns inside behavior/, this doc updates. Concept-level changes inside existing docs do not touch it.
+Updates trigger on file-level growth. When a large new ctx-NAME file spawns inside behavior/, this doc updates. Concept-level changes inside existing docs do not touch it.
 
 ---
 
 ## ctx-rules.md
 
-The foundational layer. Hard operational rules, behavioral constraints, and retrieval policies for agents working in the project. Also holds the working glossary for framework terminology until the vocabulary outgrows its embedded home.
+The foundational layer. Hard operational rules, behavioral constraints, and retrieval policies for agents working in the project. Also holds the canonical Format section that describes the five Bump-entry shape variants (Knob block, semver release, agent handoff, dated priority block, guardrail/runbook entry).
+
+---
+
+## ctx-lexicon.md
+
+The decoder ring. Single canonical home for framework terminology (Knob, Bump, Entropy, Wayfinding, etc.) and operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD). Each entry is a one-line definition and a pointer to its canonical home doc. Load this when you encounter a term or acronym you do not recognize.
 
 ---
 

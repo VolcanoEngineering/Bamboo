@@ -15,17 +15,17 @@ Repository-md/
 ├── AGENT.md                     # Cold-start router for any agent landing in the repo
 ├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
 ├── LICENSE
-├── agent-architecture/          # Multi-agent role design and orchestration patterns.
+├── agent-architecture/          # ADVANCED ADD-ON. Multi-agent role design and orchestration. Skip unless multi-agent.
 │   ├── agent-identity.md
 │   ├── agent-topology.md
 │   └── agent-mms.md
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
-│   └── memory-context/
+│   └── memory-ctx/
 │       ├── ctx-orientation.md   # Hot per-Knob change log.
 │       └── ctx-ori-summary-2.md # Cold storage for older Knobs.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
-├── architecture/                # Memory architecture, ADM/RAG, Watchdog, workflow tools.
+├── architecture/                # ADVANCED ADD-ON. ADM/RAG, Watchdog, workflow tools. Skip unless memory-system work.
 │   ├── workflow-tools.md        # Tool/workflow memory friction.
 │   └── memory/                  # Memory operating layer.
 │       ├── memory.md
@@ -52,7 +52,7 @@ Six working folders plus `docs/`. The folders are deliberate. They map to differ
 Operational memory for *this* repository. Distinct from the `behavior/` rules, which describe how agents should think about context in *any* project they fork this into. `docs/` is the in-house version: the map of this repo, and the running log of Knobs as they get committed.
 
 - `repo-organization.md` — this file. The folder map. Updates when a new top-level folder or canonical file spawns.
-- `memory-context/` — this repo's internal memory log folder.
+- `memory-ctx/` — this repo's internal memory log folder.
   - `ctx-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `ctx-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
   - `ctx-ori-summary-2.md` — cold storage for older Knobs rolled out of `ctx-orientation.md`.
 
@@ -60,9 +60,9 @@ The reason these live in `docs/` rather than at the root is to keep the root cle
 
 ---
 
-## agent-architecture/
+## agent-architecture/ — advanced add-on
 
-Multi-agent operating model docs. This folder is selective cold-start material. Pull it when the task is about agent roles, identity, orchestration, handoffs, or parallel work boundaries.
+Multi-agent operating model docs. **Skip on cold-start unless the project has a multi-agent topology with handoff or orchestration boundaries.** Single-agent projects do not need this folder. Pull it when the task is explicitly about agent roles, identity, orchestration, handoffs, or parallel work boundaries.
 
 - `agent-identity.md` — how an agent adopts a role-shaped working identity.
 - `agent-topology.md` — the coordination model for a practical startup tech squad: role lanes, ownership, handoffs, escalation, and anti-conflict rules.
@@ -74,19 +74,20 @@ Multi-agent operating model docs. This folder is selective cold-start material. 
 
 The foundational rules. Everything an agent has to internalize before it touches the rest of the repo. Read this first on cold start, no matter what task is in front of you.
 
-- `ctx-rules.md` — hard operational rules, behavioral constraints, retrieval policies. Also holds the working glossary of framework terminology (Knob, Bump, Entropy, Context Window, Drift, Bloat, Saturation, Wayfinding, Collapse, Decay). Foundational layer.
+- `ctx-rules.md` — hard operational rules, behavioral constraints, retrieval policies. Holds the canonical Format section that describes the five Bump-entry shape variants (Knob block, semver release, agent handoff, dated priority, guardrail/runbook). Foundational layer.
+- `ctx-lexicon.md` — the decoder ring. Single canonical home for framework terminology (Knob, Bump, Entropy, Wayfinding, Decay, Drift, Bloat, Collapse, Saturation, Context Window, Active Working Memory, Repository Memory, CTX) and operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD). Load it when you encounter a term you don't recognize.
 - `ctx-entropy.md` — the preservation view. How context survives across Knobs, agent handoffs, and human hiatus. Defines PLTRF, LTIP, STIP, and the hot/warm/cold tiering. Holds the worked examples (the v0.9.31 shader-engine recovery, the ui-refactor knob in Usage Menubar) that anchor the vocabulary.
 - `ctx-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
 - `ctx-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
-- `ctx-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `context-NAME.md` doc spawns.
+- `ctx-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `ctx-NAME.md` doc spawns.
 
-These four docs share vocabulary on purpose. Rules sets the foundation, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
+These five docs share vocabulary on purpose. Rules sets the foundation, lexicon decodes the language, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
 
 ---
 
-## architecture/
+## architecture/ — advanced add-on
 
-The memory architecture layer. This is where the repo talks about Memory, ADM, RAG, CRUD, Drift, Watchdog, and Workflow Tools as systems instead of one-off rules. Do not ingest this whole folder on ordinary cold start. Pull it when the work is memory governance, context audits, drift prevention, ADM/RAG retrieval, Watchdog behavior, or workflow-tool alignment.
+The memory architecture layer. This is where the repo talks about Memory, ADM, RAG, CRUD, Drift, Watchdog, and Workflow Tools as systems instead of one-off rules. **Skip on cold-start unless the project explicitly has an ADM/RAG memory layer or the current work is auditing memory governance.** Most projects do not need this folder. Pull it when the work is memory governance, context audits, drift prevention, ADM/RAG retrieval, Watchdog behavior, or workflow-tool alignment.
 
 - `workflow-tools.md` — how IDEs, CLIs, desktop apps, browsers, APIs, and sandboxes affect memory debt and project drift.
 - `memory/` — the memory operating layer. This is the home for the memory docs, not the top level of `architecture/`.
@@ -153,9 +154,9 @@ For an agent landing in this repo for the first time:
 3. `Documentation.md` — the policy source.
 4. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why in this repo.
 5. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
-6. `behavior/ctx-rules.md` → `ctx-entropy.md` → `ctx-window.md` → `ctx-token-limits.md` → `ctx-utility.md`.
-7. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-8. `agent-architecture/` — only if the task touches identity, topology, orchestration, or parallel-agent governance.
+6. `behavior/ctx-rules.md` → `ctx-lexicon.md` → `ctx-entropy.md` → `ctx-window.md` → `ctx-token-limits.md` → `ctx-utility.md`.
+7. `architecture/` — **advanced add-on.** Skip unless the project has an ADM/RAG memory layer or the task is auditing memory governance.
+8. `agent-architecture/` — **advanced add-on.** Skip unless the project has a multi-agent topology.
 9. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
 10. `workflows/` — only if the task touches setup or context governance.
 11. `design/` — only if the task is design work.

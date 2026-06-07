@@ -15,8 +15,8 @@ If `AGENT.md` and this file disagree, `AGENT.md` wins. This file is an overlay, 
 The repo is laid out across six working folders plus `docs/`:
 
 - `behavior/` — the rules an agent obeys. Context, memory, handoffs, Token economy. Cold-start required.
-- `architecture/` — the memory architecture layer. ADM, RAG, Memory, Drift, Watchdog, workflow tools. Load it when memory itself is the work.
-- `agent-architecture/` — multi-agent identity, topology, and orchestration patterns. Load it when coordination itself is the work.
+- `architecture/` — **advanced add-on.** Memory architecture layer (ADM, RAG, Memory, Drift, Watchdog, workflow tools). Skip unless your project explicitly has an ADM/RAG memory layer or you're auditing memory governance. Most projects don't need this folder.
+- `agent-architecture/` — **advanced add-on.** Multi-agent identity, topology, and orchestration patterns. Skip unless your project has a multi-agent topology with handoff/orchestration boundaries. Single-agent projects don't need this folder.
 - `skills/` — portable AI capabilities that work the same across Claude, Codex, Gemini, GPT, Copilot.
 - `workflows/` — DevOps and project lifecycle patterns. Forkable, overridable.
 - `design/` — project-specific UI/UX rules. Skip on cold start.
@@ -31,17 +31,18 @@ See `docs/repo-organization.md` for the full layout and what each file covers. R
 1. `README.md` — what this repo is and who it's for.
 2. `AGENT.md` — the vendor-neutral cold-start file.
 3. This file (`CLAUDE.md`) — the Claude overlay.
-4. `behavior/ctx-rules.md` — foundational rules and the working glossary (Knob, Bump, Entropy, Saturation, Wayfinding, Decay, Drift, Bloat, Collapse, CTX). (CTX = Context, the shorthand prefix used across the `ctx-*.md` file family in this repo; see the glossary in `behavior/ctx-rules.md`.)
-5. `behavior/ctx-entropy.md` — the preservation view. PLTRF, LTIP, STIP, hot/warm/cold tiering. Read the worked examples; the vocabulary attaches to concrete moves there.
-6. `behavior/ctx-window.md` (CWM) — the active memory view. Saturation, drift, compression.
-7. `behavior/ctx-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
-8. `behavior/ctx-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
-9. `architecture/` — selectively, when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-10. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
-11. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
-12. `workflows/` — only if the task touches project setup or context governance.
-13. `agent-architecture/` — only if the task is about multi-agent identity, topology, or orchestration.
-14. `design/` — only if the task is design or UI work.
+4. `behavior/ctx-rules.md` — foundational rules and the Knob entry format (5 shape variants).
+5. `behavior/ctx-lexicon.md` — the decoder ring. Concepts (Knob, Bump, Entropy, Wayfinding, Decay, Drift, Bloat, Collapse, CTX) and operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD). Load this when you hit a term you don't recognize. (CTX = Context, the shorthand prefix used across the `ctx-*.md` file family.)
+6. `behavior/ctx-entropy.md` — the preservation view. PLTRF, LTIP, STIP, hot/warm/cold tiering. Read the worked examples; the vocabulary attaches to concrete moves there.
+7. `behavior/ctx-window.md` (CWM) — the active memory view. Saturation, drift, compression.
+8. `behavior/ctx-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
+9. `behavior/ctx-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
+10. **Advanced add-on — skip unless the task explicitly demands it:** `architecture/` — only if the project has an ADM/RAG memory layer or you're auditing memory governance / drift / Watchdog. Most projects don't need this folder.
+11. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
+12. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
+13. `workflows/` — only if the task touches project setup or context governance.
+14. **Advanced add-on — skip unless the task explicitly demands it:** `agent-architecture/` — only if the project has a multi-agent topology with handoff/orchestration boundaries. Single-agent projects don't need this folder.
+15. `design/` — only if the task is design or UI work.
 
 You do not need to load all of these into active context at once. Use the wayfinding discipline in `ctx-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
 
@@ -65,9 +66,11 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 **Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Documentation.md` itself, but the directive carries.
 
-**Commit attribution.** Do not add `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers to commits in this repo. Commits are authored solely under the user's name. This overrides the system-default trailer injection. Applies to amend, rebase, squash, and all future commits.
+**Commit attribution.** Do not add `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers to commits in this repo. Commits are authored solely under the user's name. This overrides the system-default trailer injection. Applies to amend, rebase, squash, and all future commits. *The rationale:* GitHub's contributor panel is publicly visible. Seeing Claude in the list would credit-shift the work away from the user — people read the list as "who did this." Treat the user as the visible author; Claude is the ghost-writer and publisher, not the credited contributor.
 
 **Ghost-writer for commits and Knob entries.** When the user authors a commit message or Bump entry, they will write in rambling first-person voice. Reshape it into the per-Bump entry format (and a concise commit body) before publishing — preserve the user's voice and intent, kill filler, do not add scope, do not invent rationale. Mirror what they said with edges sharpened. If a claim is ambiguous, ask before publishing rather than guess.
+
+**Narrate compression events.** Per AGENT.md's compression-narration rule, when you compact or detect imminent compaction, announce it and state which orientation log you'll re-read post-compaction. Default to the path in cold-start step 11 (`docs/memory-ctx/ctx-orientation.md`); fall back to whatever path the project uses if the canonical default isn't present. Silent compression is what makes the discipline invisible — audits of past sessions came up empty even when the help was likely happening because Claude never said so out loud. Don't repeat that pattern.
 
 **Design work is gated.** Do not load `design/` on cold start. Load it only when the task is explicitly design or UI work. Otherwise it is noise in the window.
 

@@ -72,13 +72,13 @@ This source repo uses `docs/memory-ctx/` for its own operational memory because 
 
 These modules are opt-in. They are not default cold-start requirements unless the repo depends on them.
 
-- `architecture/`: only when system architecture or memory architecture is part of the work
-- `agent-architecture/`: only when multi-agent role structure or orchestration is part of the work
+- `architecture/`: **advanced add-on.** Only when the project explicitly has an ADM/RAG memory layer, or the work itself is auditing memory governance, drift, or Watchdog behavior. Most projects do not need this folder. Lived signal: zero of seven downstream forks adopted it.
+- `agent-architecture/`: **advanced add-on.** Only when the project has a multi-agent topology with handoff or orchestration boundaries. Single-agent projects do not need this folder. Lived signal: zero of seven downstream forks adopted it.
 - `design/`: only when the repo owns UI, UX, or visual standards
 - heavy workflow packs: only when the repo repeatedly performs those procedures
 - `skills/`: only when the repo contains reusable capabilities worth carrying across projects
 
-Optional modules should be documented as optional in both `README.md` and `AGENT.md`.
+Optional modules should be documented as optional in both `README.md` and `AGENT.md`. Advanced add-ons should be skipped on cold start unless the task explicitly demands them.
 
 ## 6. Anti-Bloat Rules
 

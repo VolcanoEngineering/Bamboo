@@ -34,29 +34,29 @@ Refer to ctx-entropy and ctx-window for a comprehensive look at context, and how
 
 # Terminology
 
-- Knobs: Knobs are the different cycles, and or stages of a project that an AI agent will need to understand in order to operate within the project's architecture.
-- Bump: A bump is a change that is made to a knob, and or the project structure. It is a way to track the changes that are made to a project over time. And is usually a version update that is pushed to GitHub, or any other source control repository, versioning control software (Perforce, Alienbrain)
-- Entropy: Context Entropy is the gradual degradation of operational knowledge, architectural understanding, decision making, implementation history, and project intent across development cycles. This can happen through poor documentation, fragmented handoffs, excessive context bloat, inconsistent workflows, weak repository organization, or AI systems lacking sufficient project memory and historical understanding.
-- Context Window: The context window is the amount of information that an AI agent can store in its working memory at one time.
-- Context Drift: Context drift is the gradual loss of context over time, as information is lost, or forgotten.
-- Context Bloat: Context bloat is the accumulation of too much context, which can overwhelm an AI agent and lead to poor decision making.
-- Saturation: Context Saturation is the point at which a context window becomes too full to effectively store and process information.
-- Active Working Memory: Active working memory is the information that an AI agent can currently access and process.
-- Repository Memory: Repository memory is the information that an AI agent has stored in its repository.
-- Wayfinding: Wayfinding is the ability for an AI agent to understand where context lives, what context matters, what context does not matter, what knob is active, what implementation cycle is active, what artifacts are stale, what information is critical.
-- Context Collapse: Context collapse occurs when an AI agent loses too much context, and can no longer effectively reason about the project, leading to poor decision making and implementation errors.
-- Context Decay: Context Decay is what entropy looks like at the retrieval layer. Information that was parsed and stored starts to come back degraded. Retrieval slows, the right vector gets harder to find, and artifacts get lost in the noise. Entropy is the system wide drift across cycles. Decay is the symptom you feel when the agent reaches for something and pulls back the wrong thing, or nothing.
-- CTX: Context. Shorthand prefix used across `behavior/ctx-*.md` and `docs/memory-ctx/ctx-*.md` filenames and identifiers. The word "context" in prose stays unabbreviated; CTX is reserved for filenames and path references. Introduced to keep document names short without losing the semantic anchor.
+The working glossary moved to `behavior/ctx-lexicon.md`. Load that doc when you encounter a term or acronym you do not recognize. It covers both the concept layer (Knob, Bump, Entropy, Wayfinding, etc.) and the operational acronyms (PLTRF, LTIP, STIP, CWM, CTL, ADM, RAG, CRUD).
 
 # Format
-Each entry uses this shape:
-## Knob: <short tag> — <Day, Month DD, YYYY>
 
-<One paragraph describing what changed and why.>
+Every Knob entry must contain three invariants:
 
-<Optional second paragraph for cross-references, follow-up Knobs, or context that
-will matter to the next agent picking this up.>
-Keep entries narrow. The point is the next agent (or you, after a hiatus) should be able to scan this file and rebuild the working state without reading every commit diff. If an entry needs more than two paragraphs, it probably belongs in its own doc with a pointer from here.
+1. **A date** — full date, optionally a timestamp.
+2. **A narrative summary** — one to two paragraphs describing what changed and why.
+3. **Cross-references** — explicit pointers to changed files, related Knobs, or follow-up work.
+
+Beyond those invariants, the *shape* of the entry can match the project it serves. Pick one shape and stay consistent within the project — mixing shapes inside one log creates Drift. Five tested shapes:
+
+1. **Knob block** — `## Knob: <title> — <date>` followed by a 1–2 paragraph narrative. Canonical default. Works for docs and prose-heavy projects. This is what `docs/memory-ctx/ctx-orientation.md` uses in this repo.
+
+2. **Semver release** — `## vX.Y.Z — <title>` with subsections like **Added / Edited / Tests / Bridge contract bump**. Natural fit for software projects with versioned releases. Pattern proven in `Trading-MCP-Algo/CHANGELOG.md`.
+
+3. **Agent handoff** — `### Response from <agent> — <date> v<n>` with bullets and code blocks. Natural fit for multi-agent systems where each entry is one side of a dialogue. Pattern proven in `Trading-MCP-Analyzer/handoff.md`.
+
+4. **Dated priority block** — `## P0 — <date> <title>` with checkbox tasks underneath. Natural fit for product / task-driven work. Pattern proven in `LearnDesign/docs/todo-logs.md`.
+
+5. **Guardrail / runbook entry** — `## <title>` with rules, status, and triggers. Natural fit for projects with hard technical traps that need to be re-read often. Pattern proven in `React-Playground/MEMORY.md`.
+
+Keep entries narrow regardless of shape. The point is the next agent (or you, after a hiatus) should be able to scan the log and rebuild the working state without reading every commit diff. If an entry needs more than two paragraphs of narrative, it probably belongs in its own doc with a pointer from the log.
 
 - 1. Use clear hierarchy to structure, and organize each document.
 - 2. Important information should be prioritized. Not everything in the document needs to be the top priority.
