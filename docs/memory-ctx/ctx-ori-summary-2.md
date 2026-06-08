@@ -6,6 +6,36 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ---
 
+## Knob: fork-resync workflow doc — Sunday, June 7, 2026, 04:35 AM CDT
+
+Wrote `workflows/fork-resync.md` — the procedure for catching a fork up to a canonical structural change. Covers when to resync (rename, folder move, new doc family, discipline shift), the pre-flight checklist (read the canonical Knob entry, check PLTRF CI is green, clean working tree, note fork-specific deviations), the procedure itself (single atomic commit per fork, no orphan pointers, no rewriting historical Knob entries), and the anti-patterns to avoid.
+
+The honest take: I'm not touching the seven downstream forks directly. Each one has its own state — local changes, in-flight branches, custom adaptions — and resyncing them is a per-fork judgment call I shouldn't make alone. The doc gives you the recipe so any fork can be brought current when you're ready, on whatever schedule you decide.
+
+Cross-referenced from `project-setup.md` (first-time bootstrap, see fork-resync for every sync after) and surfaced in `docs/repo-organization.md` under the workflows section. New forks land in setup; existing forks needing catch-up land here.
+
+---
+
+## Knob: ctx-rules.md voice tightening — Sunday, June 7, 2026, 04:20 AM CDT
+
+Tightened the Operational Governance section in `behavior/ctx-rules.md`. The block was drifting into metaphor — *Software development is a marathon, not a sprint*, *Context is our fuel*, *LOCKED-IN and FROZEN* in all caps. Cold-start material should be terser than that.
+
+Kept the Matt-isms that earned their place — "we lose our way," "Context is the fuel. Limited supply.", "discard the dead weight." Cut the cliché. Killed the LOCKED-IN ALL CAPS. Collapsed the meandring "Therefore, agents must be able to work with..." sentence into something direct. Net result is shorter, sharper, still sounds like me. Section dropped from roughly 480 words to about 210.
+
+The doc is agent-facing rules content; voice tweaks belong in author-voiced surfaces, not in canonical doctrine that other agents read as instructions.
+
+---
+
+## Knob: log migration — hot file back under cap — Sunday, June 7, 2026, 04:05 AM CDT
+
+The hot orientation log was sitting at over 10,000 characters — twice the 5000-char threshold. Time to migrate. Pulled the ten oldest Knobs out of `docs/memory-ctx/ctx-orientation.md` and prepended them at the top of `docs/memory-ctx/ctx-ori-summary-2.md` in newest-first order so the cold archive stays scannable. The hot file now holds the current Knob plus the last three — exactly what the discipline calls for.
+
+Worth noting: this Knob itself triggers another migration in the same shape. With this entry added, the hot file goes back over the count, so the oldest of that set (structural moves) gets moved to summary-2 in the same commit. Steady-state behvaior — every Bump moves one out the bottom. Keeps the hot file lean automatically as long as the discipline holds.
+
+No other changes in this Knob. Pure log hygiene.
+
+---
+
 ## Knob: PLTRF GitHub Action — safety net closes the sequence — Sunday, June 7, 2026, 03:45 AM CDT
 
 Last one in the sequence. Shipped `.github/workflows/pltrf-check.yml`. Runs on every push and PR. Scans the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Bamboo.md`, `README.md`, `docs/repo-organization.md`, and all `behavior/ctx-*.md`) and asserts every repo-relative file path mentioned actually exists on disk. If any reference is broken, the build fails with a clear annotation pointing at which source doc references which missing file.

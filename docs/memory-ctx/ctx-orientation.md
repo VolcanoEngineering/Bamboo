@@ -8,6 +8,20 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: GitHub repo renamed to Bamboo + template repository enabled + README updated — Sunday, June 7, 2026, 11:45 PM CDT
+
+Two GitHub-side moves and a tiny README polish.
+
+The repo on GitHub got renamed: `internetdialup/Documentation.md` → `internetdialup/Bamboo`. GitHub auto-redirects old URLs for a while, but the local git remote got updated to the new canonical URL in the same move. Anyone with the old clone still works through the redirect.
+
+Template repository setting got toggled on. The repo now offers a "Use this template" button next to the Code button — designed exactly for this use case, since Bamboo's whole purpose is fork-and-go starter materail. Templates give the user a fresh repo without the upstream commit history (cleaner than a traditional fork for starter projects). The existing forks workflow is unchanged; this just adds the easier path.
+
+README's "Fork in 5 Minutes" section got a small touchup to lead with the template option as the easy path. Manual file-copy instructions stay as the fallback for people slotting Bamboo into an existing project.
+
+No code changes beyond the README. The Bump entry covers the GitHub-side state for the record.
+
+---
+
 ## Knob: cleanup — dangling branches gone, Copilot agent retired — Sunday, June 7, 2026, 11:28 PM CDT
 
 Three cleanup moves on the GitHub side. First, the dangling `knob/memory-split-ltip-canonical` branch — the one whose only unique content (`behavior/user-model.md`) was already cherry-picked to main this morning — got the explicit auth and was deleted from origin. Branch pointer gone, work preserved.
@@ -48,34 +62,5 @@ Tried to delete the dangling remote branch in the same Knob but the action got b
 
 ---
 
-## Knob: fork-resync workflow doc — Sunday, June 7, 2026, 04:35 AM CDT
-
-Wrote `workflows/fork-resync.md` — the procedure for catching a fork up to a canonical structural change. Covers when to resync (rename, folder move, new doc family, discipline shift), the pre-flight checklist (read the canonical Knob entry, check PLTRF CI is green, clean working tree, note fork-specific deviations), the procedure itself (single atomic commit per fork, no orphan pointers, no rewriting historical Knob entries), and the anti-patterns to avoid.
-
-The honest take: I'm not touching the seven downstream forks directly. Each one has its own state — local changes, in-flight branches, custom adaptions — and resyncing them is a per-fork judgment call I shouldn't make alone. The doc gives you the recipe so any fork can be brought current when you're ready, on whatever schedule you decide.
-
-Cross-referenced from `project-setup.md` (first-time bootstrap, see fork-resync for every sync after) and surfaced in `docs/repo-organization.md` under the workflows section. New forks land in setup; existing forks needing catch-up land here.
-
----
-
-## Knob: ctx-rules.md voice tightening — Sunday, June 7, 2026, 04:20 AM CDT
-
-Tightened the Operational Governance section in `behavior/ctx-rules.md`. The block was drifting into metaphor — *Software development is a marathon, not a sprint*, *Context is our fuel*, *LOCKED-IN and FROZEN* in all caps. Cold-start material should be terser than that.
-
-Kept the Matt-isms that earned their place — "we lose our way," "Context is the fuel. Limited supply.", "discard the dead weight." Cut the cliché. Killed the LOCKED-IN ALL CAPS. Collapsed the meandring "Therefore, agents must be able to work with..." sentence into something direct. Net result is shorter, sharper, still sounds like me. Section dropped from roughly 480 words to about 210.
-
-The doc is agent-facing rules content; voice tweaks belong in author-voiced surfaces, not in canonical doctrine that other agents read as instructions.
-
----
-
-## Knob: log migration — hot file back under cap — Sunday, June 7, 2026, 04:05 AM CDT
-
-The hot orientation log was sitting at over 10,000 characters — twice the 5000-char threshold. Time to migrate. Pulled the ten oldest Knobs out of `docs/memory-ctx/ctx-orientation.md` and prepended them at the top of `docs/memory-ctx/ctx-ori-summary-2.md` in newest-first order so the cold archive stays scannable. The hot file now holds the current Knob plus the last three — exactly what the discipline calls for.
-
-Worth noting: this Knob itself triggers another migration in the same shape. With this entry added, the hot file goes back over the count, so the oldest of that set (structural moves) gets moved to summary-2 in the same commit. Steady-state behvaior — every Bump moves one out the bottom. Keeps the hot file lean automatically as long as the discipline holds.
-
-No other changes in this Knob. Pure log hygiene.
-
----
 
 Older entries moved to `docs/memory-ctx/ctx-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.

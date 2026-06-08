@@ -4,9 +4,9 @@ Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projec
 
 ## Fork in 5 Minutes
 
-If you want to use this in your own project, here's the short version. You probably don't need everything in this repo — most projects only use a small subset. So let's get you the right pieces.
+If you want to use this in your own project, the easy path is the **Use this template** button at the top of the repo. Gives you a fresh repo with the structure already in place; no upstream commit history to clean up. Then trim what you don't need using the skip list below. If you'd rather slot Bamboo into an existing project, copy the files in manually instead.
 
-**Copy these into your project root:**
+**Whichever path you take, you'll want these into your project root:**
 
 - `AGENT.md` — the cold-start router. Every agent that lands in your project reads this first.
 - `Bamboo.md` — the policy layer. Recommended if you want the full contract; safe to skip if your project is small and you'd rather keep it lean.
