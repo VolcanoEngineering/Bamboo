@@ -8,6 +8,20 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: cleanup — dangling branches gone, Copilot agent retired — Sunday, June 7, 2026, 11:28 PM CDT
+
+Three cleanup moves on the GitHub side. First, the dangling `knob/memory-split-ltip-canonical` branch — the one whose only unique content (`behavior/user-model.md`) was already cherry-picked to main this morning — got the explicit auth and was deleted from origin. Branch pointer gone, work preserved.
+
+Second, the `doc_v0.0.1` branch — the old development branch from late May that hosted PR #2 — got deleted from origin too. It was fully merged into main with zero unique commits, so the only thing lost was the stale pointer. Merged commits stay in main's history forever; the PR page stays accessible as a permanent receipt. Same deal for PR #1 — the closed PR page persists even after its branch was deleted earlier.
+
+Third, the Copilot cloud agent workflow that had been registered on the repo. The workflow file lived only on `doc_v0.0.1`, so deleting that branch removed the file, but the workflow registartion was sticky in GitHub's Actions UI. `gh workflow disable` refused to turn it off (no file to disable), but deleting the workflow's only run via direct API call removed the registration entirely. The Actions tab now shows only the PLTRF Check.
+
+Why this matters: the public-facing view of the repo should look like my work, not a parade of AI-assisted agents that ran experiments last month. The Copilot run on PR #2 was a leftover from before this discipline took hold. Removing it doesn't lie about history — the PRs are still there with their narratives intact — it just cleans up the active surface so what's visible is the current discipline, not the old detritus.
+
+No code changes in this Knob. Only GitHub-side state. Working tree is identical. Bump entry exists so the cleanup is on the record.
+
+---
+
 ## Knob: brand rename — Documentation.md becomes Bamboo — Sunday, June 7, 2026, 02:45 PM CDT
 
 The framework's name flipped from Documentation.md / Repository-md to **Bamboo** — unifying the framework and the SaaS under one brand. Brand decision locked earlier today (Matt acquired `bamboo.nyc`, set up the Volcano umbrella org with `volcano.engineering` + `volcano.technology`). This Knob makes the rename real in the canonical repo.
