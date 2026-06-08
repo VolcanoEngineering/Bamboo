@@ -84,7 +84,11 @@ For the deep treatment — foundational concepts, the mapping table from prior w
 
 ## About
 
-Created and maintained by Matt Stenquist.
+Created and maintained by Matt Stenquist. 
+
+### Acknowledgements
+Thanks, Chip Huyen for AI Engineering and Designing Machine Learning Systems. 
+SHULK, and Adam Shu from OA. 
 
 Map hygiene is enforced in CI — every push runs `.github/workflows/pltrf-check.yml`, which scans the cold-start cascade and fails the build if any referenced file is missing from disk. PLTRF discipline plus a safety net.
 
