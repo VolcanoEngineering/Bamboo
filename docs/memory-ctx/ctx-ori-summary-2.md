@@ -1,4 +1,4 @@
-# Documentation.md — Context Orientation Summary 2
+# Bamboo.md — Context Orientation Summary 2
 
 Cold storage for older Knobs moved out of `docs/memory-ctx/ctx-orientation.md` when the hot log approached the 5000-character threshold.
 
@@ -8,13 +8,13 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ## Knob: PLTRF GitHub Action — safety net closes the sequence — Sunday, June 7, 2026, 03:45 AM CDT
 
-Last one in the sequence. Shipped `.github/workflows/pltrf-check.yml`. Runs on every push and PR. Scans the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Documentation.md`, `README.md`, `docs/repo-organization.md`, and all `behavior/ctx-*.md`) and asserts every repo-relative file path mentioned actually exists on disk. If any reference is broken, the build fails with a clear annotation pointing at which source doc references which missing file.
+Last one in the sequence. Shipped `.github/workflows/pltrf-check.yml`. Runs on every push and PR. Scans the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Bamboo.md`, `README.md`, `docs/repo-organization.md`, and all `behavior/ctx-*.md`) and asserts every repo-relative file path mentioned actually exists on disk. If any reference is broken, the build fails with a clear annotation pointing at which source doc references which missing file.
 
 The matching is deliberatly scoped to paths that start with a known top-level folder (`behavior/`, `architecture/`, `agent-architecture/`, `docs/`, `skills/`, `workflows/`, `design/`, `.github/`). Bare filenames in prose like "see SKILL.md", sequence patterns like `-3.md`, template placeholders like `ctx-NAME.md`, and external-fork examples like `Trading-MCP-Algo/CHANGELOG.md` all get ignored — resolving them needs context the check doesn't have. Intentional placeholders (downstream-fork defaults, Backlog files) live in a `SKIP_LIST` at the top of the action.
 
 Tested locally against the current state of the repo and it passes clean. Zero broken pointers. Confirmed it would catch a fake broken reference during development by introducing one and watching it fail.
 
-PLTRF was discipline-only until this Knob — every rename, every new file, every move depended on me or the agent being meticulous. Now it's discipline plus a safety net. Broken pointers get caught in CI instead of waiting for a fresh agent to stumble into them six weeks later. README and Documentation.md got short notes mentioning the check is automated.
+PLTRF was discipline-only until this Knob — every rename, every new file, every move depended on me or the agent being meticulous. Now it's discipline plus a safety net. Broken pointers get caught in CI instead of waiting for a fresh agent to stumble into them six weeks later. README and Bamboo.md got short notes mentioning the check is automated.
 
 This wraps the 5-Knob refinement sequence post-Vision Synthesis Report. Across the arc: agent-mms filled (1), mirror layer killed (2), workflows split + entropy metrics relocated + CPP own home (3), Watchdog persona doc + Skill upgrade (4), and now CI enforcement (5). Five Knobs, five concrete refinements. The repo is materially less drift-prone than it was at the start of yesterday.
 
@@ -74,7 +74,7 @@ Applied the refinements from the Lived Signal Report in one atomic move. Created
 
 Loosened the Knob entry format in `ctx-rules.md`. The rigid `## Knob: Title — Date` template was the single biggest signal in the fork audit — every fork ignored it and grew its own shape. The Format section now lists three invariants (date, narrative, cross-refs) and five tested shape variants pulled from real forks: Knob block, semver release block, agent handoff signature, dated priority block, and guardrail/runbook entry. Forkers pick the shape that fits their project; stay consistent inside one log to avoid drift.
 
-Demoted `architecture/` and `agent-architecture/` to explicit advanced add-on status across the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Documentation.md`, `docs/repo-organization.md`). The audit showed zero of seven downstream forks adopted either folder. Single-agent projects and projects without an ADM/RAG memory layer skip both on cold start. Folders stay in place physically; only the gating language sharpened.
+Demoted `architecture/` and `agent-architecture/` to explicit advanced add-on status across the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Bamboo.md`, `docs/repo-organization.md`). The audit showed zero of seven downstream forks adopted either folder. Single-agent projects and projects without an ADM/RAG memory layer skip both on cold start. Folders stay in place physically; only the gating language sharpened.
 
 Added a vendor-neutral **narrate-compression directive** as section 8 of `AGENT.md`, with a mirroring bullet in `CLAUDE.md`. Auto-compaction has been silent by default; the new rule says when an agent compresses (or detects imminent compression), it states which orientation log it will re-read and what active Knob it will reconstitute from. Closes the Phase C invisibility gap from the Lived Signal audit — the user reported Claude saying the log helped during compaction, but the transcripts came up empty because Claude never said so out loud.
 
@@ -88,7 +88,7 @@ Two orphan pointers from the prior `memory-context/` → `memory-ctx/` rename we
 
 ## Knob: ctx- rename + CTX acronym + ghost-writer policy — Saturday, June 6, 2026, 06:27 PM CDT
 
-Refactored the `context-` filename prefix to `ctx-` across the repo and renamed the `docs/memory-context/` folder to `docs/memory-ctx/`. Twelve files moved via `git mv` (six in `behavior/`, two in `docs/memory-ctx/`, four in `skills/repo-cognition/references/`) plus the folder itself. Path and identifier references in every doc inside the Documentation.md radius — CLAUDE.md, AGENT.md, README.md, Documentation.md, docs/repo-organization.md, the skill files, the workflow docs, and the architecture/memory docs — were updated in lockstep so no orphan pointers were left behind. The standalone word "context" in prose was preserved per the user's rule; only doc-name references and folder paths flipped.
+Refactored the `context-` filename prefix to `ctx-` across the repo and renamed the `docs/memory-context/` folder to `docs/memory-ctx/`. Twelve files moved via `git mv` (six in `behavior/`, two in `docs/memory-ctx/`, four in `skills/repo-cognition/references/`) plus the folder itself. Path and identifier references in every doc inside the Bamboo.md radius — CLAUDE.md, AGENT.md, README.md, Bamboo.md, docs/repo-organization.md, the skill files, the workflow docs, and the architecture/memory docs — were updated in lockstep so no orphan pointers were left behind. The standalone word "context" in prose was preserved per the user's rule; only doc-name references and folder paths flipped.
 
 Introduced CTX as a canonical acronym. Definition lives in the glossary inside `behavior/ctx-rules.md` alongside Knob, Bump, Entropy, and the other foundational terms. A one-sentence gloss was added to the cold-start sections of both `CLAUDE.md` and `AGENT.md` so a fresh agent encounters the acronym before relying on it. The rename is the kind of move `behavior/ctx-entropy.md` explicitly warns against — Drift starts when renames stack without their references — so all of it landed in a single atomic commit under PLTRF discipline.
 
@@ -106,7 +106,7 @@ History scrub paired with the policy: the trailer existed on exactly one commit,
 
 ## Knob: memory-context normalization + agent topology — Thursday, June 4, 2026, 04:44 AM CDT
 
-Normalized this repo's internal memory path to `docs/memory-ctx/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Documentation.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/ctx-orientation.md` unless they intentionally adopt the same folder structure.
+Normalized this repo's internal memory path to `docs/memory-ctx/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Bamboo.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/ctx-orientation.md` unless they intentionally adopt the same folder structure.
 
 Added `agent-architecture/agent-topology.md` as the source of truth for multi-agent squad structure. The new doc defines a practical startup tech-squad topology with core lanes, optional lanes, ownership boundaries, handoff expectations, escalation rules, and anti-conflict rules for parallel work. Also added a light cross-reference in `agent-identity.md` so identity stays about persona while topology owns coordination.
 
@@ -114,7 +114,7 @@ Added `agent-architecture/agent-topology.md` as the source of truth for multi-ag
 
 ## Knob: canonical Documentation root + thinner fork contract — Wednesday, June 3, 2026, 09:18 PM CDT
 
-Added a literal root `Documentation.md` and made it the canonical operating spec for this repository pattern. `README.md` now stays human-facing, `AGENT.md` is reduced to cold-start routing, and generic policy was pulled out of `workflows/project-setup.md` so setup procedure no longer competes with the source of truth.
+Added a literal root `Bamboo.md` and made it the canonical operating spec for this repository pattern. `README.md` now stays human-facing, `AGENT.md` is reduced to cold-start routing, and generic policy was pulled out of `workflows/project-setup.md` so setup procedure no longer competes with the source of truth.
 
 This also tightened the fork contract. Downstream repos are expected to carry the minimum governance layer, copy only the modules they actively need, and add real working folders early so the repo does not become mostly process docs. Updated `docs/repo-organization.md` to reflect the new root file and cold-start order.
 
@@ -157,6 +157,6 @@ Replaced the empty root `CLAUDE.md` with a Claude-specific cold-start overlay th
 Entries before this Knob live in commit history. Notable prior Bumps:
 
 - **5.16.26** — Added and rewrote Context documents, Updated Skills folder, created `AGENT.md`. The behavior/ docs and the cold-start file were established at this point.
-- **5.11.26** — Initial release of `Documentation.md`. Repo scaffolding and intent set.
+- **5.11.26** — Initial release of `Bamboo.md`. Repo scaffolding and intent set.
 
 These are recorded here for traceability but were not logged Knob-by-Knob at the time.

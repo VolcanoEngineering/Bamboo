@@ -1,6 +1,6 @@
 # Project Setup
 
-This workflow is procedural and **first-time only**. It explains how to initialize a new repo using the `Documentation.md` system. Durable policy lives in `Documentation.md`, not here. For ongoing context governance after the repo is up — the 5000-character rule, the 20-document threshold, Git push/pull discipline, branch and worktree naming, Token usage at the project level — see `workflows/project-context.md`. For resyncing the fork to a later canonical change (renames, new docs, moved folders), see `workflows/fork-resync.md`.
+This workflow is procedural and **first-time only**. It explains how to initialize a new repo using the `Bamboo.md` system. Durable policy lives in `Bamboo.md`, not here. For ongoing context governance after the repo is up — the 5000-character rule, the 20-document threshold, Git push/pull discipline, branch and worktree naming, Token usage at the project level — see `workflows/project-context.md`. For resyncing the fork to a later canonical change (renames, new docs, moved folders), see `workflows/fork-resync.md`.
 
 ## Goal
 
@@ -12,7 +12,7 @@ Create a repo that is easy for humans and agents to enter, has the minimum gover
    Determine whether the repo is an application, research workspace, design system, library, or another structure the user already chose.
 2. Create the minimum governance layer.
    Add `README.md`, `AGENT.md`, and `docs/ctx-orientation.md`.
-3. Add `Documentation.md` if this repo will carry a local operating spec.
+3. Add `Bamboo.md` if this repo will carry a local operating spec.
    Keep it repo-specific and aligned with the canonical contract.
 4. Create only the working folders the repo needs.
    Examples: `src/`, `tests/`, `config/`, `research/`, `data/`, `design/`, `scripts/`.

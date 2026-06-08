@@ -1,7 +1,7 @@
 
 # Introduction
 
-This doc is about **ongoing** context governance once a repo is already running on the `Documentation.md` system. The 5000-character threshold, the 20-document threshold, Git push and pull discipline for handoff, branch and worktree naming, Token usage at the project level — all of it lives here. For **first-time** repo bootstrap (how to initialize the governance layer, what to copy, what to localize), see `workflows/project-setup.md`.
+This doc is about **ongoing** context governance once a repo is already running on the `Bamboo.md` system. The 5000-character threshold, the 20-document threshold, Git push and pull discipline for handoff, branch and worktree naming, Token usage at the project level — all of it lives here. For **first-time** repo bootstrap (how to initialize the governance layer, what to copy, what to localize), see `workflows/project-setup.md`.
 
 This document is about agent context entropy, and memory. Entropy management so we have a clean codebase, Agent intelligence and feedback that can provide higher quality project context.
 

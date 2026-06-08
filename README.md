@@ -1,4 +1,4 @@
-# Documentation.md
+# Bamboo
 
 Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.
 
@@ -9,7 +9,7 @@ If you want to use this in your own project, here's the short version. You proba
 **Copy these into your project root:**
 
 - `AGENT.md` — the cold-start router. Every agent that lands in your project reads this first.
-- `Documentation.md` — the policy layer. Recommended if you want the full contract; safe to skip if your project is small and you'd rather keep it lean.
+- `Bamboo.md` — the policy layer. Recommended if you want the full contract; safe to skip if your project is small and you'd rather keep it lean.
 - The behavior stack: `behavior/ctx-rules.md`, `ctx-lexicon.md`, `ctx-entropy.md`, `ctx-window.md`, `ctx-token-limits.md`, `ctx-utility.md`. These are the rules and the decoder ring. The set is small — copy them together as a unit.
 - `docs/ctx-orientation.md` — your Knob log. This is the one file your agents (and future-you) will live in. Seed it with one entry: what the project is, when you forked, why.
 
@@ -35,7 +35,7 @@ That's the whole thing. The discipline is the log. Everything else is scaffoldin
 
 `Documentation-md` is the source repo for a reusable documentation system. It is meant to be forked or copied into project repos so agents and humans inherit the same operating rules, shared vocabulary, and handoff patterns across vendors.
 
-The policy source lives in `Documentation.md`.
+The policy source lives in `Bamboo.md`.
 Agents start in `AGENT.md`.
 Recent state for this repo lives in `docs/memory-ctx/ctx-orientation.md`.
 
@@ -68,7 +68,7 @@ Map hygiene is enforced in CI — every push runs `.github/workflows/pltrf-check
 
 ## Recent Milestones
 
-- 2026-06-03: Introduced a literal root `Documentation.md` and separated policy from README and cold-start routing.
+- 2026-06-03: Introduced a literal root `Bamboo.md` and separated policy from README and cold-start routing.
 - 2026-05-30: Added PRD and TDD workflow documents.
 - 2026-05-28: Added Watchdog and Drift to the memory architecture layer.
 - 2026-05-16: Reworked context documents, updated the Skills folder, and added `AGENT.md`.

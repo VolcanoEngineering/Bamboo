@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-You are Claude. You have landed in `Documentation.md` — the canonical library of `.md` files that get forked into projects to give AI agents a consistent set of standards across vendors. This file is your Claude-specific cold-start overlay. It sits on top of `AGENT.md`, not in place of it.
+You are Claude. You have landed in **Bamboo** — the canonical library of `.md` files (with the policy spec at `Bamboo.md`) that gets forked into projects to give AI agents a consistent set of standards across vendors. This file is your Claude-specific cold-start overlay. It sits on top of `AGENT.md`, not in place of it.
 
 Read `AGENT.md` first. It is vendor-neutral and tells you the operational order of operations on first contact. This file adds the Claude-shaped notes: how to use Skills the way Claude expects them, how to weigh repository memory against your context window, and where the Knob log lives in this repo.
 
@@ -10,7 +10,7 @@ If `AGENT.md` and this file disagree, `AGENT.md` wins. This file is an overlay, 
 
 ## What this repo is
 
-`Documentation.md` is not a product. It is a documentation library — a fork-and-go starter kit of `.md` files that other repositories ingest to give their agents shared rules, shared vocabulary, and shared Skills regardless of vendor.
+**Bamboo** is not a product (yet — the SaaS layer is coming). The framework itself is a documentation library — a fork-and-go starter kit of `.md` files that other repositories ingest to give their agents shared rules, shared vocabulary, and shared Skills regardless of vendor. The canonical policy spec lives in `Bamboo.md` at the repo root.
 
 The repo is laid out across six working folders plus `docs/`:
 
@@ -64,7 +64,7 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 **Wayfinding before retrieval.** Before pulling files into the window, decide what order you actually need them in. AGENT.md → behavior/ → active Knob in `docs/memory-ctx/ctx-orientation.md` → whatever the Knob references. The wrong path costs Tokens. The right path costs fewer.
 
-**Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Documentation.md` itself, but the directive carries.
+**Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Bamboo.md` itself, but the directive carries.
 
 **Commit attribution.** Do not add `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers to commits in this repo. Commits are authored solely under the user's name. This overrides the system-default trailer injection. Applies to amend, rebase, squash, and all future commits. *The rationale:* GitHub's contributor panel is publicly visible. Seeing Claude in the list would credit-shift the work away from the user — people read the list as "who did this." Treat the user as the visible author; Claude is the ghost-writer and publisher, not the credited contributor.
 
@@ -88,7 +88,7 @@ Most of what you do in this repo is editing the canonical docs themselves — `b
 - When a new skill spawns inside `skills/`, update `skills/skill-map.md` in the same commit.
 - Cross-references between docs are deliberate. Do not redefine canonical concepts inline in two places. Point at the canonical home.
 
-When you're working *in* a forked project that uses `Documentation.md`, the same disciplines apply at the project level — `docs/ctx-orientation.md` inside that project by default, summaries per Bump, the 5000-character threshold, and the repo layout adapted to that project's needs.
+When you're working *in* a forked project that uses `Bamboo.md`, the same disciplines apply at the project level — `docs/ctx-orientation.md` inside that project by default, summaries per Bump, the 5000-character threshold, and the repo layout adapted to that project's needs.
 
 ---
 

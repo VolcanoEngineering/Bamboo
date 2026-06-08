@@ -1,6 +1,6 @@
 # Fork Resync
 
-This workflow covers how to resync a downstream fork to a canonical change. Use it when the canonical `Documentation.md` repo introduces a structural change — a rename, a new doc family, a moved folder, an acronym shift — and the fork has not yet adopted it.
+This workflow covers how to resync a downstream fork to a canonical change. Use it when the canonical `Bamboo.md` repo introduces a structural change — a rename, a new doc family, a moved folder, an acronym shift — and the fork has not yet adopted it.
 
 Forks in this system are snapshots, not live tracks. They do not automatically pull canonical changes. That is intentional — it lets each project move at its own pace. But the longer a fork lags, the harder the eventual catch-up. This doc keeps the catch-up cheap.
 
@@ -39,7 +39,7 @@ The resync is a single atomic commit per fork — PLTRF discipline. Multiple sma
 
 1. **Mirror the canonical move locally.** If canonical renamed files, `git mv` the equivalent files in the fork. If canonical added a doc, copy it from canonical and adjust paths inside it to match the fork's layout.
 2. **Update every reference inside the fork.** Run `grep -rEn "<old-pattern>" --include="*.md" .` to find every mention. Update each in lockstep. No orphan pointers.
-3. **Update the fork's cold-start docs.** `AGENT.md`, `CLAUDE.md` (if present), `README.md`, and any `Documentation.md` copy in the fork. These point at structural paths; the points must move with the structure.
+3. **Update the fork's cold-start docs.** `AGENT.md`, `CLAUDE.md` (if present), `README.md`, and any `Bamboo.md` copy in the fork. These point at structural paths; the points must move with the structure.
 4. **Add a Knob entry to the fork's orientation log.** Whatever format the fork uses (Knob block, semver, agent handoff, task list, guardrail). Name the resync, name the canonical Bump it tracks, name what moved.
 5. **Run the fork's verification.** `grep -rEn "<old-pattern>" --include="*.md" .` should return zero hits inside the fork. If the fork has its own CI or PLTRF check, run it.
 6. **Single atomic commit.** Stage everything. Commit. No `Co-Authored-By: Claude` trailer (the canonical policy applies to forks too unless the fork has overridden it).

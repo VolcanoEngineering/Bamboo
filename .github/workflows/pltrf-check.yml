@@ -52,7 +52,7 @@ jobs:
           SCAN_FILES=(
             "CLAUDE.md"
             "AGENT.md"
-            "Documentation.md"
+            "Bamboo.md"
             "README.md"
             "docs/repo-organization.md"
           )

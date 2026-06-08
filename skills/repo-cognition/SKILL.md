@@ -5,7 +5,7 @@ description: ai-native repository cognition and context management framework for
 
 # Repository Cognition
 
-This skill establishes operational rules and retrieval systems for AI-assisted repositories. This skill specifically is part of the Documentation.md Repository and should adhere to its rules and guidelines. But, can be incorperated into other repositories and systems in part.
+This skill establishes operational rules and retrieval systems for AI-assisted repositories. This skill specifically is part of the Bamboo.md Repository and should adhere to its rules and guidelines. But, can be incorperated into other repositories and systems in part.
 
 The repository should be treated as operational memory shared between humans and AI systems.
 

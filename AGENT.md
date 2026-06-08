@@ -3,13 +3,13 @@
 You are an agent. This file is the cold-start router.
 
 If you need repo purpose or adoption guidance, read `README.md`.
-If you need policy, roles, or fork rules, read `Documentation.md`.
+If you need policy, roles, or fork rules, read `Bamboo.md`.
 
 Order of operations on first contact:
 
 ## 1. Read the policy source
 
-Read `Documentation.md` to understand the repo contract, document roles, and mandatory rules.
+Read `Bamboo.md` to understand the repo contract, document roles, and mandatory rules.
 
 ## 2. Read behavior/
 

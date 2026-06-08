@@ -1,4 +1,4 @@
-# Documentation.md — Context Orientation
+# Bamboo.md — Context Orientation
 
 The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date and timestamp. Brief, concrete, no bloat. Any agent (or human) reading this file should be able to trace what happened at any Knob in the repo's history and why.
 

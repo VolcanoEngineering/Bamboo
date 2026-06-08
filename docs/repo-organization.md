@@ -2,7 +2,7 @@
 
 A map of this repository. It describes what each folder is for, what lives inside it, and the order an agent (or a human) should consult things when picking the repo up cold. Pair this with `AGENT.md` at the root, which is the operational cold-start file. `AGENT.md` tells an agent *how* to enter the repo. This file tells it *where things are*.
 
-This is `Documentation.md`. Not a project repo. It is the canonical library of `.md` files that get forked into projects to give AI agents a consistent set of standards across vendors (Claude, Codex, Gemini, GPT, Copilot, and so on). `Documentation.md` at the repo root is the policy source. `README.md` is the human overview. `AGENT.md` is the cold-start router. Treat the tree below as a stable contract. Renames propagate everywhere they are referenced in the same commit. New folders get an entry in this file and an entry in `AGENT.md` if they belong on the cold-start path.
+This is `Bamboo.md`. Not a project repo. It is the canonical library of `.md` files that get forked into projects to give AI agents a consistent set of standards across vendors (Claude, Codex, Gemini, GPT, Copilot, and so on). `Bamboo.md` at the repo root is the policy source. `README.md` is the human overview. `AGENT.md` is the cold-start router. Treat the tree below as a stable contract. Renames propagate everywhere they are referenced in the same commit. New folders get an entry in this file and an entry in `AGENT.md` if they belong on the cold-start path.
 
 ---
 
@@ -10,7 +10,7 @@ This is `Documentation.md`. Not a project repo. It is the canonical library of `
 
 ```
 Repository-md/
-├── Documentation.md            # Canonical operating spec for repos using this system
+├── Bamboo.md            # Canonical operating spec for repos using this system
 ├── README.md                    # What this repo is, who it's for, what it does
 ├── AGENT.md                     # Cold-start router for any agent landing in the repo
 ├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
@@ -56,7 +56,7 @@ Operational memory for *this* repository. Distinct from the `behavior/` rules, w
   - `ctx-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `ctx-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
   - `ctx-ori-summary-2.md` — cold storage for older Knobs rolled out of `ctx-orientation.md`.
 
-The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it. This repo uses `docs/memory-ctx/` internally because the repository itself is documenting memory systems; downstream repos still default to `docs/ctx-orientation.md` unless they intentionally adopt the same layout.
+The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Bamboo.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it. This repo uses `docs/memory-ctx/` internally because the repository itself is documenting memory systems; downstream repos still default to `docs/ctx-orientation.md` unless they intentionally adopt the same layout.
 
 ---
 
@@ -125,12 +125,12 @@ Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL
 
 DevOps and project lifecycle patterns. Forkable, overridable per project. If a forked project disagrees with a workflow doc, defer to the fork.
 
-- `project-setup.md` — **first-time** project initialization procedure. How to apply the `Documentation.md` contract in a new repo without redefining the policy. 8-step bootstrap.
+- `project-setup.md` — **first-time** project initialization procedure. How to apply the `Bamboo.md` contract in a new repo without redefining the policy. 8-step bootstrap.
 - `project-context.md` — **ongoing** context governance once the repo is running. The 5000-char threshold, the 20-document threshold, Git push/pull rules for handoff, branch and worktree naming, Token discipline at the project level. Setup-only content lives in `project-setup.md`; ongoing-only content lives here.
 - `cpp.md` — Context Preservation Protocol. The workflow that keeps project memory alive across the big transitions — branch closes, phase rollovers, production deploys. Triggers, anti-patterns, archiving standards. Used to live as a section inside `architecture/workflow-tools.md`; got its own home when the named concept earned it.
 - `fork-resync.md` — how to resync a downstream fork to a canonical structural change (renames, new docs, moved folders). Pairs with `project-setup.md` (first sync) — this doc covers every sync after. Single atomic commit per fork; never rewrite historical Knob entries to match new naming.
 
-Both docs are written for the project-fork case, not for `Documentation.md` itself. The `Documentation.md` repo follows the same rules but applies them to its own evolution as a documentation library.
+Both docs are written for the project-fork case, not for `Bamboo.md` itself. The `Bamboo.md` repo follows the same rules but applies them to its own evolution as a documentation library.
 
 ---
 
@@ -156,7 +156,7 @@ For an agent landing in this repo for the first time:
 
 1. `README.md` — what this repo is and how to adopt it.
 2. `AGENT.md` — how to enter it.
-3. `Documentation.md` — the policy source.
+3. `Bamboo.md` — the policy source.
 4. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why in this repo.
 5. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
 6. `behavior/ctx-rules.md` → `ctx-lexicon.md` → `ctx-entropy.md` → `ctx-window.md` → `ctx-token-limits.md` → `ctx-utility.md`.

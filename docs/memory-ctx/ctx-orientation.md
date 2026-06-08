@@ -1,10 +1,24 @@
-# Documentation.md — Context Orientation
+# Bamboo.md — Context Orientation
 
 The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date and timestamp. Brief, concrete, no bloat. Any agent (or human) reading this file should be able to trace what happened at any Knob in the repo's history and why.
 
 When this file crosses 5000 characters of per-Knob entries, spawn `ctx-ori-summary-2.md` and continue here. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. The current Knob and the last three stay hot in this file. Older entries migrate to the numbered summary files as cold storage.
 
 Read in reverse chronological order — newest at the top. The active Knob is whatever appears first.
+
+---
+
+## Knob: brand rename — Documentation.md becomes Bamboo — Sunday, June 7, 2026, 02:45 PM CDT
+
+The framework's name flipped from Documentation.md / Repository-md to **Bamboo** — unifying the framework and the SaaS under one brand. Brand decision locked earlier today (Matt acquired `bamboo.nyc`, set up the Volcano umbrella org with `volcano.engineering` + `volcano.technology`). This Knob makes the rename real in the canonical repo.
+
+Mechanically: `Documentation.md` (the literal file at the repo root) became `Bamboo.md` via `git mv` so the file history follows. Every reference to `Documentation.md` across the cold-start cascade — `CLAUDE.md`, `AGENT.md`, `README.md`, `docs/repo-organization.md`, `behavior/ctx-*.md`, the workflow docs, the `skills/repo-cognition/SKILL.md` — got flipped to `Bamboo.md` in one sed pass. Then I hand-polished the H1s in `Bamboo.md` and `README.md` (just "Bamboo" the brand, not "Bamboo.md" the file) and the brand-forward openings of `CLAUDE.md`. The PLTRF GitHub Action's scan list updated to look for `Bamboo.md` instead of the old name. Local PLTRF check passes clean — zero broken pointers.
+
+What I deliberatly didn't touch: past Bump entries in this orientation log and in `ctx-ori-summary-2.md`. They reference `Documentation.md` because that's what the project was called at the time. Rewriting them would lie about history. The brand transition lives in this Knob; the past stays the past. Same call for `Repository-md` in the tree diagram inside `docs/repo-organization.md` — that's the literal folder name on disk, which stays `Repository-md` until the actual folder gets moved (which is Matt's call when he sets up the GitHub org).
+
+This is the kind of move `behavior/ctx-entropy.md` warns about — renames that don't propagate. PLTRF discipline plus the CI action plus the manual polish pass = atomic. Memory updated too — `project_documentation-md-vision.md` became `project_bamboo-vision.md` and the index reflects.
+
+Next: the GitHub org `bamboo` (Matt setting up); the repo itself may move from `internetdialup/Documentation.md` to `bamboo/<something>` separately. That's outside this Knob.
 
 ---
 

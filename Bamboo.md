@@ -1,12 +1,12 @@
-# Documentation.md
+# Bamboo
 
-The canonical operating spec for AI-assisted repositories.
+The canonical operating spec for AI-assisted repositories. This file (`Bamboo.md` at the repo root) carries the policy layer; the brand is **Bamboo**.
 
 Use this file as the cross-project policy layer. It defines the minimum repo contract, document roles, mandatory rules, optional modules, anti-bloat guardrails, and the forking model. `README.md` explains a repo to humans. `AGENT.md` is the cold-start router for agents. In downstream repos, `docs/ctx-orientation.md` is the default running state log. In this canonical source repo, the internal running state log lives under `docs/memory-ctx/ctx-orientation.md`.
 
 ## 1. Purpose and Scope
 
-`Documentation.md` exists to give projects a stable operating system for AI and human collaboration across vendors. It is not a product README and it is not a task workflow. It is the durable policy layer that should change slowly and apply broadly.
+`Bamboo.md` exists to give projects a stable operating system for AI and human collaboration across vendors. It is not a product README and it is not a task workflow. It is the durable policy layer that should change slowly and apply broadly.
 
 Use it to standardize:
 
@@ -41,7 +41,7 @@ If a folder is not serving the repo, do not create it just to match a template.
 
 ## 3. Document Roles
 
-- `Documentation.md`: canonical operating policy for the repo or template it lives in
+- `Bamboo.md`: canonical operating policy for the repo or template it lives in
 - `README.md`: human-facing project overview and adoption guide
 - `AGENT.md`: short agent entrypoint that says what to read and in what order
 - `docs/ctx-orientation.md`: newest-first log of meaningful repo state changes

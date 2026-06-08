@@ -1,6 +1,6 @@
 # General Design Rules 
 
-These are the general design rules for the Documentation.md Repo. Here the rules will be establishing foundational rulesets for design heuristics, UX and UI laws, research areas for user experience design to be adopted into project and design system foundations. 
+These are the general design rules for the Bamboo.md Repo. Here the rules will be establishing foundational rulesets for design heuristics, UX and UI laws, research areas for user experience design to be adopted into project and design system foundations. 
 
 ## Design Principles and Rules
 
