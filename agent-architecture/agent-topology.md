@@ -126,6 +126,15 @@ Parallel work is allowed only when ownership boundaries stay clean.
 - Shared state changes require a current summary in the active context log and any relevant maps before handoff.
 - The Memory Watchdog may block completion when stale references, missing topology updates, or structural drift would make future work unsafe.
 
+
+## Event-Driven Agency (The Watchdog Pattern)
+
+Once a multi-agent organization establishes a "Vigilant Handshake," conversational handoffs should be phased out in favor of **Event-Driven Synchronization**. This minimizes context noise and ensures that agents react only to validated state changes.
+
+- **State Mutation as Communication**: Agents do not "talk" to describe their work; they mutate shared state files or structured JSON payloads.
+- **Watchdog Interrupts**: A dedicated filesystem watcher (e.g., `dh_handoff_watcher.py`) monitors these mutations and triggers OS-level interrupts (SIGUSR1 or system notifications).
+- **Asynchronous Pulse**: This allows parallel agents to sleep or perform heavy compute tasks while remaining "ear-to-the-ground" for mission-critical overrides or strategy shifts.
+
 ## Startup Persona Defaults
 
 For a practical unicorn-startup tech squad, use these default personas:
