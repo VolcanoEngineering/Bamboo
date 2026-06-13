@@ -11,14 +11,28 @@ This is `Bamboo.md`. Not a project repo. It is the canonical library of `.md` fi
 ```
 Repository-md/
 ├── Bamboo.md            # Canonical operating spec for repos using this system
+├── FRAMEWORK.md                 # Bamboo Operational Governance Framework (The Law)
 ├── README.md                    # What this repo is, who it's for, what it does
 ├── AGENT.md                     # Cold-start router for any agent landing in the repo
 ├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
+├── REPORTING_TEMPLATE.md        # The 40/40/20 Reporting Gold Standard
 ├── LICENSE
 ├── agent-architecture/          # ADVANCED ADD-ON. Multi-agent role design and orchestration. Skip unless multi-agent.
 │   ├── agent-identity.md
 │   ├── agent-topology.md
-│   └── agent-mms.md
+│   ├── agent-mms.md
+│   ├── psc-contract.md          # Persona Stratification Contract (Identity, Role, Tactical layers)
+│   ├── latency-governance.md    # Reasoning-depth limits and Latency Budgets
+│   ├── bamboo-orchestrator.md   # The "Chassis": Lifecycle, Pulse/Heartbeat, Resource Guards
+│   └── state-bus.md             # The State-Bus: STATE.json serialization and session resumption
+├── scripts/                     # Operational scripts and auditors
+│   ├── bamboo_contract.py       # PSC Doctrine Auditor
+│   ├── bamboo_orchestrator.py   # The BambooOrchestrator Base Class (Chassis)
+│   └── bamboo_governor.py       # The Agnostic Heartbeat (Integrity Pulse)
+├── tools/                       # Runtime sidecars and sync tools
+│   └── bamboo_watcher.py        # The "Ears": Event-driven agent synchronization
+├── .bamboo/                     # Gitignored runtime state (Agent Bus)
+├── event_calendar.yaml          # Agnostic Catalyst Loader
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── memory-ctx/
@@ -67,6 +81,10 @@ Multi-agent operating model docs. **Skip on cold-start unless the project has a 
 - `agent-identity.md` — how an agent adopts a role-shaped working identity.
 - `agent-topology.md` — the coordination model for a practical startup tech squad: role lanes, ownership, handoffs, escalation, and anti-conflict rules.
 - `agent-mms.md` — the Agent Memory Management System. How each agent scores its own working memory (Memory Value Scores), how MVS feeds hot/warm/cold tiering at the per-agent level, how the Watchdog interacts via the repo memory layer, parallel-agent memory isolation rules, and the three summarization triggers (Knob transition, compaction event, handoff).
+- `psc-contract.md` — the Persona Stratification Contract. Defines the 3-layer boot-up protocol (Identity, Role, Tactical) and the Oven vs. Food Doctrine.
+- `latency-governance.md` — Latency-Based Governance. Applies reasoning-depth limits to AI reasoning, establishing depth limits to prevent context bloat.
+- `bamboo-orchestrator.md` — The Bamboo Orchestrator (Chassis). Defines the dual-loop architecture (Pulse vs. Heartbeat), Resource Guards, and Self-Healing logic.
+- `state-bus.md` — The State-Bus Protocol. Defines the `STATE.json` schema and serialization discipline for session resumption.
 
 ---
 

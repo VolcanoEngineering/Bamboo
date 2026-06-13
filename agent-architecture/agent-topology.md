@@ -125,7 +125,22 @@ Parallel work is allowed only when ownership boundaries stay clean.
 - If one lane is blocked on another lane's output, stop and hand off instead of filling the gap with assumptions.
 - Shared state changes require a current summary in the active context log and any relevant maps before handoff.
 - The Memory Watchdog may block completion when stale references, missing topology updates, or structural drift would make future work unsafe.
+- All parallel agents must adhere to **Latency-Based Governance** (`latency-governance.md`) to ensure reasoning depth does not saturate the shared context.
 
+## Multimodal Alerting Protocol (MAP)
+
+To ensure high-fidelity communication without context saturation, agents must adopt "Priority-Based Postures." Different types of information require different "Voices" to signal urgency to the operator:
+
+- **High Priority (The Samantha Posture)**: Reserved for security breaches, risk vetoes, or critical system failures. This posture is terse, alarming, and requires immediate operator attention.
+- **Routine (The Daniel Posture)**: Used for status recaps, successful builds, or routine orientation updates. This posture is informative, calm, and follows standard reporting rhythms.
+
+## The Parallelism Clause: Multi-Track Workspaces
+
+When running parallel work tracks (e.g., concurrent research and implementation), agents must isolate their **Tactical Layers** to prevent state-collision.
+
+- **Lane Isolation**: Each track must own a specific directory or branch. Do not allow "Cross-Lane Bleed" where a research task mutates an implementation surface.
+- **Contractual Handoffs**: If Lane A depends on Lane B, Lane B must publish a **Standardized Contract** (PSC) before Lane A can proceed.
+- **Global Identity/Local Tactical**: All lanes share the same global **Identity** (Soul), but operate in distinct **Tactical** (Tasks) sandboxes.
 
 ## Event-Driven Agency (The Watchdog Pattern)
 
@@ -154,6 +169,6 @@ These personas should be competent generalists with a strong lane, not caricatur
 
 ## Coordination With Identity
 
-Use `agent-identity.md` to decide how an individual agent should operate inside a lane. Use this file to decide how multiple lanes coordinate. Identity shapes behavior. Topology shapes collaboration.
+Use `agent-identity.md` to decide how an individual agent should operate inside a lane. Use `psc-contract.md` to define the stratification layers (Identity, Role, Tactical) that anchor the agent to the lane. Use this file to decide how multiple lanes coordinate. Identity shapes behavior. Stratification anchors responsibility. Topology shapes collaboration.
 
-If the two ever disagree, topology wins on ownership and handoff, identity wins on style inside the assigned lane.
+If the three ever disagree, topology wins on ownership and handoff, stratification wins on responsibility layers, identity wins on style inside the assigned lane.

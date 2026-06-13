@@ -181,7 +181,7 @@ Areas where bamboo's current discipline is empirical-pragmatic and could benefit
 
 2. **Can corpus entropy be computed cheaply enough for CI?** Currently the corpus entropy definition requires embeddings and a nearest-neighbor index — both viable in tooling but adding latency to the CI surface. A lighter-weight proxy (e.g., fuzzy n-gram overlap) might suffice for trigger purposes.
 
-3. **How does the framework scale to >10 concurrent personas?** The handoff pattern works at 4–5 personas (validated in the operator's `Trading-MCP-{Algo,Analyzer}` workspace). At larger team sizes, the cartesian product of handoff documents becomes a fragmentation surface in itself.
+3. **How does the framework scale to >10 concurrent personas?** At larger team sizes, the cartesian product of handoff documents becomes a fragmentation surface in itself.
 
 4. **What is the right interface between bamboo's repo-level discipline and vendor-specific memory systems** (Anthropic's memory, ChatGPT's, etc.)? Currently bamboo treats vendor memory as opaque; a richer integration could let vendor memory hold STIP and repo memory hold LTIP.
 
@@ -209,7 +209,7 @@ The framework is positioned as a *human–AI co-development discipline*, not as 
 
 ## 6. Methodological notes
 
-Bamboo was authored from concrete project experience across several repositories (game engines, observability tools, trading systems). The worked examples in `behavior/ctx-entropy.md` are real failure modes the operator has experienced and recovered from. The discipline is descriptive of what would have prevented those failures, prescriptive of how to prevent the next ones.
+Bamboo was authored from concrete project experience across several repositories (game engines, observability tools, and complex data systems). The worked examples in `behavior/ctx-entropy.md` are real failure modes the operator has experienced and recovered from. The discipline is descriptive of what would have prevented those failures, prescriptive of how to prevent the next ones.
 
 This document was assembled retroactively to verify that the lived practice aligned with established prior work. Where the alignment is tight (Shannon entropy ↔ corpus entropy; Liu et al. ↔ "newest at the top"), the citations are direct. Where the alignment is metaphorical (Miller's chunks ↔ Knobs), the metaphor is named and the limits acknowledged.
 

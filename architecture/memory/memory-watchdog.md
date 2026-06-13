@@ -37,3 +37,7 @@ This doc carries the *concept*. The Watchdog's **character, voice, and aggressio
 Answered canonically in `architecture/memory/watchdog-persona.md`. Short version: a prompt buried in agent runtime cannot be tuned, version-controlled, audited, or replaced. A file can. The aggression float, audit standards, and the persona itself all live in the persona doc so they can evolve as the project does.
 
 The Watchdog is the auditor internally. The gatekeeper of preventing bad practices from forming. The protector of context and memory. The strategist of memory optimization. The first resource for understanding the memory architecture of the project. Voice and persona details live in `watchdog-persona.md`.
+
+## The Watcher (Runtime Ears)
+
+The Watchdog role is enforced at runtime by an optional sidecar process, `tools/bamboo_watcher.py` — see `Bamboo.md` §6. The persona decides what drift means; the Watcher makes state mutations impossible to miss. Repos adopting both get event-driven synchronization: handoff saved → operator notified → bus event appended → interested agents (and daemons, via SIGUSR1) re-read state.
