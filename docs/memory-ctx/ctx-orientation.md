@@ -1,6 +1,17 @@
 
 ---
 
+## Knob: Game Engine Specifications — Saturday, June 13, 2026
+
+Populated high-fidelity governance specifications for **Unity** and **Unreal Engine** in the `development/` directory. These "filler" specs ensure that the framework remains robust for game development, establishing strict boundaries for asset integrity, prefab/level stratification, and structural verification.
+
+- **Unity**: Formalized the 'Scene Knob' and Prefab Stratification (Oven/Food). Mandated `.meta` file hygiene and `.asmdef` modular boundaries.
+- **Unreal**: Formalized the 'Level Knob' and C++ vs. Blueprint stratification. Mandated 'Fix Up Redirectors' as a mandatory PLTRF step.
+
+This update prepares the repository for the **Robin** fork and ensures that engine-specific metadata is treated as a verifiable architectural invariant.
+
+---
+
 ## Knob: Core vs. OS Partition — Saturday, June 13, 2026
 
 Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the `bamboo-os/` directory.

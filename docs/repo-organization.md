@@ -29,6 +29,10 @@ Repository-md/
 │   ├── tools/                   # Sidecars (Watcher)
 │   ├── event_calendar.yaml      # Catalyst Loader
 │   └── .bamboo/                 # Runtime state (Agent Bus)
+├── development/                 # Implementation standards and engine specs.
+│   ├── unity-development.md     # Structural discipline for Unity.
+│   ├── unrealengine-development.md # Governance for UE5.
+│   └── app-development.md       # Generic app standards.
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── memory-ctx/
@@ -60,6 +64,16 @@ The **Bamboo OS** provides the runtime engine for high-velocity or multi-agent s
 - `scripts/` — implementation scripts for the Governor, Orchestrator, and Auditor.
 - `tools/` — implementation scripts for the Bamboo Watcher.
 - `event_calendar.yaml` — the agnostic catalyst loader.
+
+---
+
+## development/
+
+Implementation and engine-specific governance. Use these to establish the "Oven" for specific tech stacks.
+
+- `unity-development.md` — structural discipline for Unity projects. Defines the Scene Knob, Prefab Stratification, and `.meta` hygiene.
+- `unrealengine-development.md` — governance for UE5 projects. Blueprint vs. C++ stratification and redirector hygiene.
+- `app-development.md`, `web-development.md`, `nextjs-development.md`, `swift-development.md` — implementation standards for various stacks.
 
 ---
 
