@@ -57,4 +57,14 @@ Every repo using this pattern should have:
 
 ---
 
+## Version History
+
+- **v0.5.0 — The Governance Core Graduation (2026-06-13)**: Finalized the operational governance OS. Implemented the Orchestrator chassis, the Governor heartbeat, the Watcher ears, and the Session Identity mandate. Standardized the 3-concept canon and structural verification rules.
+- **v0.4.0 — The Cognitive Integrity Shakedown (2026-06-10)**: Anchored the Anti-Sycophancy Mandate and the Layered Reporting Protocol. Implemented the L1 Cache (`ACTIVE_STATE.md`).
+- **v0.3.0 — Concept Automation (2026-06-03)**: Introduced root `Bamboo.md` and separated policy from routing.
+- **v0.2.0 — Authored Discipline (2026-05-28)**: Added Memory Watchdog and Drift to the architecture layer.
+- **v0.1.0 — Initial Release (2026-05-11)**: Scaffolding and core context documents.
+
+---
+
 The discipline is structural. The OS is active.
