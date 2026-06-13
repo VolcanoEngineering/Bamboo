@@ -137,11 +137,11 @@ The **Anti-Sycophancy Mandate** grounds agentic behavior in adversarial validati
 
 ### 2.9 The 40/40/20 Shielding Pattern
 
-The **40/40/20 Protocol** is a structural defense against "Lost in the Middle" and hallucination-driven UI breakage. By enforcing a strict payload split—40% Data, 40% Reasoning, 20% Formatting—the system shields the interface (The Oven) from logic drift (The Food). This ensures that even if the reasoning layer hallucinates, the formatting and raw data layers remain stable and verifiable.
+The **Layered Reporting** pattern is a structural defense against "Lost in the Middle" and hallucination-driven UI breakage. By enforcing a strict payload split—separating raw data, reasoning, and formatting—the system shields the interface from logic drift. This ensures that even if the reasoning layer hallucinates, the formatting and raw data layers remain stable and verifiable.
 
 ### 2.10 Event-Driven Agency (State-Mutation Sync)
 
-Synthesizing multi-agent orchestration, Bamboo v0.4.0 moves from conversational polling to **Event-Driven Synchronization**. Agents communicate by mutating shared state files or structured payloads. A filesystem **Watchdog** (e.g., `dh_handoff_watcher.py`) detects these mutations and triggers interrupts (SIGUSR1), allowing parallel agents to synchronize asynchronously with sub-millisecond latency.
+Synthesizing multi-agent orchestration, Bamboo v0.4.0 moves from conversational polling to **Event-Driven Synchronization**. Agents communicate by mutating shared state files or structured payloads. A filesystem **Watchdog** (e.g., `bamboo_watcher.py`) detects these mutations and triggers interrupts (SIGUSR1), allowing parallel agents to synchronize asynchronously with sub-millisecond latency.
 
 
 ---

@@ -7,15 +7,15 @@
 ### [STATUS] System Pulse: ACTIVE 📡
 | Component | Status | Mandate |
 | :--- | :--- | :--- |
-| **The Oven** | `STABLE` | Operational Governance & Policy |
-| **The Watchdog** | `VIGILANT` | Memory Integrity & Drift Detection |
-| **The State-Bus** | `PERSISTENT` | Session Continuity & Recovery |
+| **Policy** | `STABLE` | Operational Governance |
+| **Watchdog** | `VIGILANT` | Memory Integrity & Drift Detection |
+| **State-Bus** | `PERSISTENT` | Session Continuity & Recovery |
 | **The Canon** | `LOCKED` | Structural Verification (PLTRF) |
 
 ---
 
 ## The Ethos
-Bamboo transforms a standard repository into a **Governed Workspace**. It is the "Oven" that provides the stable thermal mass (policy, memory, and resource limits) required to cook high-fidelity "Food" (your proprietary logic). 
+Bamboo transforms a standard repository into a **Governed Workspace**. It provides the stable policy, memory, and resource limits required to manage high-fidelity projects. 
 
 We prioritize **Physics over Liturgy**: if a rule cannot be reduced to a file path, a script exit code, or a resource ceiling, it doesn't belong in the canon.
 
@@ -34,7 +34,7 @@ To protect cold-start economics, Bamboo mandates only three load-bearing concept
 The fastest path to a governed repo is the **Use this template** button.
 
 ### 1. Project Root (The Essentials)
-Establish the "Oven" by dropping these into your project root:
+Establish the governance layer by dropping these into your project root:
 - `AGENT.md`: The cold-start router (MUST include **Session Identity**).
 - `Bamboo.md`: The operational policy layer.
 - `behavior/`: The 3-concept ruleset and decoder ring.
@@ -65,7 +65,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 - **Retrieval-Augmented Generation (RAG)** — Lewis et al. (2020)⁴. Bamboo is a *structural* RAG complement.
 - **Long-context degradation** — Liu et al. (2023)⁵, "Lost in the Middle." Empirical validation for the "newest at the top" Knob log rule.
 
-*For the deep treatment, see [`Documentation.md`](Documentation.md) and [`FRAMEWORK.md`](FRAMEWORK.md).*
+*For the deep theoretical treatment, see [`Documentation.md`](Documentation.md) and [`FRAMEWORK.md`](FRAMEWORK.md).*
 
 ---
 
@@ -76,6 +76,5 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 
 ---
 
-### [VIGILANT]
 *Created and maintained by Matt Stenquist.*
 *Special thanks to the DiamondHands fleet for production-testing the chassis.*

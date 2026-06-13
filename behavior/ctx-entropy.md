@@ -26,14 +26,14 @@ Without proper entropy management agents start to make poor decisions. Preventat
 
 ---
 
-## Context Partitioning (The Oven vs. Food Principle)
+## Context Partitioning (The Interface vs. Implementation Principle)
 
-A critical defense against amnesia-driven drift and proprietary leakage is Context Partitioning. This principle mandates a strict architectural boundary between the **Interface (The Oven)** and the **Logic (The Food)**.
+A critical defense against amnesia-driven drift and proprietary leakage is Context Partitioning. This principle mandates a strict architectural boundary between the **Interface (Protocol Layer)** and the **Implementation (Execution Layer)**.
 
 - **The Interface (Stable Context):** Consists of the presentation layer, the protocol renderers, and the high-fidelity UI. This context is intentionally generic and "dumb," relying on standardized JSON payloads rather than hardcoded logic. This stability prevents Interface Entropy.
-- **The Logic (Volatile Context):** Consists of proprietary math, secret formulas, and specific agent identities. Must be shielded via the **40/40/20 Rule** to prevent logic hallucinations from breaking the interface. This context lives behind the bridge and is never exposed to the public repo. This partitioning ensures that the "Secret Sauce" remains private while the organization scales through standardized interfaces.
+- **The Implementation (Volatile Context):** Consists of proprietary logic, complex algorithms, and specialized processing. Must be shielded via **Layered Reporting** to prevent implementation hallucinations from breaking the interface. This partitioning ensures that technical complexity remains isolated while the organization scales through standardized interfaces.
 
-By treating the UI as an "Oven" that simply renders whatever "Food" the logic nodes provide, an organization can scale infinitely without saturating the context window of any single agent.
+By treating the UI as an interface that simply renders whatever payloads the implementation nodes provide, an organization can scale infinitely without saturating the context window of any single agent.
 
 ## Context Prioritization
 

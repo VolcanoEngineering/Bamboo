@@ -34,7 +34,7 @@ To maintain a high-velocity development cycle, agents must adhere to the followi
 ## 3. The "Wait-on-Lock" Rule
 
 In multi-agent systems, a process must wait if a shared resource is being mutated. In multi-agent Bamboo:
-- If an agent detects another agent is currently mutating a shared interface (The Oven), it must **Sleep** or **Escalate** rather than guessing the interface's future state.
+- If an agent detects another agent is currently mutating a shared interface, it must **Sleep** or **Escalate** rather than guessing the interface's future state.
 - This prevents "Parallel Fragmentation" and keeps the Latency Budget focused on verified state changes.
 
 ---
@@ -49,4 +49,4 @@ Latency-Based Governance is self-enforced by the agent and audited by the **Memo
 
 By treating reasoning depth as a finite budget, we ensure that the Bamboo core remains fast, lean, and resistant to the bloat that typically kills long-running AI projects.
 
-**Ironhide: [ACTIVE]**
+The OS is active.

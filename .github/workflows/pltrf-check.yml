@@ -56,11 +56,23 @@ jobs:
             "README.md"
             "docs/repo-organization.md"
           )
-          for f in behavior/ctx-*.md; do
+          for f in behavior/*.md; do
             [ -f "$f" ] && SCAN_FILES+=("$f")
           done
 
           MISSING_COUNT=0
+
+          # --- DUPLICATE HOME DETECTOR ---
+          for f in behavior/ctx-*.md; do
+            BASENAME=$(basename "$f" .md)
+            CORENAME=${BASENAME#ctx-}
+            COLLISION="behavior/context-${CORENAME}.md"
+            if [ -f "$COLLISION" ]; then
+              echo "::error::Duplicate concept home: both $f and $COLLISION exist. Choose one prefix."
+              MISSING_COUNT=$((MISSING_COUNT + 1))
+            fi
+          done
+          # -------------------------------
 
           for SOURCE in "${SCAN_FILES[@]}"; do
             if [ ! -f "$SOURCE" ]; then

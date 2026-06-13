@@ -40,5 +40,4 @@ Every Knob entry in the orientation log must contain:
 
 ---
 
-**Ironhide: [VIGILANT]**
 Liturgy purged. Physics enforced.

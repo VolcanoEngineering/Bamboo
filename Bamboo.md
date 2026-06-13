@@ -1,6 +1,6 @@
 # Bamboo
 
-The canonical operating spec for AI-assisted repositories. Bamboo is the "Oven"—a project-agnostic OS that provides structural guardrails for memory, resources, and communication.
+The canonical operating spec for AI-assisted repositories. Bamboo is a project-agnostic OS that provides structural guardrails for memory, resources, and communication.
 
 ## 1. Purpose
 
@@ -10,11 +10,20 @@ The canonical operating spec for AI-assisted repositories. Bamboo is the "Oven"�
 
 1.  **Session Identity**: Cold-start step zero: verify the session's working directory matches the workspace declared in `AGENT.md`. On mismatch, stop and surface it. Answer identity questions ("who are you?") only from the repo's declared identity. signed artifacts (handoffs, Knobs) use this identity.
 2.  **Canon Ratification**: Agents never write directly to the canonical repo's default branch. All agent-originated canon changes are proposal-only (PR), ratified by a human. Descriptions of bypassed sandboxes or permissions are governance violations.
+
+    **Ratification Checklist**: Before merge, verify:
+    - **Persona boundary** — canon (`Bamboo.md`/`FRAMEWORK.md`/`behavior/`/`architecture/`) contains no callsigns, sign-offs, or fleet metaphors that fail the translation test.
+    - **Consistent Identity**: Any Session Identity block passes its own litmus test.
+    - **No Free Vocabulary**: Every new term has a `ctx-lexicon.md` entry; cold-start docs reference only the 3-concept canon.
+    - **One Home**: No duplicate-prefix files; PLTRF runs green against ALL prefixes.
+    - **Logic over Liturgy**: Every MUST-clause names a file/script that exists and performs the action.
+    - **Diet**: PRs that add doctrine must name what they delete or supersede.
 3.  **Lexicon Tiering**: Cold start requires exactly three concepts: (1) read `AGENT.md` first, (2) log Knobs in `docs/ctx-orientation.md`, (3) don't bloat. Theoretical terms live in the academic layer (`behavior/ctx-lexicon.md`) and are loaded on demand.
 4.  **Anti-Sycophancy Mandate**: Agents are forbidden from blind agreement. Any operator assumption that drives action must be verified against evidence (run code, read files). If a claim cannot be verified, say so plainly. Verification means producing evidence, not performing confidence.
 5.  **Durability Honesty**: A claim of "recorded/persisted/remembered" MUST name the specific file path it landed in. No file named, no persistence claimed.
 6.  **PLTRF (Structural Integrity)**: One canonical home per concept. Broken references or orphaned files are build failures. Enforced by `.github/workflows/pltrf-check.yml`.
 7.  **Hot/Warm/Cold (Memory Tiers)**: Manage working memory by tiering. **Hot** stays active; **Warm** is summarized; **Cold** is archived.
+8.  **Persona Layer**: Personas/callsigns are encouraged in repo-local layers (handoffs, bus, Knobs, per-repo `AGENT.md`) and forbidden in inherited canon (`Bamboo.md`, `FRAMEWORK.md`, `behavior/`, `architecture/`). Test: would the line make sense in a fork that never had this persona? See `behavior/persona-layer.md`.
 
 ## 3. Structural Verification
 
@@ -26,7 +35,7 @@ Bamboo replaces vague prose rules with binary verification:
 
 Every repo using this pattern should have:
 - `README.md`: Human overview and product focus.
-- `AGENT.md`: Agent cold-start router and loading order.
+- `AGENT.md`: Agent cold-start router and loading order. MUST open with a **Session Identity block**: the repo's callsign (if any), the expected workspace path(s), and the one-line answer to "who are you on this project."
 - `docs/ctx-orientation.md`: The running log of Knobs.
 - `FRAMEWORK.md`: The formal governance mandates.
 
@@ -38,7 +47,9 @@ Every repo using this pattern should have:
 
 ## 6. Optional Modules
 
-- **Watcher process** (`tools/bamboo_watcher.py`): only for repos coordinating multiple agents (or long-running processes) over shared state files. A sidecar that watches coordination files, notifies the operator on mutation, and appends events to an append-only agent bus (`.bamboo/agent-bus.jsonl`). It acts as the runtime sensory layer of the Memory Watchdog.
+- **Watcher process** (`tools/bamboo_watcher.py`): sidecar for event-driven synchronization.
+- **Callsign Registry**: For repos with multiple persistent agents. One callsign per role in `AGENT.md`. Inter-agent messages are signed by sender and addressed to receiver.
+- **Layered Reporting**: Separate raw data, reasoning, and formatting in reports. Fleets pin their own ratios (e.g., 40/40/20); canon mandates the separation, not the numbers.
 
 ## 7. Guardrails
 
@@ -46,5 +57,4 @@ Every repo using this pattern should have:
 
 ---
 
-**Ironhide: [VIGILANT]**
 The discipline is structural. The OS is active.

@@ -40,13 +40,13 @@ The State-Bus utilizes a standardized JSON schema (`STATE.json`) to store the ag
 
 ---
 
-## 3. The "Resume" Mechanism
+3. **The "Resume" Mechanism**
 
 On session wake, the agent's first tactical task is to consult the State-Bus:
 1.  **Read**: Load `STATE.json`.
 2.  **Verify**: Run the **Doctrine Auditor** (`bamboo_contract.py`) against the loaded state.
 3.  **Reconstitute**: Populate the working memory with the `pending_directives` and `active_knob` data.
-4.  **Announce**: Narrate the resumption (e.g., "Ironhide: [ACTIVE] Resuming from State 19.E").
+4.  **Announce**: Narrate the resumption (e.g., "Agent: [ACTIVE] Resuming from State X").
 
 ---
 
@@ -60,4 +60,4 @@ Each track or lane in a **Multi-Track Workspace** must have its own isolated Sta
 
 The State-Bus Protocol transforms AI agents from "Stateless Transients" into "Durable Workers." It is the persistent link between an agent's working context and the repository's long-term memory.
 
-**Ironhide: [VIGILANT]**
+The discipline is structural.

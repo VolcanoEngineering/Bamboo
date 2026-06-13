@@ -109,8 +109,8 @@ Escalation is not failure. It is how the topology prevents one lane from making 
 
 To scale a multi-agent organization without saturating individual context windows, the topology must prioritize **Standardized Contracts** over direct agent coupling. This allows specialized units to evolve independently while maintaining a unified product surface.
 
-- **The Protocol Architect (e.g. Ironhide):** Owns the interface contract (The Oven). Their context window is focused on rendering efficiency, user interaction, and protocol stability. They remain "blind" to the underlying math to prevent context bloat.
-- **The Execution Specialist (e.g. Starshield):** Owns the proprietary implementation (The Food). Their context window is focused on mathematical modeling, risk weights, and logic nodes. They emit standardized payloads that the Protocol Architect renders.
+- **The Protocol Architect:** Owns the interface contract. Their context window is focused on rendering efficiency, user interaction, and protocol stability. They remain "blind" to the underlying technical implementation to prevent context bloat.
+- **The Execution Specialist:** Owns the proprietary implementation. Their context window is focused on technical modeling, logic nodes, and specialized processing. They emit standardized payloads that the Protocol Architect renders.
 
 **Scaling Mechanism:** By agreeing on a JSON-RPC or Schema-based contract, an organization can add or remove agents in the private logic layer without requiring updates to the presentation layer. This reduces the "Noise" in parallel handoffs and ensures that organizational growth does not lead to context collapse.
 

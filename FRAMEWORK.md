@@ -8,8 +8,8 @@ Every Bamboo-compliant system must satisfy these requirements:
 
 ### 1.1 Resource Governance (The Ceilings)
 - **Requirement**: The system MUST define resource ceilings (RAM/CPU/Disk).
-- **Verification**: Ceilings must be codified in a configuration file (e.g., `watchdog-persona.md`) and monitored by a script (e.g., `scripts/bamboo_orchestrator.py`).
-- **Failure State**: Breach of ceilings triggers an automated environment reset.
+- **Verification**: Ceilings must be codified in a configuration file (e.g., `watcher.config.json`) and monitored by a script (e.g., `scripts/bamboo_orchestrator.py`).
+- **Optional**: Breach of ceilings may trigger an automated environment reset (Implementation-specific).
 
 ### 1.2 Memory Governance (The State-Bus)
 - **Requirement**: The system MUST maintain a `STATE.json` for session continuity.
@@ -43,5 +43,4 @@ All other terminology is considered decorative or project-specific.
 
 ---
 
-**Ironhide: [VIGILANT]**
 Bamboo is not a philosophy; it is a structural OS for AI agents.

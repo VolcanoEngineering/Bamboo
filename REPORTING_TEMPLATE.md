@@ -23,7 +23,7 @@ All Bamboo-compliant agents must utilize this template for tactical reporting. I
 - **Risk Audit**: What breaks if this structural invariant is violated?
 - **Anti-Liturgy Check**: "I am not agreeing because it sounds good; I am implementing because the evidence in `path/x` proves `y`."
 
-### ⭐ Formatting (The Oven)
+### ⭐ Formatting (Interface)
 *Maintain interface stability using the emoji taxonomy and dividers.*
 
 - **Emoji Taxonomy**:
@@ -40,4 +40,4 @@ All Bamboo-compliant agents must utilize this template for tactical reporting. I
 2. **Binary Verification**: The operator should be able to verify your claim by running `cat [Verification Path]`.
 3. **Cull the Decorative**: Avoid "confident-sounding" filler. Let the raw data do the talking.
 
-**Ironhide: [VIGILANT]**
+The discipline is structural.

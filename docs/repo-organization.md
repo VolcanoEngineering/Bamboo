@@ -81,7 +81,7 @@ Multi-agent operating model docs. **Skip on cold-start unless the project has a 
 - `agent-identity.md` — how an agent adopts a role-shaped working identity.
 - `agent-topology.md` — the coordination model for a practical startup tech squad: role lanes, ownership, handoffs, escalation, and anti-conflict rules.
 - `agent-mms.md` — the Agent Memory Management System. How each agent scores its own working memory (Memory Value Scores), how MVS feeds hot/warm/cold tiering at the per-agent level, how the Watchdog interacts via the repo memory layer, parallel-agent memory isolation rules, and the three summarization triggers (Knob transition, compaction event, handoff).
-- `psc-contract.md` — the Persona Stratification Contract. Defines the 3-layer boot-up protocol (Identity, Role, Tactical) and the Oven vs. Food Doctrine.
+- `psc-contract.md` — the Persona Stratification Contract. Defines the 3-layer boot-up protocol (Identity, Role, Tactical) and the Interface vs. Implementation Doctrine.
 - `latency-governance.md` — Latency-Based Governance. Applies reasoning-depth limits to AI reasoning, establishing depth limits to prevent context bloat.
 - `bamboo-orchestrator.md` — The Bamboo Orchestrator (Chassis). Defines the dual-loop architecture (Pulse vs. Heartbeat), Resource Guards, and Self-Healing logic.
 - `state-bus.md` — The State-Bus Protocol. Defines the `STATE.json` schema and serialization discipline for session resumption.
@@ -98,6 +98,7 @@ The foundational rules. Everything an agent has to internalize before it touches
 - `ctx-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
 - `ctx-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
 - `ctx-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `ctx-NAME.md` doc spawns.
+- `persona-layer.md` — the Persona Layer rules. Codifies the boundary between persona-rich repo layers and persona-free inherited canon.
 - `user-model.md` — the user view. How the agent reads, models, and adapts to the user. Three sections: Analyze User Behavior, Talk to the User, User Psychology. Sits next to the ctx-* docs as a sibling rather than nested under them — context-side disciplines on one side of the behavior layer, user-side disciplines on the other.
 
 These five docs share vocabulary on purpose. Rules sets the foundation, lexicon decodes the language, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
