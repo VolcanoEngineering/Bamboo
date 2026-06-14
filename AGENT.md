@@ -31,9 +31,9 @@ Read `docs/memory-ctx/ctx-orientation.md` for this repo's current state and most
 
 `architecture/` is an advanced add-on. Skip unless the project explicitly has an ADM/RAG memory layer or the current task is auditing memory governance, drift, or Watchdog behavior. Most projects do not need this folder.
 
-## 5. Pull bamboo-os/agent-architecture/ when the task is multi-agent coordination (advanced add-on)
+## 5. Pull BAMBOO-OS when the task is multi-agent coordination (advanced extension)
 
-`bamboo-os/agent-architecture/` is an advanced add-on. Skip unless the project has a multi-agent topology with handoff or orchestration boundaries. Single-agent projects do not need this folder.
+Access to the runtime governance engine and multi-agent patterns is managed via the **BAMBOO-OS** private repository. Skip unless the project has a multi-agent topology with handoff or orchestration boundaries. Single-agent projects do not need this extension.
 
 ## 6. Load relevant Skills and workflows
 

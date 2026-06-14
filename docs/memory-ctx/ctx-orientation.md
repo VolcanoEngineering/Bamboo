@@ -5,11 +5,10 @@
 
 Implemented the **Real Semantic Drift** construct, replacing the self-admitted placeholder math in the integrity heartbeat. This update operationalizes persona drift as **cosine distance from a fixed role anchor**, measured over time. By using local `sentence-transformers` (`all-MiniLM-L6-v2`), we achieve reproducible, vendor-neutral, and offline drift detection.
 
-Introduced `drift_score` (current distance) and `drift_velocity` (slope across the recent window) as the primary measurable metrics for session rot. This enables the **Context Flush** to act as a testable intervention: we can now quantitatively verify if a flush resets the `drift_velocity`.
+Introduced `drift_score` (current distance) and `drift_velocity` (slope across the recent window) as the primary measurable metrics for session rot. This enables the **Context Flush** to act as a testable intervention.
 
-- Created `bamboo-os/scripts/bamboo_semantic_drift.py` (Embedding Engine)
-- Updated `bamboo-os/scripts/bamboo_governor.py` (Integrated Drift Audit)
-- Created `bamboo-os/requirements.txt` (Pinned OS Dependencies)
+- Created `BAMBOO-OS/scripts/bamboo_semantic_drift.py` (Embedding Engine)
+- Updated `BAMBOO-OS/scripts/bamboo_governor.py` (Integrated Drift Audit)
 
 ---
 
@@ -17,7 +16,7 @@ Introduced `drift_score` (current distance) and `drift_velocity` (slope across t
 
 Populated high-fidelity governance specifications for **Unity** and **Unreal Engine** in the `development/` directory. These "filler" specs ensure that the framework remains robust for game development, establishing strict boundaries for asset integrity, prefab/level stratification, and structural verification.
 
-- **Unity**: Formalized the 'Scene Knob' and Prefab Stratification (Oven/Food). Mandated `.meta` file hygiene and `.asmdef` modular boundaries.
+- **Unity**: Formalized the 'Scene Knob' and Prefab Stratification. Mandated `.meta` file hygiene and `.asmdef` modular boundaries.
 - **Unreal**: Formalized the 'Level Knob' and C++ vs. Blueprint stratification. Mandated 'Fix Up Redirectors' as a mandatory PLTRF step.
 
 This update prepares the repository for the **Robin** fork and ensures that engine-specific metadata is treated as a verifiable architectural invariant.
@@ -28,21 +27,21 @@ This update prepares the repository for the **Robin** fork and ensures that engi
 
 Acknowledge the cross-vendor convergence report. Successfully integrated new measurable drift axes and purged 'Mechanism Theater' from the core framework. This update formalizes **Entropy of Duration** (Session Rot) and **Silent Decay** (Doc-Code Drift) as load-bearing concepts in the behavior layer, anchoring Bamboo in empirical phenomena observed across both Claude and Gemini fleets.
 
-Purged the 'Neural Reset' liturgy, reclassifying it as a **Context Flush** (L2 session purge) to maintain the Physics of Truth. This ensures that the framework's self-correction loops remain verifiable and free of impressive-sounding but technically empty claims (e.g., markdown-based temperature resets). Reinforced the 'Fence' between the agnostic core and fleet-local patterns.
+Purged the 'Neural Reset' liturgy, reclassifying it as a **Context Flush** (L2 session purge) to maintain the Physics of Truth. This ensures that the framework's self-correction loops remain verifiable and free of technically empty claims. Reinforced the 'Fence' between the agnostic core and fleet-local patterns.
 
 - Updated `behavior/ctx-entropy.md` (Duration & Decay Axes)
 - Updated `behavior/ctx-lexicon.md` (New Drift Definitions)
-- Updated `bamboo-os/agent-architecture/bamboo-orchestrator.md` (Context Flush Mandate)
+- Updated `BAMBOO-OS` orchestrator (Context Flush Mandate)
 
 ---
 
 ## Knob: Core vs. OS Partition — Saturday, June 13, 2026
 
-Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the `bamboo-os/` directory.
+Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the **BAMBOO-OS** private repository.
 
-This update protects the cold-start economics of simple projects by providing a clear 'Optional Door': discipline-only forks can now `rm -rf bamboo-os/` immediately to remain lean. Re-mapped the repo organization, decoupled `Bamboo.md` from the OS law (`FRAMEWORK.md`), and updated the `README.md` to define these two distinct adoption paths.
+This update protects the cold-start economics of simple projects by providing a clear 'Optional Door': discipline-only forks can now remain lean without the overhead of the runtime engine. Re-mapped the repo organization, decoupled `Bamboo.md` from the OS law, and updated the `README.md` to define these two distinct adoption paths.
 
-- Created `bamboo-os/` partition (Moved `scripts/`, `tools/`, `agent-architecture/`, `FRAMEWORK.md`, etc.)
+- Created `BAMBOO-OS` private repository (Moved all runtime logic).
 - Updated `Bamboo.md` (Decoupled Discipline from OS)
 - Updated `README.md` (Tiered Adoption Guide)
 - Updated `docs/repo-organization.md` (Structural Re-mapping)
@@ -55,13 +54,6 @@ This update protects the cold-start economics of simple projects by providing a 
 Successfully finalized the **Bamboo Operational Governance OS**. This major architectural graduation transforms Bamboo from a documentation template into a functional governance layer. Key accomplishments include the implementation of the **Bamboo Orchestrator** chassis (lifecycle/resource management), the **Bamboo Governor** (integrity heartbeat), and the **Bamboo Watcher** (event-driven synchronization).
 
 Executed a comprehensive **Governance Core Remediation** pass to harden the framework against persona bleed and structural duplication. Established a formal **Persona Layer** boundary, codified the **Canon Ratification Checklist**, and anchored the framework on the **3-Concept Canon** (Knob, PLTRF, Tiers) to protect cold-start economics. Integrated the **Session Identity Clause** to bind sessions to workspaces and prevent project-boundary bleed.
-
-- Created `FRAMEWORK.md` (Operational Law)
-- Created `scripts/` (Orchestrator, Governor, Auditor)
-- Created `tools/bamboo_watcher.py` (Production Sensory Layer)
-- Created `behavior/persona-layer.md` (Identity Boundaries)
-- Updated `Bamboo.md` (Mandatory Rules & Version History)
-- Hardened CI with the **Duplicate Home Detector**
 
 ---
 

@@ -33,13 +33,12 @@ Drop these into your project root to establish the behavioral baseline:
 - `behavior/`: The 3-concept ruleset and decoder ring.
 - `docs/ctx-orientation.md`: Your project's narrative history.
 
-**If you only need the discipline, delete the `bamboo-os/` folder immediately.**
+**The core discipline is vendor-neutral and dependency-free.**
 
 ### 2. Establish the OS (Full Governance)
-Keep the `bamboo-os/` folder to enable the runtime governance engine. This includes:
-- **`bamboo_orchestrator.py`**: Dual-loop lifecycle management (Pulse/Heartbeat).
-- **`bamboo_governor.py`**: Continuous integrity auditing for sycophancy and drift.
-- **`bamboo_watcher.py`**: The "Watchdog's Ears" for event-driven synchronization.
+For multi-agent or complex environments, the **Bamboo OS** runtime extension provides the high-fidelity chassis for lifecycle management, integrity heartbeat, and event-driven sync.
+
+**Access to the runtime engine is managed via the private BAMBOO-OS repository.**
 
 ---
 
@@ -52,9 +51,9 @@ To protect cold-start economics, Bamboo mandates only three load-bearing concept
 
 ---
 
-## 🛡️ Strategic Modules (Optional)
+## 🛡️ Strategic Extensions (Optional)
 - `architecture/`: Advanced memory systems (ADM/RAG/Watchdog).
-- `bamboo-os/`: The runtime engine (Scripts, Schemas, Multi-agent Topology).
+- **BAMBOO-OS**: The private runtime engine (Scripts, Schemas, Multi-agent Topology).
 - `skills/`: Portable AI capabilities and vendor-specific overlays.
 - `design/`: UI/UX standards and component rules.
 
@@ -69,12 +68,12 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 - **Retrieval-Augmented Generation (RAG)** — Lewis et al. (2020)⁴. Bamboo is a *structural* RAG complement.
 - **Long-context degradation** — Liu et al. (2023)⁵, "Lost in the Middle." Empirical validation for the "newest at the top" Knob log rule.
 
-*For the deep theoretical treatment, see [`Documentation.md`](Documentation.md) and [`bamboo-os/FRAMEWORK.md`](bamboo-os/FRAMEWORK.md).*
+*For the deep theoretical treatment, see [`Documentation.md`](Documentation.md).*
 
 ---
 
 ## 🏆 Recent Milestones
-- **2026-06-13**: Finalized **Governance Core** and **Session Identity Clause**.
+- **2026-06-13**: Partitioned core discipline and OS into separate repositories. Finalized **Governance Core** and **Session Identity Clause**.
 - **2026-06-03**: Introduced root `Bamboo.md` and separated policy from routing.
 - **2026-05-28**: Added **Memory Watchdog** and **Drift** to the architecture layer.
 

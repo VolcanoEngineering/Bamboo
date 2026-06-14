@@ -22,13 +22,6 @@ Repository-md/
 │   ├── ctx-entropy.md           # The preservation view (LTIP/PLTRF).
 │   ├── persona-layer.md         # Identity boundaries and placement.
 │   └── user-model.md            # User behavior and psychology modeling.
-├── bamboo-os/                   # ADVANCED EXTENSION. Runtime engine and multi-agent OS.
-│   ├── FRAMEWORK.md             # Operational Governance Protocol (The Law)
-│   ├── agent-architecture/      # Role design and topology
-│   ├── scripts/                 # Governance scripts (Governor, Orchestrator)
-│   ├── tools/                   # Sidecars (Watcher)
-│   ├── event_calendar.yaml      # Catalyst Loader
-│   └── .bamboo/                 # Runtime state (Agent Bus)
 ├── development/                 # Implementation standards and engine specs.
 │   ├── unity-development.md     # Structural discipline for Unity.
 │   ├── unrealengine-development.md # Governance for UE5.
@@ -48,37 +41,6 @@ Repository-md/
 
 ---
 
-## bamboo-os/ — advanced extension
-
-The **Bamboo OS** provides the runtime engine for high-velocity or multi-agent squads. **Simple or single-agent projects should delete this folder on fork.**
-
-- `FRAMEWORK.md` — the Operational Governance Protocol. Codifies the Resource, Persistence, and Structural Verification mandates as foundational laws.
-- `agent-architecture/` — multi-agent role design and orchestration.
-  - `agent-identity.md` — how an agent adopts a role-shaped working identity.
-  - `agent-topology.md` — the coordination model: role lanes, ownership, and anti-conflict rules.
-  - `agent-mms.md` — the Agent Memory Management System.
-  - `psc-contract.md` — the Persona Stratification Contract. Defines the 3-layer identity protocol and the Interface vs. Implementation Doctrine.
-  - `latency-governance.md` — Latency-Based Governance (Reasoning-depth limits).
-  - `bamboo-orchestrator.md` — defines the Orchestrator lifecycle (Pulse/Heartbeat).
-  - `state-bus.md` — defines the `STATE.json` serialization protocol.
-- `scripts/` — implementation scripts for the Governor, Orchestrator, and Auditor.
-  - `bamboo_semantic_drift.py` — embedding-based distance math for persona drift.
-- `tools/` — implementation scripts for the Bamboo Watcher.
-- `event_calendar.yaml` — the agnostic catalyst loader.
-- `requirements.txt` — Python dependencies for the OS extension.
-
----
-
-## development/
-
-Implementation and engine-specific governance. Use these to establish the structural guardrails for specific tech stacks.
-
-- `unity-development.md` — structural discipline for Unity projects. Defines the Scene Knob, Prefab Stratification, and `.meta` hygiene.
-- `unrealengine-development.md` — governance for UE5 projects. Blueprint vs. C++ stratification and redirector hygiene.
-- `app-development.md`, `web-development.md`, `nextjs-development.md`, `swift-development.md` — implementation standards for various stacks.
-
----
-
 ## behavior/
 
 The foundational rules. Everything an agent has to internalize before it touches the rest of the repo. Read this first on cold start.
@@ -88,6 +50,12 @@ The foundational rules. Everything an agent has to internalize before it touches
 - `ctx-entropy.md` — the preservation view. Defines PLTRF and memory tiering.
 - `persona-layer.md` — the Persona Layer rules. Codifies the boundary between persona-rich repo layers and persona-free inherited canon.
 - `user-model.md` — how the agent reads, models, and adapts to the user.
+
+---
+
+## Private Extensions
+
+High-fidelity implementation components (scripts, schemas, and advanced multi-agent topology) are managed via the **BAMBOO-OS** private repository.
 
 ---
 

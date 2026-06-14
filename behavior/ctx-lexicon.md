@@ -44,14 +44,16 @@ These terms represent the deep theoretical surface. They are not required for co
 - **Entropy Metrics** — Quantitative retrieval and corpus disorder scores.
 - **Entropy of Duration** — Drift scaling with session length (Session Rot).
 - **Silent Decay** — Discrepancies between documentation and implementation.
-- **Chassis** — The agnostic base class for an orchestrator (`bamboo-os/scripts/bamboo_orchestrator.py`).
-- **Catalyst** — An agnostic event trigger defined in `bamboo-os/event_calendar.yaml`.
+- **Chassis** — The base class for a governance orchestrator.
+- **Catalyst** — An agnostic event trigger for automated tasks.
 - **PSC** (Persona Stratification Contract) — The 3-layer identity protocol (Identity, Role, Tactical).
-- **State-Bus** — The `STATE.json` serialization mechanism for session continuity.
+- **State-Bus** — The serialization mechanism for session continuity.
 - **Context Flush** — A mandatory purge of the L2 session context to combat duration-based drift.
-- **MAP** (Multimodal Alerting Protocol) — Priority-based communication signal standards.
+- **MAP** (Multimodal Alerting Protocol) — Signal standards for priority-based communication.
 - **Layered Reporting** — The structural split between raw data, reasoning, and formatting.
 - **Integrity Pulse** — Periodic automated audits for sycophancy and drift.
+
+Access to high-fidelity implementations of these primitives is provided via the **BAMBOO-OS** extension.
 
 ---
 
