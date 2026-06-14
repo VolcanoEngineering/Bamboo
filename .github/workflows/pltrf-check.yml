@@ -74,6 +74,15 @@ jobs:
           done
           # -------------------------------
 
+          # --- SESSION IDENTITY CHECK ---
+          if grep -q "## Session Identity" AGENT.md; then
+            echo "[OK] AGENT.md contains Session Identity block."
+          else
+            echo "::error::AGENT.md is missing '## Session Identity' block. This is a Mandatory Rule violation."
+            MISSING_COUNT=$((MISSING_COUNT + 1))
+          fi
+          # ------------------------------
+
           for SOURCE in "${SCAN_FILES[@]}"; do
             if [ ! -f "$SOURCE" ]; then
               echo "::error::Source file missing: $SOURCE"
