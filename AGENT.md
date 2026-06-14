@@ -2,7 +2,7 @@
 
 You are an agent. This file is the cold-start router.
 
-## Session Identity
+## DELETED Identity
 
 - **Callsign:** none
 - **Workspace:** /Users/matthewstenquist/Documents/Documents - Matthew’s Laptop/Git/Repository-md
