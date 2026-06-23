@@ -1,5 +1,17 @@
 
 ---
+## Knob: Retired the duplicate orientation log — Monday, June 22, 2026
+
+`behavior/ctx-orientation.md` was a second running Knob log competing with the canonical one at `docs/memory-ctx/ctx-orientation.md`. The log had migrated to `docs/memory-ctx/` — that's where AGENT.md, Bamboo.md, ctx-rules, and the lexicon all now point, and where the recent Knobs live — but the old `behavior/` copy never got removed, leaving five May Knobs stranded in it. Three of those (the May 28 entries) were already preserved in `ctx-ori-summary-2.md`; the two May 31 Knobs existed only in the stale file.
+
+Moved the two unique May 31 Knobs into `ctx-ori-summary-2.md` alongside their May siblings, in reverse-chronological order, then deleted `behavior/ctx-orientation.md`. The repo now has one orientation log with one cold archive — the One Home rule PLTRF is built on. This also closes the `ctx-utility.md` map gap: the file no longer exists, so it needs no map entry. Worth noting the duplicate-home detector in `pltrf-check.yml` never caught this, because it only compares `behavior/ctx-* ` against `behavior/context-*` and doesn't look across folders — a CI blind spot for a later phase.
+
+- Deleted `behavior/ctx-orientation.md` (stale duplicate log)
+- Preserved its two unique May 31 Knobs in `docs/memory-ctx/ctx-ori-summary-2.md`
+- Canonical log unchanged: `docs/memory-ctx/ctx-orientation.md`
+
+---
+
 ## Knob: Collapsed the references mirror — Monday, June 22, 2026
 
 The `repo-cognition` Skill's `references/` folder was still carrying four full `context-*.md` docs — the old mirror of the `behavior/ctx-*` canon that `SKILL.md` itself calls out as Drift fuel. The migration that was supposed to replace that mirror with thin pointer stubs only got half done: the `ctx-*` stubs landed, but the original fat copies never got deleted. They'd drifted 2–84 lines off the `behavior/` canon, and nothing referenced them as a live path — the only mentions were a historical note in `fork-resync.md` and an unrelated prose phrase in `Documentation.md`. So we deleted them.
