@@ -43,7 +43,7 @@ Bamboo replaces vague prose rules with binary verification:
 Every repo using this pattern should have:
 - `README.md`: Human overview and product focus.
 - `AGENT.md`: Agent cold-start router and loading order. MUST open with a **Session Identity block**: the repo's callsign (if any), the expected workspace path(s), and the one-line answer to "who are you on this project."
-- `docs/ctx-orientation.md`: The running log of Knobs.
+- The orientation log: the running log of Knobs (`docs/memory-ctx/ctx-orientation.md` here; `docs/ctx-orientation.md` in forks).
 
 ## 5. Map Hygiene
 
