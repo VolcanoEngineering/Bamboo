@@ -236,10 +236,3 @@ Additional related work for further reading: Baddeley, A. (1992). *Working Memor
 ---
 
 End of documentation. Drop into `behavior/ctx-utility.md` to scan the operational discipline surface, or `docs/memory-ctx/ctx-orientation.md` to see what changed last.
- of the Practice.* IEEE Software, 20(6), 35–39.
-
-Additional related work for further reading: Baddeley, A. (1992). *Working Memory.* Science, 255(5044), 556–559. Nygard, M. (2011). Documenting Architecture Decisions (ADR pattern). Brown, S. (2018). *The C4 Model for Software Architecture.*
-
----
-
-End of documentation. Drop into `behavior/ctx-utility.md` to scan the operational discipline surface, or `docs/memory-ctx/ctx-orientation.md` to see what changed last.
