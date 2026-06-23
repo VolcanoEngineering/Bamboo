@@ -64,6 +64,6 @@ Access to high-fidelity implementations of these primitives is provided via the 
 
 For an agent landing in a Bamboo repo:
 1. **Read `AGENT.md`**: Follow the loading order.
-2. **Log Knobs**: Narrate every change in `docs/ctx-orientation.md`.
+2. **Log Knobs**: Narrate every change in the orientation log (`docs/memory-ctx/ctx-orientation.md` here; `docs/ctx-orientation.md` in forks).
 3. **Don't Bloat**: Only the three load-bearing concepts (**Knob**, **PLTRF**, **Hot/Warm/Cold**) are mandatory.
 
