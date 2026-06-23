@@ -1,5 +1,11 @@
+# Bamboo.md — Context Orientation
+
+The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date. Brief, concrete, no bloat — any agent or human reading this should be able to trace what happened at any Knob and why.
+
+Read in reverse chronological order — newest at the top, active Knob first. The current Knob plus the last three stay hot here. When per-Knob entries cross 5000 characters, older entries migrate to `ctx-ori-summary-2.md` (then `-3`, `-4`, `-5`) as cold storage.
 
 ---
+
 ## Knob: Cold-start spine + behavior + root hardening pass — Monday, June 22, 2026
 
 Ran a full consistency and accuracy sweep across the cold-start cascade, the behavior layer, the root files, and the repo map. Most of what got fixed was inherited drift, not new breakage — the kind that doesn't announce itself. The Session Identity in `AGENT.md` was hardcoded to a personal laptop path, so every fork failed its own step-zero check; swapped it for a portable "repo root containing Bamboo.md and AGENT.md" rule and propagated the same wording into `Bamboo.md` Rules 1, 3, and the Minimum Repo Contract. The orientation-log path was wrong in several places — pointing at the fork default `docs/ctx-orientation.md` instead of this repo's `docs/memory-ctx/ctx-orientation.md` — fixed in `Bamboo.md`, `ctx-lexicon.md`, and `ctx-rules.md`. The lexicon was missing a CRUD entry the cascade promises; added it. `ctx-rules.md` had two sections both numbered 4 and never stated the newest-on-top ordering or the 5000-char rollover rule, so those went into the Knob format section where they belong.
@@ -17,6 +23,7 @@ The three sibling specs (entropy, window, token-limits) referenced each other by
 - `Documentation.md` — corrupted tail removed
 
 ---
+---
 
 ## Knob: Retired the duplicate orientation log — Monday, June 22, 2026
 
@@ -28,6 +35,7 @@ Moved the two unique May 31 Knobs into `ctx-ori-summary-2.md` alongside their Ma
 - Preserved its two unique May 31 Knobs in `docs/memory-ctx/ctx-ori-summary-2.md`
 - Canonical log unchanged: `docs/memory-ctx/ctx-orientation.md`
 
+---
 ---
 
 ## Knob: Collapsed the references mirror — Monday, June 22, 2026
@@ -41,6 +49,8 @@ The `repo-cognition` Skill's `references/` folder was still carrying four full `
 - Pointer stubs retained: `skills/repo-cognition/references/ctx-*.md`
 
 ---
+---
+
 ## Knob: Promoting Liturgy to Physics — Saturday, June 13, 2026
 
 Acknowledge Claude's 'spec-to-physics gap' critique. Successfully promoted key governance rules from narrative 'Liturgy' to automated **Physics** via CI gates. This update ensures that the framework's mandates are enforced by machine-verifiable logic rather than agentic goodwill.
@@ -53,113 +63,6 @@ Implemented a **Theater Scan CI gate** in the private `BAMBOO-OS` repository, en
 
 ---
 
-## Knob: The Seventh Check (Theater Scan) — Saturday, June 13, 2026
-
-Implemented the **Seventh Check**—a deterministic 'auditor of the auditors'—within the **BAMBOO-OS** private repository. This update closes the final loop in the governance immune system by scanning the source code of the governance tools themselves. It detects and fails the build on "Theater"—claims of capability (stubs, placeholders, magic-constant shims) that the code does not physically implement.
-
-By moving from agent-driven audits to deterministic regex/AST analysis, we end the infinite regress of "who audits the auditors." The Theater Scan ensures that the 'Oven' remains anchored in absolute structural reality, as verified by its internal heartbeat.
-
-- Created `BAMBOO-OS/scripts/bamboo_theater_scan.py` (AST/Regex Auditor)
-- Created `BAMBOO-OS/tests/test_theater_scan.py` (Scanner Verification)
-- Integrated Theater Scan into the `BAMBOO-OS` Governor cycle.
-
----
-
-## Knob: Real Semantic Drift — Saturday, June 13, 2026
-
-Implemented the **Real Semantic Drift** construct, replacing the self-admitted placeholder math in the integrity heartbeat. This update operationalizes persona drift as **cosine distance from a fixed role anchor**, measured over time. By using local `sentence-transformers` (`all-MiniLM-L6-v2`), we achieve reproducible, vendor-neutral, and offline drift detection.
-
-Introduced `drift_score` (current distance) and `drift_velocity` (slope across the recent window) as the primary measurable metrics for session rot. This enables the **Context Flush** to act as a testable intervention.
-
-- Created `BAMBOO-OS/scripts/bamboo_semantic_drift.py` (Embedding Engine)
-- Updated `BAMBOO-OS/scripts/bamboo_governor.py` (Integrated Drift Audit)
-
----
-
-## Knob: Game Engine Specifications — Saturday, June 13, 2026
-
-Populated high-fidelity governance specifications for **Unity** and **Unreal Engine** in the `development/` directory. These "filler" specs ensure that the framework remains robust for game development, establishing strict boundaries for asset integrity, prefab/level stratification, and structural verification.
-
-- **Unity**: Formalized the 'Scene Knob' and Prefab Stratification. Mandated `.meta` file hygiene and `.asmdef` modular boundaries.
-- **Unreal**: Formalized the 'Level Knob' and C++ vs. Blueprint stratification. Mandated 'Fix Up Redirectors' as a mandatory PLTRF step.
-
-This update prepares the repository for the **Robin** fork and ensures that engine-specific metadata is treated as a verifiable architectural invariant.
-
----
-
-## Knob: AI Forensics & Chain of Custody — Saturday, June 13, 2026
-
-Adopting the **AI Forensics** reframing as the precise mechanism for our detective governance layer. This shift moves the framework from ambiguous 'Operational Intelligence' to a bounded, forensic discipline focusing on the post-hoc examination of immutable records. By reading the 'frozen tape' (commits, logs, bus), we escape the observer effect of live monitoring and establish a verifiable reconstruction of events.
-
-Formalized the **Chain of Custody** as a structural requirement in the behavior layer. This mandate ensures that all forensic evidence (logs, handoffs, state artifacts) must be tamper-evident via append-only logs, integrity hashes, and git authorship. This protects the repository from 'forged context' and ensures that our forensic audits are anchored in a verifiable history.
-
-- Updated `behavior/ctx-lexicon.md` (AI Forensics & Chain of Custody)
-- Updated `behavior/ctx-rules.md` (Evidence Integrity mandate)
-
----
-
-## Knob: Hardening the Physics of Truth — Saturday, June 13, 2026
-
-Acknowledge the cross-vendor convergence report. Successfully integrated new measurable drift axes and purged 'Mechanism Theater' from the core framework. This update formalizes **Entropy of Duration** (Session Rot) and **Silent Decay** (Doc-Code Drift) as load-bearing concepts in the behavior layer, anchoring Bamboo in empirical phenomena observed across both Claude and Gemini fleets.
-
-Purged the 'Neural Reset' liturgy, reclassifying it as a **Context Flush** (L2 session purge) to maintain the Physics of Truth. This ensures that the framework's self-correction loops remain verifiable and free of technically empty claims. Reinforced the 'Fence' between the agnostic core and fleet-local patterns.
-
-- Updated `behavior/ctx-entropy.md` (Duration & Decay Axes)
-- Updated `behavior/ctx-lexicon.md` (New Drift Definitions)
-- Updated `BAMBOO-OS` orchestrator (Context Flush Mandate)
-
----
-
-## Knob: Core vs. OS Partition — Saturday, June 13, 2026
-
-Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the **BAMBOO-OS** private repository.
-
-This update protects the cold-start economics of simple projects by providing a clear 'Optional Door': discipline-only forks can now remain lean without the overhead of the runtime engine. Re-mapped the repo organization, decoupled `Bamboo.md` from the OS law, and updated the `README.md` to define these two distinct adoption paths.
-
-- Created `BAMBOO-OS` private repository (Moved all runtime logic).
-- Updated `Bamboo.md` (Decoupled Discipline from OS)
-- Updated `README.md` (Tiered Adoption Guide)
-- Updated `docs/repo-organization.md` (Structural Re-mapping)
-- Updated `behavior/persona-layer.md` (Path Consistency)
-
----
-
-## Knob: v0.5.0 — The Governance Core Graduation — Saturday, June 13, 2026
-
-Successfully finalized the **Bamboo Operational Governance OS**. This major architectural graduation transforms Bamboo from a documentation template into a functional governance layer. Key accomplishments include the implementation of the **Bamboo Orchestrator** chassis (lifecycle/resource management), the **Bamboo Governor** (integrity heartbeat), and the **Bamboo Watcher** (event-driven synchronization).
-
-Executed a comprehensive **Governance Core Remediation** pass to harden the framework against persona bleed and structural duplication. Established a formal **Persona Layer** boundary, codified the **Canon Ratification Checklist**, and anchored the framework on the **3-Concept Canon** (Knob, PLTRF, Tiers) to protect cold-start economics. Integrated the **Session Identity Clause** to bind sessions to workspaces and prevent project-boundary bleed.
-
----
-
-## Knob: Bamboo v0.4.0 — The Cognitive Integrity Shakedown — Wednesday, June 10, 2026, 03:30 PM
-
-Officially upgraded the Bamboo Framework to v0.4.0. This update anchors the **Anti-Sycophancy Mandate** and the **Layered Reporting Protocol** as mandatory policy. Implemented the **L1 Cache (`ACTIVE_STATE.md`)** and formalized **Event-Driven Agency** (Watchdog pattern) for multi-agent synchronization.
-
----
-
-## Knob: academic grounding mirrored from bamboo-cli — Monday, June 8, 2026
-
-Mirrored theoretical surface from `internetdialup/bamboo-cli` into public. `Documentation.md` lands at the repo root. Foundational concepts and theoretical grounding with citations (Shannon 1948, Miller 1956, Sweller 1988, Nonaka & Takeuchi 1995, Lewis et al. 2020, Liu et al. 2023, Lethbridge et al. 2003).
-
----
-
-## Knob: GitHub repo renamed to Bamboo — Sunday, June 7, 2026
-
-The repo on GitHub got renamed to `internetdialup/Bamboo`. Template repository setting got toggled on. README's "Fork in 5 Minutes" section updated.
-
----
-
-## Knob: brand rename — Sunday, June 7, 2026
-
-The framework's name flipped to **Bamboo**. `Documentation.md` became `Bamboo.md`. Every reference across the cold-start cascade updated.
-
 ---
 
 Older entries moved to `docs/memory-ctx/ctx-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
-
-## Knob: Codifying AI TeamOS & Interface-Driven Scaling — Tuesday, June 9, 2026
-
-Successfully codified "TeamOS" principles into the Bamboo core. Established the blueprint for scaling AI teams via standardized payloads and separated the Protocol Layer from the Execution Layer.
-
-**Agent standing by.** The Bamboo core is now high-fidelity and performance-ready.
