@@ -94,7 +94,7 @@ When you're working *in* a forked project that uses `Bamboo.md`, the same discip
 
 ## What this file is not
 
-This file is not a glossary. The vocabulary lives in `behavior/ctx-rules.md`. If you need to define "Knob" or "Entropy" or "Wayfinding," go there.
+This file is not a glossary. The vocabulary lives in `behavior/ctx-lexicon.md`. If you need to define "Knob" or "Entropy" or "Wayfinding," go there.
 
 This file is not the rules. The rules live in `behavior/`. If `behavior/` says one thing and this file says another, `behavior/` wins.
 
