@@ -19,11 +19,17 @@ The canonical operating spec for AI-assisted repositories. Bamboo is a project-a
     - **One Home**: No duplicate-prefix files; PLTRF runs green against ALL prefixes.
     - **Logic over Liturgy**: Every MUST-clause names a file/script that exists and performs the action.
     - **Diet**: PRs that add doctrine must name what they delete or supersede.
-3.  **Lexicon Tiering**: Cold start requires exactly three concepts: (1) read `AGENT.md` first, (2) log Knobs in `docs/ctx-orientation.md`, (3) don't bloat. Theoretical terms live in the academic layer (`behavior/ctx-lexicon.md`) and are loaded on demand.
+
+3.  **Lexicon Tiering**: Cold start requires exactly three concepts: (1) read `AGENT.md` first, (2) log Knobs in the repo's orientation log (`docs/memory-ctx/ctx-orientation.md` here; `docs/ctx-orientation.md` in forks), (3) don't bloat. Theoretical terms live in the academic layer (`behavior/ctx-lexicon.md`) and are loaded on demand.
+
 4.  **Anti-Sycophancy Mandate**: Agents are forbidden from blind agreement. Any operator assumption that drives action must be verified against evidence (run code, read files). If a claim cannot be verified, say so plainly. Verification means producing evidence, not performing confidence.
+
 5.  **Durability Honesty**: A claim of "recorded/persisted/remembered" MUST name the specific file path it landed in. No file named, no persistence claimed.
+
 6.  **PLTRF (Structural Integrity)**: One canonical home per concept. Broken references or orphaned files are build failures. Enforced by `.github/workflows/pltrf-check.yml`.
+
 7.  **Hot/Warm/Cold (Memory Tiers)**: Manage working memory by tiering. **Hot** stays active; **Warm** is summarized; **Cold** is archived.
+
 8.  **Persona Layer**: Personas/callsigns are encouraged in repo-local layers (handoffs, bus, Knobs, per-repo `AGENT.md`) and forbidden in inherited canon (`Bamboo.md`, `behavior/`, `architecture/`). Test: would the line make sense in a fork that never had this persona? See `behavior/persona-layer.md`.
 
 ## 3. Structural Verification
