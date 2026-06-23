@@ -41,6 +41,7 @@ These terms represent the deep theoretical surface. They are not required for co
 - **CTL** (Context Token Limits) — Token economy and scoring.
 - **ADM** (Active Domain Memory) — Episodic chapter management.
 - **RAG** (Retrieval-Augmented Generation) — Semantic search layer.
+- **CRUD** (Create, Read, Update, Delete) — The lifecycle operations on memory records. Canonical: `architecture/memory/memory-crud.md`.
 - **Entropy Metrics** — Quantitative retrieval and corpus disorder scores.
 - **Entropy of Duration** — Drift scaling with session length (Session Rot).
 - **Silent Decay** — Discrepancies between documentation and implementation.
