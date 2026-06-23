@@ -38,6 +38,8 @@ Every Knob entry in the orientation log must contain:
 1. **Date**: Full date (e.g., Saturday, June 13, 2026).
 2. **Narrative**: 1-2 paragraphs of "Why" and "What."
 3. **Cross-References**: Binary links to changed files or previous Knobs.
+4. **Order**: Newest Knob on top. The active Knob and the last three stay hot in the file.
+5. **Rollover**: When per-Knob entries cross 5000 characters, spawn the next numbered summary (`ctx-ori-summary-2.md`, then `-3`, `-4`, `-5`) and keep the hot entries in the main log. Older entries migrate to the summary as cold storage.
 
 ## 6. Hot/Warm/Cold Tiering
 
