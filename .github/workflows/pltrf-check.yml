@@ -1,16 +1,14 @@
 name: PLTRF Check
 
-# Asserts every file path mentioned in the cold-start cascade exists on
-# disk. Catches the broken-pointer failure mode that ctx-entropy.md
-# warns about — silently, in CI, before a fresh agent stumbles into it.
+# Preventative Long-Term Repo Fragmentation gate.
+# Physics over liturgy: each check below can fail the build. They cover the
+# failure modes ctx-entropy.md warns about — broken pointers, duplicate homes,
+# missing identity, and orientation-log drift — before a fresh agent hits them.
 #
-# Only flags paths that start with a known repo top-level folder
-# (behavior/, architecture/, agent-architecture/, docs/, skills/,
-# workflows/, design/, .github/). Bare filenames in prose ("SKILL.md"),
-# sequence patterns ("-3.md"), template placeholders ("ctx-NAME.md"),
-# and external-fork examples (Trading-MCP-Algo/CHANGELOG.md) are
-# intentionally ignored because resolving them requires context the
-# check does not have.
+# Pointer scan only flags repo-relative paths (those starting with a known
+# top-level folder). Bare filenames in prose, sequence patterns ("-3.md"),
+# template placeholders ("ctx-NAME.md"), and external-fork examples are
+# intentionally ignored; resolving them needs context the check lacks.
 
 on:
   push:
@@ -23,94 +21,126 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: PLTRF + duplicate-home + identity gate
+      - name: PLTRF + duplicate-home + identity + orientation gate
         run: |
           set -uo pipefail
+          FAIL=0
 
-          # Intentional placeholders — files referenced on purpose that
-          # don't exist on disk yet. Downstream-fork defaults and
-          # planned/Backlog entries. Add to this list when introducing a
-          # new intentional missing reference; remove when the file
-          # lands.
+          # Intentional placeholders — referenced on purpose, not on disk yet
+          # (downstream-fork defaults, planned/Backlog entries). Add here when
+          # introducing an intentional missing reference; remove when it lands.
           SKIP_LIST=(
             "docs/ctx-orientation.md"
           )
 
-          # Only check paths that start with one of these top-level
-          # folders. This is the boundary between "real repo-relative
-          # path" and "bare filename in prose."
-          VALID_PREFIX='^(behavior|architecture|bamboo-os|docs|skills|workflows|design|\.github)/'
+          # Boundary between "real repo-relative path" and "bare filename in
+          # prose": a path must start with one of these top-level folders.
+          VALID_PREFIX='^(behavior|architecture|development|docs|skills|workflows|design|\.github)/'
 
-          is_skipped() {
-            local needle="$1"
-            for s in "${SKIP_LIST[@]}"; do
-              [[ "$needle" == "$s" ]] && return 0
-            done
-            return 1
-          }
+          # Basenames allowed to appear in more than one location. Skill folders
+          # each carry their own SKILL.md and vendor overlays; READMEs recur.
+          ALLOW_DUP=" SKILL.md CLAUDE.md CODEX.md GEMINI.md README.md openai.yaml "
 
-          SCAN_FILES=(
-            "CLAUDE.md"
-            "AGENT.md"
-            "Bamboo.md"
-            "README.md"
-            "docs/repo-organization.md"
-          )
-          for f in behavior/*.md; do
-            [ -f "$f" ] && SCAN_FILES+=("$f")
-          done
+          is_skipped() { local n="$1"; for s in "${SKIP_LIST[@]}"; do [[ "$n" == "$s" ]] && return 0; done; return 1; }
 
-          MISSING_COUNT=0
+          HOTLOG="docs/memory-ctx/ctx-orientation.md"
 
-          # --- DUPLICATE HOME DETECTOR ---
-          for f in behavior/ctx-*.md; do
-            BASENAME=$(basename "$f" .md)
-            CORENAME=${BASENAME#ctx-}
-            COLLISION="behavior/context-${CORENAME}.md"
-            if [ -f "$COLLISION" ]; then
-              echo "::error::Duplicate concept home: both $f and $COLLISION exist. Choose one prefix."
-              MISSING_COUNT=$((MISSING_COUNT + 1))
+          # ---- 1. DUPLICATE HOME (any basename, any folder) ----
+          # One canonical home per concept. A basename may resolve to multiple
+          # paths ONLY if at most one is a real doc and the rest are pointer
+          # stubs (files that declare "is a pointer"). Two+ real copies = fail.
+          is_stub() { grep -q "is a pointer" "$1" 2>/dev/null; }
+          while IFS= read -r base; do
+            [[ "$ALLOW_DUP" == *" $base "* ]] && continue
+            mapfile -t hits < <(find . -path ./.git -prune -o -type f -name "$base" -print | sed 's|^\./||')
+            [ "${#hits[@]}" -gt 1 ] || continue
+            nonstub=0
+            for h in "${hits[@]}"; do is_stub "$h" || nonstub=$((nonstub+1)); done
+            if [ "$nonstub" -gt 1 ]; then
+              echo "::error::Duplicate home: '$base' has $nonstub non-pointer copies:"
+              printf "   %s\n" "${hits[@]}"
+              FAIL=$((FAIL+1))
+            fi
+          done < <(find . -path ./.git -prune -o -type f -name '*.md' -print | xargs -n1 basename | sort -u)
+
+          # also catch the ctx-* / context-* prefix collision in the same folder
+          for f in $(find . -path ./.git -prune -o -type f -name 'ctx-*.md' -print); do
+            core=$(basename "$f" .md); core=${core#ctx-}
+            collision="$(dirname "$f")/context-${core}.md"
+            if [ -f "$collision" ]; then
+              echo "::error::Prefix collision: $f and $collision describe the same concept."
+              FAIL=$((FAIL+1))
             fi
           done
-          # -------------------------------
 
-          # --- SESSION IDENTITY CHECK ---
+          # ---- 2. SESSION IDENTITY ----
           if grep -q "## Session Identity" AGENT.md; then
-            echo "[OK] AGENT.md contains Session Identity block."
+            echo "[OK] AGENT.md has Session Identity block."
           else
-            echo "::error::AGENT.md is missing '## Session Identity' block. This is a Mandatory Rule violation."
-            MISSING_COUNT=$((MISSING_COUNT + 1))
+            echo "::error::AGENT.md missing '## Session Identity' block (Mandatory Rule)."
+            FAIL=$((FAIL+1))
           fi
-          # ------------------------------
+
+          # ---- 3. ORIENTATION LOG: rollover-due + descending order ----
+          if [ -f "$HOTLOG" ]; then
+            kc=$(grep -c '^## Knob' "$HOTLOG" || true)
+            if [ "$kc" -gt 4 ]; then
+              echo "::error::Hot log has $kc Knobs (max 4: current + last three). Rollover overdue to ctx-ori-summary-*.md."
+              FAIL=$((FAIL+1))
+            else
+              echo "[OK] Hot log Knob count = $kc (<= 4)."
+            fi
+            python3 - "$HOTLOG" <<'PY'
+          import re, sys
+          from datetime import datetime
+          text = open(sys.argv[1], encoding="utf-8").read()
+          heads = re.findall(r'^##\s+Knob:.*$', text, flags=re.M)
+          dates = []
+          for h in heads:
+              raw = h.rsplit("—", 1)[-1].strip()
+              try: dates.append((datetime.strptime(raw, "%A, %B %d, %Y"), h.strip()))
+              except ValueError:
+                  # tolerate optional trailing ", HH:MM ..." timestamps
+                  base = raw.split(",")
+                  try: dates.append((datetime.strptime(",".join(base[:3]).strip(), "%A, %B %d, %Y"), h.strip()))
+                  except ValueError: print(f"::warning::Unparseable Knob date: {h.strip()}")
+          bad = False
+          for (dp,hp),(dc,hc) in zip(dates, dates[1:]):
+              if dc > dp:
+                  print(f"::error::Knob out of order: '{hc}' ({dc.date()}) above older '{hp}' ({dp.date()}).")
+                  bad = True
+          sys.exit(1 if bad else 0)
+          PY
+            [ $? -ne 0 ] && FAIL=$((FAIL+1)) || echo "[OK] Hot-log Knobs in descending order."
+          fi
+
+          # ---- 4. BROKEN POINTERS (all doc surfaces) ----
+          SCAN_FILES=( "CLAUDE.md" "AGENT.md" "Bamboo.md" "README.md" "Documentation.md" "REPORTING_TEMPLATE.md" )
+          # The orientation log and its cold summaries are narrative history;
+          # they reference deleted paths by design, so exclude them as sources.
+          while IFS= read -r f; do SCAN_FILES+=("$f"); done < <(find behavior architecture development docs skills workflows design -type f -name '*.md' ! -name 'ctx-orientation.md' ! -name 'ctx-ori-summary-*.md' 2>/dev/null)
 
           for SOURCE in "${SCAN_FILES[@]}"; do
-            if [ ! -f "$SOURCE" ]; then
-              echo "::error::Source file missing: $SOURCE"
-              MISSING_COUNT=$((MISSING_COUNT + 1))
-              continue
-            fi
-
-            BACKTICK_PATHS=$(grep -oE '`[a-zA-Z0-9_./-]+\.md`' "$SOURCE" 2>/dev/null | tr -d '`' | sort -u | grep -E "$VALID_PREFIX" || true)
-            LINK_PATHS=$(grep -oE '\]\([a-zA-Z0-9_./-]+\.md[^)]*\)' "$SOURCE" 2>/dev/null | sed -E 's/^\]\(([^)#]+).*/\1/' | sort -u | grep -E "$VALID_PREFIX" || true)
-            ALL_PATHS=$(printf "%s\n%s\n" "$BACKTICK_PATHS" "$LINK_PATHS" | sort -u | grep -v '^$' || true)
-
+            [ -f "$SOURCE" ] || continue
+            BT=$(grep -oE '`[a-zA-Z0-9_./-]+\.md`' "$SOURCE" 2>/dev/null | tr -d '`' | sort -u | grep -E "$VALID_PREFIX" || true)
+            LK=$(grep -oE '\]\([a-zA-Z0-9_./-]+\.md[^)]*\)' "$SOURCE" 2>/dev/null | sed -E 's/^\]\(([^)#]+).*/\1/' | sort -u | grep -E "$VALID_PREFIX" || true)
+            ALL=$(printf "%s\n%s\n" "$BT" "$LK" | sort -u | grep -v '^$' || true)
             while IFS= read -r P; do
               [ -z "$P" ] && continue
               CLEAN="${P%%#*}"
               [[ "$CLEAN" =~ ^https?:// ]] && continue
               [ -z "$CLEAN" ] && continue
-              if is_skipped "$CLEAN"; then continue; fi
+              is_skipped "$CLEAN" && continue
               if [ ! -f "$CLEAN" ]; then
-                echo "::error file=$SOURCE::Broken pointer in $SOURCE: references \`$CLEAN\` but file does not exist on disk."
-                MISSING_COUNT=$((MISSING_COUNT + 1))
+                echo "::error file=$SOURCE::Broken pointer in $SOURCE: \`$CLEAN\` does not exist."
+                FAIL=$((FAIL+1))
               fi
-            done <<< "$ALL_PATHS"
+            done <<< "$ALL"
           done
 
           echo ""
-          if [ $MISSING_COUNT -gt 0 ]; then
-            echo "PLTRF check failed: $MISSING_COUNT broken pointer(s) detected."
-            echo "Fix the references, create the missing files, or add intentional placeholders to SKIP_LIST in this workflow."
+          if [ "$FAIL" -gt 0 ]; then
+            echo "PLTRF gate FAILED: $FAIL issue(s). Fix references/structure, or update SKIP_LIST / ALLOW_DUP for intentional cases."
             exit 1
           fi
-          echo "PLTRF check passed: all referenced files exist on disk."
+          echo "PLTRF gate passed: pointers resolve, one home per concept, identity present, orientation log healthy."
