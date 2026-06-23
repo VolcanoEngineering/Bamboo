@@ -1,5 +1,23 @@
 
 ---
+## Knob: Cold-start spine + behavior + root hardening pass — Monday, June 22, 2026
+
+Ran a full consistency and accuracy sweep across the cold-start cascade, the behavior layer, the root files, and the repo map. Most of what got fixed was inherited drift, not new breakage — the kind that doesn't announce itself. The Session Identity in `AGENT.md` was hardcoded to a personal laptop path, so every fork failed its own step-zero check; swapped it for a portable "repo root containing Bamboo.md and AGENT.md" rule and propagated the same wording into `Bamboo.md` Rules 1, 3, and the Minimum Repo Contract. The orientation-log path was wrong in several places — pointing at the fork default `docs/ctx-orientation.md` instead of this repo's `docs/memory-ctx/ctx-orientation.md` — fixed in `Bamboo.md`, `ctx-lexicon.md`, and `ctx-rules.md`. The lexicon was missing a CRUD entry the cascade promises; added it. `ctx-rules.md` had two sections both numbered 4 and never stated the newest-on-top ordering or the 5000-char rollover rule, so those went into the Knob format section where they belong.
+
+The three sibling specs (entropy, window, token-limits) referenced each other by the wrong filename casing (`Context-entropy.md` instead of `ctx-entropy.md`) — corrected so the cross-references actually resolve. `ctx-entropy.md` also said "two axes" while listing three, plus a couple of real typos. The `behavior/` map (`ctx-utility.md`) was missing `persona-layer.md`; added it. `repo-organization.md` had drifted off the tree — re-audited it to match all 8 behavior files and all 7 development files, renamed the stale root, and listed `Documentation.md`. `CLAUDE.md` was missing the entire `development/` folder from its layout, count, and cold-start order; added it, and fixed a glossary pointer still aimed at the old `ctx-rules.md` home. `README.md` had five citation superscripts with no reference list — added it. `Documentation.md` had a corrupted, duplicated tail — removed it. Functional fixes only throughout; the manifesto voice in the behavior docs was left untouched on purpose, including the deliberate imperfections.
+
+- `AGENT.md`, `Bamboo.md` — portable Session Identity, consistent log paths
+- `behavior/ctx-lexicon.md` — CRUD entry, log path
+- `behavior/ctx-rules.md` — section renumber, log path, Knob ordering + rollover rules
+- `behavior/ctx-entropy.md`, `ctx-window.md`, `ctx-token-limits.md` — axes count, filename casing, typos
+- `behavior/ctx-utility.md` — persona-layer.md map entry
+- `docs/repo-organization.md` — re-audited map
+- `CLAUDE.md` — development/ folder added, glossary pointer
+- `README.md` — references list
+- `Documentation.md` — corrupted tail removed
+
+---
+
 ## Knob: Retired the duplicate orientation log — Monday, June 22, 2026
 
 `behavior/ctx-orientation.md` was a second running Knob log competing with the canonical one at `docs/memory-ctx/ctx-orientation.md`. The log had migrated to `docs/memory-ctx/` — that's where AGENT.md, Bamboo.md, ctx-rules, and the lexicon all now point, and where the recent Knobs live — but the old `behavior/` copy never got removed, leaving five May Knobs stranded in it. Three of those (the May 28 entries) were already preserved in `ctx-ori-summary-2.md`; the two May 31 Knobs existed only in the stale file.
