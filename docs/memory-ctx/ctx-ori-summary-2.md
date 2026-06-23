@@ -6,6 +6,128 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ---
 
+## Knob: The Seventh Check (Theater Scan) — Saturday, June 13, 2026
+
+Implemented the **Seventh Check**—a deterministic 'auditor of the auditors'—within the **BAMBOO-OS** private repository. This update closes the final loop in the governance immune system by scanning the source code of the governance tools themselves. It detects and fails the build on "Theater"—claims of capability (stubs, placeholders, magic-constant shims) that the code does not physically implement.
+
+By moving from agent-driven audits to deterministic regex/AST analysis, we end the infinite regress of "who audits the auditors." The Theater Scan ensures that the 'Oven' remains anchored in absolute structural reality, as verified by its internal heartbeat.
+
+- Created `BAMBOO-OS/scripts/bamboo_theater_scan.py` (AST/Regex Auditor)
+- Created `BAMBOO-OS/tests/test_theater_scan.py` (Scanner Verification)
+- Integrated Theater Scan into the `BAMBOO-OS` Governor cycle.
+
+---
+---
+
+## Knob: Real Semantic Drift — Saturday, June 13, 2026
+
+Implemented the **Real Semantic Drift** construct, replacing the self-admitted placeholder math in the integrity heartbeat. This update operationalizes persona drift as **cosine distance from a fixed role anchor**, measured over time. By using local `sentence-transformers` (`all-MiniLM-L6-v2`), we achieve reproducible, vendor-neutral, and offline drift detection.
+
+Introduced `drift_score` (current distance) and `drift_velocity` (slope across the recent window) as the primary measurable metrics for session rot. This enables the **Context Flush** to act as a testable intervention.
+
+- Created `BAMBOO-OS/scripts/bamboo_semantic_drift.py` (Embedding Engine)
+- Updated `BAMBOO-OS/scripts/bamboo_governor.py` (Integrated Drift Audit)
+
+---
+---
+
+## Knob: Game Engine Specifications — Saturday, June 13, 2026
+
+Populated high-fidelity governance specifications for **Unity** and **Unreal Engine** in the `development/` directory. These "filler" specs ensure that the framework remains robust for game development, establishing strict boundaries for asset integrity, prefab/level stratification, and structural verification.
+
+- **Unity**: Formalized the 'Scene Knob' and Prefab Stratification. Mandated `.meta` file hygiene and `.asmdef` modular boundaries.
+- **Unreal**: Formalized the 'Level Knob' and C++ vs. Blueprint stratification. Mandated 'Fix Up Redirectors' as a mandatory PLTRF step.
+
+This update prepares the repository for the **Robin** fork and ensures that engine-specific metadata is treated as a verifiable architectural invariant.
+
+---
+---
+
+## Knob: AI Forensics & Chain of Custody — Saturday, June 13, 2026
+
+Adopting the **AI Forensics** reframing as the precise mechanism for our detective governance layer. This shift moves the framework from ambiguous 'Operational Intelligence' to a bounded, forensic discipline focusing on the post-hoc examination of immutable records. By reading the 'frozen tape' (commits, logs, bus), we escape the observer effect of live monitoring and establish a verifiable reconstruction of events.
+
+Formalized the **Chain of Custody** as a structural requirement in the behavior layer. This mandate ensures that all forensic evidence (logs, handoffs, state artifacts) must be tamper-evident via append-only logs, integrity hashes, and git authorship. This protects the repository from 'forged context' and ensures that our forensic audits are anchored in a verifiable history.
+
+- Updated `behavior/ctx-lexicon.md` (AI Forensics & Chain of Custody)
+- Updated `behavior/ctx-rules.md` (Evidence Integrity mandate)
+
+---
+---
+
+## Knob: Hardening the Physics of Truth — Saturday, June 13, 2026
+
+Acknowledge the cross-vendor convergence report. Successfully integrated new measurable drift axes and purged 'Mechanism Theater' from the core framework. This update formalizes **Entropy of Duration** (Session Rot) and **Silent Decay** (Doc-Code Drift) as load-bearing concepts in the behavior layer, anchoring Bamboo in empirical phenomena observed across both Claude and Gemini fleets.
+
+Purged the 'Neural Reset' liturgy, reclassifying it as a **Context Flush** (L2 session purge) to maintain the Physics of Truth. This ensures that the framework's self-correction loops remain verifiable and free of technically empty claims. Reinforced the 'Fence' between the agnostic core and fleet-local patterns.
+
+- Updated `behavior/ctx-entropy.md` (Duration & Decay Axes)
+- Updated `behavior/ctx-lexicon.md` (New Drift Definitions)
+- Updated `BAMBOO-OS` orchestrator (Context Flush Mandate)
+
+---
+---
+
+## Knob: Core vs. OS Partition — Saturday, June 13, 2026
+
+Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the **BAMBOO-OS** private repository.
+
+This update protects the cold-start economics of simple projects by providing a clear 'Optional Door': discipline-only forks can now remain lean without the overhead of the runtime engine. Re-mapped the repo organization, decoupled `Bamboo.md` from the OS law, and updated the `README.md` to define these two distinct adoption paths.
+
+- Created `BAMBOO-OS` private repository (Moved all runtime logic).
+- Updated `Bamboo.md` (Decoupled Discipline from OS)
+- Updated `README.md` (Tiered Adoption Guide)
+- Updated `docs/repo-organization.md` (Structural Re-mapping)
+- Updated `behavior/persona-layer.md` (Path Consistency)
+
+---
+---
+
+## Knob: v0.5.0 — The Governance Core Graduation — Saturday, June 13, 2026
+
+Successfully finalized the **Bamboo Operational Governance OS**. This major architectural graduation transforms Bamboo from a documentation template into a functional governance layer. Key accomplishments include the implementation of the **Bamboo Orchestrator** chassis (lifecycle/resource management), the **Bamboo Governor** (integrity heartbeat), and the **Bamboo Watcher** (event-driven synchronization).
+
+Executed a comprehensive **Governance Core Remediation** pass to harden the framework against persona bleed and structural duplication. Established a formal **Persona Layer** boundary, codified the **Canon Ratification Checklist**, and anchored the framework on the **3-Concept Canon** (Knob, PLTRF, Tiers) to protect cold-start economics. Integrated the **Session Identity Clause** to bind sessions to workspaces and prevent project-boundary bleed.
+
+---
+---
+
+## Knob: Bamboo v0.4.0 — The Cognitive Integrity Shakedown — Wednesday, June 10, 2026, 03:30 PM
+
+Officially upgraded the Bamboo Framework to v0.4.0. This update anchors the **Anti-Sycophancy Mandate** and the **Layered Reporting Protocol** as mandatory policy. Implemented the **L1 Cache (`ACTIVE_STATE.md`)** and formalized **Event-Driven Agency** (Watchdog pattern) for multi-agent synchronization.
+
+---
+---
+
+## Knob: academic grounding mirrored from bamboo-cli — Monday, June 8, 2026
+
+Mirrored theoretical surface from `internetdialup/bamboo-cli` into public. `Documentation.md` lands at the repo root. Foundational concepts and theoretical grounding with citations (Shannon 1948, Miller 1956, Sweller 1988, Nonaka & Takeuchi 1995, Lewis et al. 2020, Liu et al. 2023, Lethbridge et al. 2003).
+
+---
+---
+
+## Knob: GitHub repo renamed to Bamboo — Sunday, June 7, 2026
+
+The repo on GitHub got renamed to `internetdialup/Bamboo`. Template repository setting got toggled on. README's "Fork in 5 Minutes" section updated.
+
+---
+---
+
+## Knob: brand rename — Sunday, June 7, 2026
+
+The framework's name flipped to **Bamboo**. `Documentation.md` became `Bamboo.md`. Every reference across the cold-start cascade updated.
+
+---
+---
+
+## Knob: Codifying AI TeamOS & Interface-Driven Scaling — Tuesday, June 9, 2026
+
+Successfully codified "TeamOS" principles into the Bamboo core. Established the blueprint for scaling AI teams via standardized payloads and separated the Protocol Layer from the Execution Layer.
+
+**Agent standing by.** The Bamboo core is now high-fidelity and performance-ready.
+
+---
+
 ## Knob: cherry-picked user-model.md from dangling branch — Sunday, June 7, 2026, 04:50 AM CDT
 
 The dangling `knob/memory-split-ltip-canonical` branch carried one unique commit adding `behavior/user-model.md`. The rest of the branch's content (memory-drift, memory-watchdog, workflow-tools) had been independantly rebuilt on main since the branch was created back on May 28. So instead of merging the whole stale branch, I cherry-picked just the doc and adapted it to current naming.
@@ -17,6 +139,7 @@ Updated `behavior/ctx-utility.md` (added user-model.md as a sibling entry) and `
 Tried to delete the dangling remote branch in the same Knob but the action got blocked by the auto-mode classifier — destroying remote branches needs explicit user authorization. The question is surfaced back to the user separately. For now the branch stays on origin with its one commit intact; user-model.md is preserved on main regardless.
 
 ---
+---
 
 ## Knob: fork-resync workflow doc — Sunday, June 7, 2026, 04:35 AM CDT
 
@@ -26,6 +149,7 @@ The honest take: I'm not touching the seven downstream forks directly. Each one 
 
 Cross-referenced from `project-setup.md` (first-time bootstrap, see fork-resync for every sync after) and surfaced in `docs/repo-organization.md` under the workflows section. New forks land in setup; existing forks needing catch-up land here.
 
+---
 ---
 
 ## Knob: ctx-rules.md voice tightening — Sunday, June 7, 2026, 04:20 AM CDT
@@ -37,6 +161,7 @@ Kept the Matt-isms that earned their place — "we lose our way," "Context is th
 The doc is agent-facing rules content; voice tweaks belong in author-voiced surfaces, not in canonical doctrine that other agents read as instructions.
 
 ---
+---
 
 ## Knob: log migration — hot file back under cap — Sunday, June 7, 2026, 04:05 AM CDT
 
@@ -46,6 +171,7 @@ Worth noting: this Knob itself triggers another migration in the same shape. Wit
 
 No other changes in this Knob. Pure log hygiene.
 
+---
 ---
 
 ## Knob: PLTRF GitHub Action — safety net closes the sequence — Sunday, June 7, 2026, 03:45 AM CDT
@@ -61,6 +187,7 @@ PLTRF was discipline-only until this Knob — every rename, every new file, ever
 This wraps the 5-Knob refinement sequence post-Vision Synthesis Report. Across the arc: agent-mms filled (1), mirror layer killed (2), workflows split + entropy metrics relocated + CPP own home (3), Watchdog persona doc + Skill upgrade (4), and now CI enforcement (5). Five Knobs, five concrete refinements. The repo is materially less drift-prone than it was at the start of yesterday.
 
 ---
+---
 
 ## Knob: Watchdog persona + Skill upgrade — Sunday, June 7, 2026, 03:20 AM CDT
 
@@ -75,11 +202,13 @@ Added a Watchdog entry to `ctx-lexicon.md` pointing at all three homes (persona,
 This is the biggest authoring move in the refinement sequence. Closes the design-without-implementation gap for the Watchdog — it's now actually a thing an agent can run, not just something the docs talk about.
 
 ---
+---
 
 ## Knob: README tagline swap — Sunday, June 7, 2026, 03:00 AM CDT
 
 Swapped the line under the README title. Old version read like a brochure — *Canonical documentation and agent-governance starter for AI-assisted repositories.* New version reads like me: *Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.* Same scope, different vibe. The README is the first thing a forker sees and the old line was doing it no favors.
 
+---
 ---
 
 ## Knob: structural moves — workflows split + entropy metrics + CPP own home + voice directive — Sunday, June 7, 2026, 02:50 AM CDT
@@ -93,6 +222,7 @@ CPP earned its own doc. It used to be a section inside `architecture/workflow-to
 Also tucked a voice directive into CLAUDE.md under the ghost-writer bullet. Future Claude sessions get explicit guidance to sound like me, not a corporate changelog. Direct, light contractions, occasional sentence fragments to keep the output from reading too polished. Applies to commits, Knob entries, and author-voiced README sections only. Agent-facing rules content stays clean.
 
 ---
+---
 
 ## Knob: killed the mirror layer in skills/repo-cognition/references/ — Sunday, June 7, 2026, 02:30 AM CDT
 
@@ -101,6 +231,7 @@ Replaced the four byte-near mirror files in `skills/repo-cognition/references/` 
 Updated the Skill itself and all three vendor overlays in the same commit. `SKILL.md`, `CLAUDE.md`, `CODEX.md`, and `GEMINI.md` now name canonical paths under `behavior/` in their Load lists (including the new `ctx-lexicon.md` from the prior Knob) instead of the now-thin `references/` stubs. The `references/` directory stays in place so any older external link still resolves, but the Skill no longer asks agents to load from it. `docs/repo-organization.md` description of `references/` updated to reflect the new pointer-layer role.
 
 ---
+---
 
 ## Knob: agent-mms filled + memory-adm Backlog section — Sunday, June 7, 2026, 02:15 AM CDT
 
@@ -108,6 +239,7 @@ First Knob in the post–Vision Synthesis refinement sequence. Filled `agent-arc
 
 Same Knob restructured `architecture/memory/memory-adm.md`. The "Planned, not yet written" references to `memory-context-preservation.md` and `memory-manifest.md` moved into a dedicated `# Backlog` section with one-line rationale each. They read as deliberate design intent now instead of broken pointers an agent might chase. Updated the pointer descriptions in `docs/repo-organization.md` (agent-mms.md is now a real doc, not a placeholder) and `agent-architecture/agent-identity.md` (the intro line that names the trio of agent-architecture docs now names MMS too).
 
+---
 ---
 
 ## Knob: lived signal refinements — lexicon, format flex, narrate rule, README recipe — Sunday, June 7, 2026, 02:02 AM CDT
@@ -127,6 +259,7 @@ Added a **Fork in 5 Minutes** section to the top of `README.md`, ghost-written i
 Two orphan pointers from the prior `memory-context/` → `memory-ctx/` rename were also fixed in `docs/repo-organization.md` (the tree diagram and the docs/ section). PLTRF discipline pass. No `Co-Authored-By: Claude` trailer.
 
 ---
+---
 
 ## Knob: ctx- rename + CTX acronym + ghost-writer policy — Saturday, June 6, 2026, 06:27 PM CDT
 
@@ -137,6 +270,7 @@ Introduced CTX as a canonical acronym. Definition lives in the glossary inside `
 Same Knob also added a **Ghost-writer for commits and Knob entries** bullet to `CLAUDE.md`. The user writes commit drafts and Bump entries in rambling first-person voice; Claude reshapes them into the per-Bump format while preserving voice and intent, killing filler, and never adding scope or inventing rationale. Codifying it in `CLAUDE.md` means future Claude sessions inherit the role without being re-briefed.
 
 ---
+---
 
 ## Knob: commit attribution policy + history scrub — Saturday, June 6, 2026, 05:49 PM CDT
 
@@ -144,6 +278,7 @@ Added an explicit **Commit attribution** directive to `CLAUDE.md` under "Claude-
 
 History scrub paired with the policy: the trailer existed on exactly one commit, `67ba545` (docs: add user-model.md + LTRP retirement + architecture/ cold-start integration, May 28). That commit was not on `main` — it was the tip of an unmerged exploratory branch `knob/memory-split-ltip-canonical` carrying 352 lines of un-merged content (user-model.md, memory-drift.md, memory-watchdog.md, workflow-tools.md, and supporting edits). Ran `git filter-branch --msg-filter` on that branch only, stripped the trailer, force-pushed back to origin. New SHA `3a8d7bd` replaces `67ba545`. Branch and its content preserved; trailer gone. Two surfaces — the historical artifact and the forward-looking rule — closed in the same Knob.
 
+---
 ---
 
 ## Knob: memory-context normalization + agent topology — Thursday, June 4, 2026, 04:44 AM CDT
@@ -153,6 +288,7 @@ Normalized this repo's internal memory path to `docs/memory-ctx/` and propagated
 Added `agent-architecture/agent-topology.md` as the source of truth for multi-agent squad structure. The new doc defines a practical startup tech-squad topology with core lanes, optional lanes, ownership boundaries, handoff expectations, escalation rules, and anti-conflict rules for parallel work. Also added a light cross-reference in `agent-identity.md` so identity stays about persona while topology owns coordination.
 
 ---
+---
 
 ## Knob: canonical Documentation root + thinner fork contract — Wednesday, June 3, 2026, 09:18 PM CDT
 
@@ -160,6 +296,7 @@ Added a literal root `Bamboo.md` and made it the canonical operating spec for th
 
 This also tightened the fork contract. Downstream repos are expected to carry the minimum governance layer, copy only the modules they actively need, and add real working folders early so the repo does not become mostly process docs. Updated `docs/repo-organization.md` to reflect the new root file and cold-start order.
 
+---
 ---
 
 ## Knob: typo pass + memory-tal rename — Sunday, May 31, 2026
@@ -169,6 +306,7 @@ Ran a correction pass over `ctx-rules.md` and the `architecture/memory/` docs. S
 Renamed the orphan `memory-tsq.md` to `memory-tal.md`, which was the name intended. It was an empty zero-byte file with an acronym nothing explained. Gave it a short planned-stub header naming its scope, temporal memory queries, and mapped it in `repo-organization.md` as planned. It is not loaded by anything yet. Still open after this Knob: the empty unmapped `development/` folder, and the unsettled question of whether `repo-cognition` ships standalone, which decides whether the `references/` stubs stay or get deleted.
 
 ---
+---
 
 ## Knob: references dedup + glossary split — Sunday, May 31, 2026
 
@@ -176,6 +314,7 @@ Killed the duplication in `skills/repo-cognition/references/`. The four referenc
 
 Two smaller fixes rode along. `memory-adm.md` was pointing at `memory-context-preservation.md` and `memory-manifest.md`, neither of which exists. Moved those under a planned note so the intent stays on record without leaving a broken pointer an agent would chase. And `ctx-rules.md` had Entropy and Context Decay defined with identical glossary text. Split them. Entropy is the system wide drift across cycles, Decay is the retrieval-layer symptom, which is how `ctx-entropy.md` already frames it. Still open after this Knob: the empty unmapped `development/` folder, the orphan `memory-tsq.md`, and a typo and voice pass on `ctx-rules.md` and the `architecture/memory/` docs.
 
+---
 ---
 
 ## Knob: memory Skills + map hygiene — Thursday, May 28, 2026, 07:52 PM CDT
@@ -185,6 +324,7 @@ Added two separate Skills instead of bloating `repo-cognition`: `memory-context`
 Added Map Hygiene rules to `docs/repo-organization.md`. New folders, moved files, new Skills, and new architecture memory docs now have explicit map-update expectations. This is the OSS governance edge of the repo: if the map lies, the memory system rots.
 
 ---
+---
 
 ## Knob: ADM/RAG memory folder — Thursday, May 28, 2026
 
@@ -193,6 +333,7 @@ Moved the memory architecture docs into `architecture/memory/` so Memory, Drift,
 Added the first pass of ADM, RAG, and CRUD memory docs. ADM carries episodic chapters and active memory banks. RAG carries semantic and procedural memory. CRUD is the keep-it-alive loop so stale memory gets created, read, updated, or destroyed instead of quietly rotting.
 
 ---
+---
 
 ## Knob: architecture map + PLTRF cleanup — Thursday, May 28, 2026, 06:53 PM CDT
 
@@ -200,6 +341,7 @@ Added `architecture/` to the repo's cold-start map as the fifth working folder. 
 
 Cleaned up early PLTRF drift before it became normal. Fixed the broken `references/ctx-token-limits.md` pointers, corrected the long-term preservation acronym split, synced the repo-cognition reference mirrors back to canonical `behavior/`, and turned the Codex/Claude/Gemini overlays into thin wrappers around `SKILL.md`. Same hooks, fewer duplicated rules, less chance the repo becomes the thing the agent fights.
 
+---
 ---
 
 ## Knob: docs scaffolding + CLAUDE overlay — Friday, May 22, 2026
