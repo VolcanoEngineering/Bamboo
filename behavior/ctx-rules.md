@@ -32,14 +32,14 @@ Maintaining repo integrity is a binary task.
 - **Audited Maps**: The repo map (`docs/repo-organization.md`) must be 100% accurate.
 - **CI Enforcement**: The `pltrf-check.yml` action fails the build on any broken pointer.
 
-## 4. Knob Entry Format
+## 5. Knob Entry Format
 
 Every Knob entry in the orientation log must contain:
 1. **Date**: Full date (e.g., Saturday, June 13, 2026).
 2. **Narrative**: 1-2 paragraphs of "Why" and "What."
 3. **Cross-References**: Binary links to changed files or previous Knobs.
 
-## 5. Hot/Warm/Cold Tiering
+## 6. Hot/Warm/Cold Tiering
 
 - **Hot**: Active Knob and current directives. Stays in context.
 - **Warm**: Recent history (last 3-5 Knobs). Summarized or moved to `ctx-ori-summary-*.md`.
