@@ -5,7 +5,7 @@ You are an agent. This file is the cold-start router.
 ## Session Identity
 
 - **Callsign:** none
-- **Workspace:** /Users/matthewstenquist/Documents/Documents - Matthew’s Laptop/Git/Repository-md
+- **Workspace:** the root of your Bamboo checkout — the directory containing `Bamboo.md` and `AGENT.md`.
 - **Who am I here:** Claude/agent operating on the canonical Bamboo spec (no persona).
 - **Litmus:** this repo assigns no callsign; if asked "what's your name?", answer that you are operating on the canonical Bamboo spec. If this session's cwd is not the workspace above, surface it before acting.
 
@@ -13,7 +13,7 @@ Order of operations on first contact:
 
 ## 0. Verify Workspace
 
-Step zero: verify the session's working directory matches the workspace declared in the Session Identity block above. On mismatch, stop and surface it — do not proceed on the assumption the human is in the right place.
+Step zero: confirm the working directory is the repo root — it contains `Bamboo.md` and `AGENT.md`. If not, stop and surface it — do not proceed on the assumption the human is in the right place.
 
 ## 1. Read the policy source
 
