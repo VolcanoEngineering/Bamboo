@@ -80,6 +80,6 @@ The better we can understand the users intention. The less tokens spent.
 
 ## End of Documentation
 
-CTL is the Token economy view. Context-entropy.md is the preservation view. They share vocabulary on purpose. Hot, warm, cold tiering originates in entropy's LTIP reconstitution discipline and applies here to the runtime Tokens budget. Wayfinding in CTL is the runtime version of the cross-reference discipline PLTRF describes for the repo itself. When a Knob is in motion, read both docs side by side. When the project is in hiatus, read entropy first to understand what was preserved, then CTL to understand the cost of pulling it back into context.
+CTL is the Token economy view. ctx-entropy.md is the preservation view. They share vocabulary on purpose. Hot, warm, cold tiering originates in entropy's LTIP reconstitution discipline and applies here to the runtime Tokens budget. Wayfinding in CTL is the runtime version of the cross-reference discipline PLTRF describes for the repo itself. When a Knob is in motion, read both docs side by side. When the project is in hiatus, read entropy first to understand what was preserved, then CTL to understand the cost of pulling it back into context.
 
 Update this document as Token budgets shift across vendors, as IDE conventions change, and as the scoring system gets refined through actual project use.
