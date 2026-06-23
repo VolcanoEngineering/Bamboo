@@ -8,24 +8,31 @@ This is `Bamboo.md`. Not a project repo. It is the canonical library of `.md` fi
 
 ## Top-level layout
 
-```
-Repository-md/
-├── Bamboo.md            # Canonical operating spec for repos using this system
-├── README.md                    # What this repo is, who it's for, what it does
-├── AGENT.md                     # Cold-start router for any agent landing in the repo
-├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
-├── REPORTING_TEMPLATE.md        # The Layered Reporting Template
+Bamboo/
+├── Bamboo.md                   # Canonical operating spec for repos using this system
+├── README.md                   # What this repo is, who it's for, what it does
+├── AGENT.md                    # Cold-start router for any agent landing in the repo
+├── CLAUDE.md                   # Claude-specific cold-start overlay (sits on top of AGENT.md)
+├── Documentation.md            # Long-form framework documentation and rationale
+├── REPORTING_TEMPLATE.md       # The Layered Reporting Template
 ├── LICENSE
-├── behavior/                    # The rules an agent obeys. Cold-start required.
-│   ├── ctx-rules.md             # Hard operational rules and constraints.
-│   ├── ctx-lexicon.md           # The decoder ring (3-Concept Canon).
-│   ├── ctx-entropy.md           # The preservation view (LTIP/PLTRF).
-│   ├── persona-layer.md         # Identity boundaries and placement.
-│   └── user-model.md            # User behavior and psychology modeling.
-├── development/                 # Implementation standards and engine specs.
+├── behavior/                   # The rules an agent obeys. Cold-start required.
+│   ├── ctx-rules.md            # Hard operational rules and constraints.
+│   ├── ctx-lexicon.md          # The decoder ring (3-Concept Canon).
+│   ├── ctx-entropy.md          # The preservation view (LTIP/PLTRF).
+│   ├── ctx-window.md           # The active-memory view (CWM).
+│   ├── ctx-token-limits.md     # The Token-economy view (CTL).
+│   ├── ctx-utility.md          # Map of behavior/ — points at where each concept lives.
+│   ├── persona-layer.md        # Identity boundaries and placement.
+│   └── user-model.md           # User behavior and psychology modeling.
+├── development/                # Implementation standards and engine specs.
+│   ├── app-development.md       # Generic app standards.
+│   ├── nextjs-development.md    # Next.js standards.
+│   ├── react-development.md     # React standards.
+│   ├── swift-development.md     # Swift / Apple-platform standards.
 │   ├── unity-development.md     # Structural discipline for Unity.
 │   ├── unrealengine-development.md # Governance for UE5.
-│   └── app-development.md       # Generic app standards.
+│   └── web-development.md       # Generic web standards.
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── memory-ctx/
@@ -37,19 +44,15 @@ Repository-md/
 ├── skills/                      # Portable AI capabilities. Cross-vendor.
 ├── workflows/                   # DevOps and project lifecycle patterns.
 └── design/                      # Project-specific UI/UX rules.
-```
 
 ---
 
 ## behavior/
 
 The foundational rules. Everything an agent has to internalize before it touches the rest of the repo. Read this first on cold start.
-
-- `ctx-rules.md` — hard operational rules and binary structural requirements.
-- `ctx-lexicon.md` — the decoder ring. Single canonical home for the 3-concept canon (**Knob**, **PLTRF**, **Hot/Warm/Cold**).
-- `ctx-entropy.md` — the preservation view. Defines PLTRF and memory tiering.
-- `persona-layer.md` — the Persona Layer rules. Codifies the boundary between persona-rich repo layers and persona-free inherited canon.
-- `user-model.md` — how the agent reads, models, and adapts to the user.
+- `ctx-window.md` — the active-memory view. Context window as virtual RAM; saturation, drift, compression.
+- `ctx-token-limits.md` — the Token-economy view. Wayfinding, scoring, conservation at runtime.
+- `ctx-utility.md` — the map of `behavior/`. Points at where each concept's canonical home lives.
 
 ---
 
