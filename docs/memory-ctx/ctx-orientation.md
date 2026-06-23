@@ -1,6 +1,16 @@
 
 ---
+## Knob: Collapsed the references mirror — Monday, June 22, 2026
 
+The `repo-cognition` Skill's `references/` folder was still carrying four full `context-*.md` docs — the old mirror of the `behavior/ctx-*` canon that `SKILL.md` itself calls out as Drift fuel. The migration that was supposed to replace that mirror with thin pointer stubs only got half done: the `ctx-*` stubs landed, but the original fat copies never got deleted. They'd drifted 2–84 lines off the `behavior/` canon, and nothing referenced them as a live path — the only mentions were a historical note in `fork-resync.md` and an unrelated prose phrase in `Documentation.md`. So we deleted them.
+
+`behavior/` is now the single home for the `ctx-*` specs, which is what PLTRF's One Home rule wanted all along. The `ctx-*` pointer stubs stay for back-compat exactly as `SKILL.md` describes. This kills the duplicate cluster that let the entropy, window, rules, and token-limits specs each be answered two or three different ways depending on which file an agent happened to open.
+
+- Deleted `skills/repo-cognition/references/context-entropy.md`, `context-rules.md`, `context-window.md`, `context-token-limits.md` (stale mirror)
+- Canonical home unchanged: `behavior/ctx-*.md`
+- Pointer stubs retained: `skills/repo-cognition/references/ctx-*.md`
+
+---
 ## Knob: Promoting Liturgy to Physics — Saturday, June 13, 2026
 
 Acknowledge Claude's 'spec-to-physics gap' critique. Successfully promoted key governance rules from narrative 'Liturgy' to automated **Physics** via CI gates. This update ensures that the framework's mandates are enforced by machine-verifiable logic rather than agentic goodwill.
