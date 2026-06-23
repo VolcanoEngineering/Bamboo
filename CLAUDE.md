@@ -12,10 +12,11 @@ If `AGENT.md` and this file disagree, `AGENT.md` wins. This file is an overlay, 
 
 **Bamboo** is not a product (yet — the SaaS layer is coming). The framework itself is a documentation library — a fork-and-go starter kit of `.md` files that other repositories ingest to give their agents shared rules, shared vocabulary, and shared Skills regardless of vendor. The canonical policy spec lives in `Bamboo.md` at the repo root.
 
-The repo is laid out across six working folders plus `docs/`:
+The repo is laid out across seven working folders plus `docs/`:
 
 - `behavior/` — the rules an agent obeys. Context, memory, handoffs, Token economy. Cold-start required.
 - `architecture/` — **advanced add-on.** Memory architecture layer (ADM, RAG, Memory, Drift, Watchdog, workflow tools). Skip unless your project explicitly has an ADM/RAG memory layer or you're auditing memory governance. Most projects don't need this folder.
+- `development/` — implementation standards and engine specs (Unity, UE5, web, Next.js, React, Swift, generic app). Load only when building in that stack.
 - `BAMBOO-OS extension (private)` — **advanced add-on.** Multi-agent identity, topology, and orchestration patterns. Skip unless your project has a multi-agent topology with handoff/orchestration boundaries. Single-agent projects don't need this folder.
 - `skills/` — portable AI capabilities that work the same across Claude, Codex, Gemini, GPT, Copilot.
 - `workflows/` — DevOps and project lifecycle patterns. Forkable, overridable.
@@ -42,7 +43,8 @@ See `docs/repo-organization.md` for the full layout and what each file covers. R
 12. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
 13. `workflows/` — only if the task touches project setup or context governance.
 14. **Advanced add-on — skip unless the task explicitly demands it:** `BAMBOO-OS extension (private)` — only if the project has a multi-agent topology with handoff/orchestration boundaries. Single-agent projects don't need this folder.
-15. `design/` — only if the task is design or UI work.
+15. `development/` — only if the task is building in a specific stack (Unity, UE5, web, etc.). Load the matching spec, skip the rest.
+16. `design/` — only if the task is design or UI work.
 
 You do not need to load all of these into active context at once. Use the wayfinding discipline in `ctx-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
 
