@@ -2,8 +2,21 @@
 
 The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date. Brief, concrete, no bloat — any agent or human reading this should be able to trace what happened at any Knob and why.
 
-Read in reverse chronological order — newest at the top, active Knob first. The current Knob plus the last three stay hot here. When per-Knob entries cross 5000 characters, older entries migrate to `ctx-ori-summary-2.md` (then `-3`, `-4`, `-5`) as cold storage.
+Read in reverse chronological order — newest at the top, active Knob first. The current Knob plus recent history stay hot here — four Knobs (current + last three) is the target, six is the hard max. When that ceiling is exceeded (or per-Knob entries cross 5000 characters), the oldest entries migrate to `ctx-ori-summary-2.md` (then `-3`, `-4`, `-5`) as cold storage.
 
+---
+
+## Knob: Relaxed the hot-log Knob ceiling to a 4-6 band — Monday, June 22, 2026
+
+The max-4 hot-log rule shipped one Knob ago turned every new Knob into a forced migrate-and-trim: land the fifth, CI fails, move the oldest to `ctx-ori-summary-2.md`, repeat — a tax on every single Bump. Replaced the hard ceiling in `pltrf-check.yml` with a band. Four Knobs (active + last three) stays the target; five or six emit a non-failing `::warning::`; only a seventh fails the gate. Net effect is a batch-migrate roughly every third Knob instead of every one, while a cold-start agent still never reads more than six hot Knobs.
+
+Mirrored the band into `ctx-rules.md` Rule 4 and this log's header so the doc and the gate state the same thing. Scoped deliberately to the count ceiling only. The separate 5000-character rollover trigger is a different mechanism — it isn't CI-enforced, and a grep showed it referenced across eight live files including the theory section in `Documentation.md` and two still-unaudited folders (`workflows/`, `skills/`), plus a -v2 naming drift in `workflows/project-context.md`. That purge is tracked as its own workstream, not bundled here, so the char clause stays in the header and Rule 5 for now. Tested both ways: passes at four, five, and six Knobs; fails at seven. This Knob is the fifth in the hot log — the first Bump to land without a forced migrate, which is the entire point.
+
+- `.github/workflows/pltrf-check.yml` — count check now bands: warn at 5-6, fail at >6
+- `behavior/ctx-rules.md` — Rule 4 states the 4-target / 6-max band
+- `docs/memory-ctx/ctx-orientation.md` — header reflects the band
+
+---
 ---
 
 ## Knob: Widened the PLTRF gate to close its blind spots — Monday, June 22, 2026

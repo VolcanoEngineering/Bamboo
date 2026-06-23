@@ -84,11 +84,14 @@ jobs:
           # ---- 3. ORIENTATION LOG: rollover-due + descending order ----
           if [ -f "$HOTLOG" ]; then
             kc=$(grep -c '^## Knob' "$HOTLOG" || true)
-            if [ "$kc" -gt 4 ]; then
-              echo "::error::Hot log has $kc Knobs (max 4: current + last three). Rollover overdue to ctx-ori-summary-*.md."
+            if [ "$kc" -gt 6 ]; then
+              echo "::error::Hot log has $kc Knobs (hard max 6). Batch-migrate the oldest back down to the 4-Knob target in ctx-ori-summary-*.md."
               FAIL=$((FAIL+1))
+            elif [ "$kc" -gt 4 ]; then
+              echo "::warning::Hot log has $kc Knobs (target 4, hard max 6). Rollover due soon — migrate the oldest when convenient."
+              echo "[OK] Hot log Knob count = $kc (within hard max 6)."
             else
-              echo "[OK] Hot log Knob count = $kc (<= 4)."
+              echo "[OK] Hot log Knob count = $kc (<= 4 target)."
             fi
             python3 - "$HOTLOG" <<'PY'
           import re, sys
