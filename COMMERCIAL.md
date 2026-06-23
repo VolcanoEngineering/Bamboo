@@ -12,6 +12,6 @@ To obtain a commercial license, contact the licensor:
 
 - **Matthew Stenquist**
 - GitHub: <https://github.com/internetdialup>
-- Email: _add-your-contact-email-here_
+- Email: matt@bonsai.miami
 
 Terms are scoped per use case. Reach out and we'll sort it.
