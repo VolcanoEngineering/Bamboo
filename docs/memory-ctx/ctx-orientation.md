@@ -6,6 +6,16 @@ Read in reverse chronological order — newest at the top, active Knob first. Th
 
 ---
 
+## Knob: Widened the PLTRF gate to close its blind spots — Monday, June 22, 2026
+
+The CI gate passed green all night while the repo carried the exact fragmentation it's named for — because its checks only looked where the drift wasn't. Rebuilt `pltrf-check.yml` to cover the gaps. The prefix allowlist now includes `development/` and drops the phantom `bamboo-os/`. The broken-pointer scan reads every doc folder instead of just the root and `behavior/`, while excluding the orientation log and summaries since those reference deleted paths by design. The duplicate-home detector now catches any basename living in two places across the whole repo — not just the `behavior/ctx-* vs context-*` pair it checked before — and it's stub-aware, so one canonical doc plus its pointer stubs passes while two real copies fails.
+
+Added two orientation-log guards turning the tiering rule into physics: rollover-due (fails if the hot log holds more than four Knobs) and descending-date order (fails if any Knob sits above an older one). Deliberately did NOT add an auto-Knob writer — a workflow can stamp a template but can't write the rationale, and auto-appending to canon collides with the Ratification and tiering rules. The log stays human/agent-authored; CI guards that it exists and stays well-formed. Every check was tested both ways before shipping: passes clean on the current repo, and fails on an injected duplicate, out-of-order Knob, fifth hot Knob, broken pointer, and missing identity block.
+
+- Rewrote `.github/workflows/pltrf-check.yml` — prefix fix, full-folder scan, stub-aware cross-folder dup detection, rollover + order guards
+
+--- 
+
 ## Knob: Cold-start spine + behavior + root hardening pass — Monday, June 22, 2026
 
 Ran a full consistency and accuracy sweep across the cold-start cascade, the behavior layer, the root files, and the repo map. Most of what got fixed was inherited drift, not new breakage — the kind that doesn't announce itself. The Session Identity in `AGENT.md` was hardcoded to a personal laptop path, so every fork failed its own step-zero check; swapped it for a portable "repo root containing Bamboo.md and AGENT.md" rule and propagated the same wording into `Bamboo.md` Rules 1, 3, and the Minimum Repo Contract. The orientation-log path was wrong in several places — pointing at the fork default `docs/ctx-orientation.md` instead of this repo's `docs/memory-ctx/ctx-orientation.md` — fixed in `Bamboo.md`, `ctx-lexicon.md`, and `ctx-rules.md`. The lexicon was missing a CRUD entry the cascade promises; added it. `ctx-rules.md` had two sections both numbered 4 and never stated the newest-on-top ordering or the 5000-char rollover rule, so those went into the Knob format section where they belong.
