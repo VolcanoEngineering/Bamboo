@@ -14,7 +14,8 @@ Added two orientation-log guards turning the tiering rule into physics: rollover
 
 - Rewrote `.github/workflows/pltrf-check.yml` — prefix fix, full-folder scan, stub-aware cross-folder dup detection, rollover + order guards
 
---- 
+---
+---
 
 ## Knob: Cold-start spine + behavior + root hardening pass — Monday, June 22, 2026
 
@@ -34,6 +35,7 @@ The three sibling specs (entropy, window, token-limits) referenced each other by
 
 ---
 ---
+---
 
 ## Knob: Retired the duplicate orientation log — Monday, June 22, 2026
 
@@ -45,6 +47,7 @@ Moved the two unique May 31 Knobs into `ctx-ori-summary-2.md` alongside their Ma
 - Preserved its two unique May 31 Knobs in `docs/memory-ctx/ctx-ori-summary-2.md`
 - Canonical log unchanged: `docs/memory-ctx/ctx-orientation.md`
 
+---
 ---
 ---
 
@@ -59,18 +62,6 @@ The `repo-cognition` Skill's `references/` folder was still carrying four full `
 - Pointer stubs retained: `skills/repo-cognition/references/ctx-*.md`
 
 ---
----
-
-## Knob: Promoting Liturgy to Physics — Saturday, June 13, 2026
-
-Acknowledge Claude's 'spec-to-physics gap' critique. Successfully promoted key governance rules from narrative 'Liturgy' to automated **Physics** via CI gates. This update ensures that the framework's mandates are enforced by machine-verifiable logic rather than agentic goodwill.
-
-Implemented a **Theater Scan CI gate** in the private `BAMBOO-OS` repository, ensuring that all governance tooling is audited for stubs and placeholders on every push. Hardened the public `pltrf-check.yml` with a **Session Identity Check**, mandating the existence of the identity block in `AGENT.md`. These gates provide a binary 'root of trust' that cannot be bypassed by persona drift or sycophancy.
-
-- Updated `.github/workflows/pltrf-check.yml` (Session Identity physics)
-- Created `.github/workflows/theater-scan.yml` in `BAMBOO-OS` (Script audit physics)
-- Synchronized the 'Oven' with the latest enforcement standards.
-
 ---
 
 ---
