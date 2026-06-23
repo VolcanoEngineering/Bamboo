@@ -1,6 +1,6 @@
 # Context Entropy
 
-As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating ctx-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
+As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating ctx-orientation and ctx-ori-summary documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
 
 This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. This is called Context Decay. Where information parsed starts to become degraded. The retrieval slows down, and artifacts get lost in noise. AI and ML agents start to have a harder time with retrieving the right vector, and can accidentally deliver the wrong end point.
 
@@ -54,7 +54,7 @@ This means prioritizing the following:
 
 ## Drift Axes
 
-Context entropy manifests along two primary axes:
+Context entropy manifests along three primary axes:
 
 ### 1. Entropy of Scale (Corpus Rot)
 The accumulation of near-duplicate files, fragmented summaries, and stale references across the repository (L0/L1). Managed via **PLTRF** and **Hot/Warm/Cold Tiering**.
@@ -91,7 +91,7 @@ Focus: Information Architecture within short development cycles (sprints, iterat
 
 We can maintain short term information and be proactive about how we handle contextual loss, information loss, and drift in the stages between documentation, to codebase architecture, to implementation, to deployment and anything in between.
 
-The goal with STIP is to maintain a high degree of AI context awareness through the **L1 Cache (`ACTIVE_STATE.md`)** and organized systematic flows through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrieval. Raw compute is not the bottleneck when it comes to most projects. In fact indexing, organization, embedded quality, and reading summaries of large document stacks often becomes the true bottleneck. However, we do need to be mindful of GPU and CPU limitations especially if a project is using technologies like WebGL, ThreeJS, and or is outside of the regular stack of web-saas products (games, research projects, etc). Always be cognizant of core CPU and GPU, but prioritize speed and efficiency when it comes to retrieval systems first before going low-level.
+The goal with STIP is to maintain a high degree of AI context awareness through the **L1 Cache (`ACTIVE_STATE.md`)** and organized systematic flows through organized systematic flows and patterns optimized to leverage. Raw compute is not the bottleneck when it comes to most projects. In fact indexing, organization, embedded quality, and reading summaries of large document stacks often becomes the true bottleneck. However, we do need to be mindful of GPU and CPU limitations especially if a project is using technologies like WebGL, ThreeJS, and or is outside of the regular stack of web-saas products (games, research projects, etc). Always be cognizant of core CPU and GPU, but prioritize speed and efficiency when it comes to retrieval systems first before going low-level.
 
 As AI and ML agents work together, we need to ensure that the velocity of STIP hits little to no bottlenecks that prevents the user from experiencing a smooth development cycle. For the most part, STIP should be automated as much as possible to reduce human-driven cognitive load. This allows the user to focus on the problems that matter most, and let the AI handle the rote contextual awareness, documentation, and information preservation.
 
