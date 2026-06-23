@@ -30,6 +30,16 @@ The user view of the framework. How the agent should analyze user behavior, when
 
 ---
 
+## persona-layer.md
+
+The identity-placement view. Personas — callsigns, roles, voice — are encouraged, but only in the layer a single repo owns; they must never enter the canon every fork inherits, because a callsign means nothing to a fork that never had that teammate.
+
+- The boundary is placement. Persona-rich: handoffs, the agent bus, `docs/ctx-orientation.md` Knob entries, a repo's own AGENT.md Session Identity. Persona-free: `Bamboo.md` and everything in `behavior/` and `architecture/` that ships to forks.
+- The translation test gates canon: would this sentence still make sense in a fork that never heard of this persona? If no, it belongs in that repo's handoff, not the spec.
+- Optional persona registry: repos running named agents declare them in one place so a signature becomes a verifiable claim instead of self-asserted text.
+
+---
+
 ## ctx-entropy.md
 
 The preservation view of the framework. How context survives across Knobs, agent handoffs, and human hiatus. Holds the worked examples that anchor the rest of the framework's vocabulary. Measurement architecture (Retrieval Entropy + Corpus Entropy with softmax math) moved to `architecture/memory/memory-entropy-metrics.md`; this doc carries the definition, that doc carries the computation.
@@ -65,3 +75,6 @@ The Token economy view of the framework. How Tokens get spent, conserved, and pr
 - Wayfinding is the discipline of pulling the right files into focus in the right order. AGENT.md first, then behavior/, then the active ctx-orientation entry, then whatever the current Knob references.
 - Token Conservation Practices is the operational guidance for spending Tokens where they earn the best result. Not the fewest Tokens possible. The right Tokens for the work.
 - The Tokens budget is the runtime constraint that all the above disciplines optimize against.
+
+
+---
