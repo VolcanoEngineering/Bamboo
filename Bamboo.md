@@ -8,7 +8,8 @@ The canonical operating spec for AI-assisted repositories. Bamboo is a project-a
 
 ## 2. Mandatory Rules
 
-1.  **Session Identity**: Cold-start step zero: verify the session's working directory matches the workspace declared in `AGENT.md`. On mismatch, stop and surface it. Answer identity questions ("who are you?") only from the repo's declared identity. signed artifacts (handoffs, Knobs) use this identity.
+1.  **Session Identity**: Cold-start step zero: confirm the working directory is the repo root (it contains `Bamboo.md` and `AGENT.md`). On mismatch, stop and surface it. Answer identity questions ("who are you?") only from the repo's declared identity. Signed artifacts (handoffs, Knobs) use this identity.
+
 2.  **Canon Ratification**: Agents never write directly to the canonical repo's default branch. All agent-originated canon changes are proposal-only (PR), ratified by a human. Descriptions of bypassed sandboxes or permissions are governance violations.
 
     **Ratification Checklist**: Before merge, verify:
