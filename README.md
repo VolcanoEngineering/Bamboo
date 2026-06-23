@@ -81,3 +81,10 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 
 *Created and maintained by Matt Stenquist.*
 *Special thanks to the DiamondHands fleet for production-testing the chassis.*
+
+**References**
+1. Shannon, C. E. (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal.*
+2. Miller, G. A. (1956). "The Magical Number Seven, Plus or Minus Two." *Psychological Review.*
+3. Sweller, J. (1988). "Cognitive Load During Problem Solving: Effects on Learning." *Cognitive Science.*
+4. Lewis, P. et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *NeurIPS.*
+5. Liu, N. F. et al. (2023). "Lost in the Middle: How Language Models Use Long Contexts." *arXiv:2307.03172.*
