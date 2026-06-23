@@ -6,6 +6,19 @@ Read in reverse chronological order — newest at the top, active Knob first. Th
 
 ---
 
+## Knob: Relicensed from BSD-3 to PolyForm Noncommercial — Monday, June 22, 2026
+
+Relicensed the repo from BSD-3-Clause to PolyForm Noncommercial 1.0.0. BSD let anyone — a competitor included — take Bamboo and sell it, which is the opposite of the intent now that the base thesis is proven and the work is turning commercial. PolyForm Noncommercial keeps the source public and free for noncommercial use (personal, research, evaluation, education, nonprofit) while withholding all commercial use, which becomes a paid commercial license. Removed the old `LICENSE` (BSD), added `LICENSE.md` with the canonical PolyForm text and a `Required Notice` line in my name, and added `COMMERCIAL.md` as the contact path for commercial licensing.
+
+The repo stays open as a public artifact of the origin work; the protection is the license, not obscurity. `README.md` gained a License section pointing at both files. Going-forward only: anything already cloned under BSD stays usable under BSD, and prior commit authorship was left untouched — rewriting historical authorship would violate the Chain-of-Custody rule this repo runs on. This Knob brings the hot log to six, the top of the new band, so the next Bump is the first that will trip the hard ceiling and require a batch-migrate.
+
+- Removed `LICENSE` (BSD-3-Clause); added `LICENSE.md` (PolyForm Noncommercial 1.0.0)
+- Added `COMMERCIAL.md` — commercial-licensing contact path
+- `README.md` — License section
+
+---
+---
+
 ## Knob: Relaxed the hot-log Knob ceiling to a 4-6 band — Monday, June 22, 2026
 
 The max-4 hot-log rule shipped one Knob ago turned every new Knob into a forced migrate-and-trim: land the fifth, CI fails, move the oldest to `ctx-ori-summary-2.md`, repeat — a tax on every single Bump. Replaced the hard ceiling in `pltrf-check.yml` with a band. Four Knobs (active + last three) stays the target; five or six emit a non-failing `::warning::`; only a seventh fails the gate. Net effect is a batch-migrate roughly every third Knob instead of every one, while a cold-start agent still never reads more than six hot Knobs.

@@ -88,3 +88,11 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 3. Sweller, J. (1988). "Cognitive Load During Problem Solving: Effects on Learning." *Cognitive Science.*
 4. Lewis, P. et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *NeurIPS.*
 5. Liu, N. F. et al. (2023). "Lost in the Middle: How Language Models Use Long Contexts." *arXiv:2307.03172.*
+
+---
+
+## License
+
+Bamboo is source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE.md) — free for
+noncommercial use (personal, research, evaluation, education, nonprofit). **Any commercial use
+requires a separate commercial license;** see [COMMERCIAL.md](COMMERCIAL.md).
