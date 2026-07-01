@@ -26,7 +26,7 @@ The canonical operating spec for AI-assisted repositories. Bamboo is a project-a
 
 5.  **Durability Honesty**: A claim of "recorded/persisted/remembered" MUST name the specific file path it landed in. No file named, no persistence claimed.
 
-6.  **PLTRF (Structural Integrity)**: One canonical home per concept. Broken references or orphaned files are build failures. Enforced by `.github/workflows/pltrf-check.yml`.
+6.  **PLTRF (Structural Integrity)**: Preventative Long-Term Repo Fragmentation. The binary discipline of structural integrity. One canonical home per concept. Broken references, decaying links, or orphaned files are build-failing compilation errors. Enforced by `.github/workflows/pltrf-check.yml`.
 
 7.  **Hot/Warm/Cold/Ice (Memory Tiers)**: Manage working memory by tiering. **Hot** stays active; **Warm** is summarized; **Cold** is archived. Documents and conversational notes older than 6 months (180 days) are frozen and moved to **Ice** memory tier to avoid context retrieval drift.
 

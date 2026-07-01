@@ -47,6 +47,14 @@ Every Knob entry in the orientation log must contain:
 - **Warm**: Recent history (last 3-5 Knobs). Summarized or moved to `ctx-ori-summary-*.md`.
 - **Cold**: Archived history. Externalized to the repo; pulled only on demand.
 
+## 7. Canonical Lexicon Definitions
+
+### Knob
+The unit of change in a project. One commit, version bump, or in-place change that moves the repo from one state to the next. Each Knob is documented by a ctx-orientation entry that records what changed and why. The entry describes the Knob. The Knob is the change itself, not the entry. A version bump with no state change behind it is a cosmetic Knob and should be logged as one.
+
+### PLTRF (Preventative Long Term Repo Fragmentation)
+The discipline of keeping a repo from fragmenting as it grows. One canonical home per concept, referenced everywhere else instead of redefined. Renames update every reference inside the same Knob. Cross-references get audited so they still resolve. A broken-link or orphan-file check is one automatable slice of PLTRF and can run at build time, but PLTRF is the wider discipline, because the failure that matters most is the one no linter catches. Two reasonable files describing the same thing under different names until the repo quietly contradicts itself.
+
 ---
 
 Liturgy purged. Physics enforced.

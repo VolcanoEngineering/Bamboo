@@ -45,8 +45,8 @@ For multi-agent or complex environments, the **Bamboo OS** runtime extension pro
 ## 🏗️ Core Architecture (The 3-Concept Canon)
 To protect cold-start economics, Bamboo mandates only three load-bearing concepts. Everything else is an extension.
 
-1.  **Knobs ⭐**: The unit of change. Every meaningful state transition earns a dated, narrative entry in the orientation log. We log the "Why," not just the code.
-2.  **PLTRF 🏗️**: Preventative Long-Term Repo Fragmentation. The binary discipline of structural integrity. One home per concept. Broken pointers are build failures.
+1.  **Knobs ⭐**: The unit of narrative state change. Every meaningful architectural state transition earns a dated, narrative entry in the orientation log. We log the "Why", not just the code.
+2.  **PLTRF 🏗️**: Preventative Long-Term Repo Fragmentation. The binary discipline of structural integrity. One canonical home per concept. Broken references, decaying links, or orphaned files are build-failing compilation errors.
 3.  **Tiering ❄️**: Memory preservation via Hot/Warm/Cold/Ice classification. Keep working memory lean, archive the rest, and freeze files > 6 months old to prevent retrieval drift.
 
 ---
@@ -73,7 +73,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 ---
 
 ## 🏆 Recent Milestones
-- **2026-07-01**: Formally shakedown-tested the Operational Knowledge Integrity (OKI) and Repository Understanding Health (RUH) frameworks in multi-agent trading environments.
+- **2026-07-01**: Formally shakedown-tested the Operational Knowledge Integrity (OKI) and Repository Understanding Health (RUH) frameworks in multi-agent simulation and orchestration environments.
 - **2026-06-13**: Bamboo has a CI gate that fails the build when an agent violates a mandatory rule. Partitioned core discipline and OS into separate repositories. Finalized **Governance Core** and **Session Identity Clause**.
 - **2026-06-03**: Introduced root `Bamboo.md` and separated policy from routing.
 - **2026-05-28**: Added **Memory Watchdog** and **Drift** to the architecture layer.
@@ -81,7 +81,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 ---
 
 *Created and maintained by Matt Stenquist.*
-*Special thanks to the DiamondHands fleet for production-testing the chassis.*
+*Special thanks to testing contributors for production-testing the chassis.*
 
 **References**
 1. Shannon, C. E. (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal.*
