@@ -51,6 +51,13 @@ The reason: silent compression makes the discipline invisible. Past session audi
 
 This rule applies to any agent, on any vendor, in any project that uses this system.
 
+## 9. Pre-Flight Push Plan Mandate
+
+Before executing any `git push` command, the agent (whether Antigravity, Cursor, Claude, or Codex) MUST present a structured "Push Execution Plan" to the human operator and obtain explicit approval. The plan must declare:
+1. **Target Funnel:** Public (`Repository-md`) or Private (`bamboo-private`).
+2. **Payload Classification:** Details of the files changed, classifying them as public hygiene/formatting (for public repo) or proprietary execution/math models (for private repo).
+3. **Compliance Verdict:** Verification that no redlined "secret sauce" (active equations, brokerage API structures, or live portfolio records) is leaked in a public push.
+
 ---
 
 This repo is the canonical documentation source, not a product repo. Keep the cold start lean and pull only the modules required for the task.
