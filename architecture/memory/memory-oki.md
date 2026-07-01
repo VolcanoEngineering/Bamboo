@@ -30,6 +30,9 @@ As unversioned, duplicated, or stale documentation files accumulate, the prompt 
 
 Where \( D_{\text{bamboo}} \) is the measured Bamboo Drift Score.
 
+> [!NOTE]
+> **Mathematical Disclaimer:** The equations presented below are conceptual bounding models (asymptotic toy limits) designed to mathematically illustrate the dynamics of agent error rates and retrieval entropy under context decay. They do not represent empirical coefficients of proprietary trading systems or execution algorithms.
+
 ### 2. Hallucination Probability Bounding Limit (\( P(H) \))
 The probability of an agent generating incorrect code paths or mocking functions to bypass calculations scales exponentially with context degradation:
 

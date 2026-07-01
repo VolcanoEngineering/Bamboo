@@ -100,6 +100,8 @@ This file is not a glossary. The vocabulary lives in `behavior/ctx-lexicon.md`. 
 
 This file is not the rules. The rules live in `behavior/`. If `behavior/` says one thing and this file says another, `behavior/` wins.
 
+**Obfuscation & Redlining:** Before committing or writing any code updates, review `behavior/obfuscation-standard.md`. Ensure that all proprietary execution math, account balances, active option symbols, and sensitive database schemas are redlined and replaced with generic abstract models.
+
 This file is not a substitute for reading `AGENT.md`. It is an overlay. Read both.
 
 ---
