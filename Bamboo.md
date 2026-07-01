@@ -28,7 +28,7 @@ The canonical operating spec for AI-assisted repositories. Bamboo is a project-a
 
 6.  **PLTRF (Structural Integrity)**: One canonical home per concept. Broken references or orphaned files are build failures. Enforced by `.github/workflows/pltrf-check.yml`.
 
-7.  **Hot/Warm/Cold (Memory Tiers)**: Manage working memory by tiering. **Hot** stays active; **Warm** is summarized; **Cold** is archived.
+7.  **Hot/Warm/Cold/Ice (Memory Tiers)**: Manage working memory by tiering. **Hot** stays active; **Warm** is summarized; **Cold** is archived. Documents and conversational notes older than 6 months (180 days) are frozen and moved to **Ice** memory tier to avoid context retrieval drift.
 
 8.  **Persona Layer**: Personas/callsigns are encouraged in repo-local layers (handoffs, bus, Knobs, per-repo `AGENT.md`) and forbidden in inherited canon (`Bamboo.md`, `behavior/`, `architecture/`). Test: would the line make sense in a fork that never had this persona? See `behavior/persona-layer.md`.
 
@@ -69,6 +69,7 @@ Access to the OS extension is managed via the **BAMBOO-OS** private repository.
 
 ## Version History
 
+- **v0.8.0 — The Operational Knowledge Integrity Proof (2026-07-01)**: Formally defined Repository Understanding Health (RUH) metrics, the Context Retrieval Degradation formula, and introduced age-based Ice memory tiering.
 - **v0.7.0 — The Physics Verification (2026-06-13)**: Initialized 'Chaos Testing' to verify CI gate enforcement. Hardened the public README with enforcement milestones.
 - **v0.6.0 — The AI Forensics & OS Partition (2026-06-13)**: Established the AI Forensics layer and formal Chain of Custody. Formally partitioned the framework into Bamboo Core (Discipline) and the private BAMBOO-OS (Runtime Extension). Implemented the Theater Scan CI gate and hardened structural verification.
 - **v0.5.0 — The Governance Core Graduation (2026-06-13)**: Finalized the operational governance OS. Implemented the Orchestrator chassis, the Governor heartbeat, the Watcher ears, and the Session Identity mandate. Standardized the 3-concept canon and structural verification rules.

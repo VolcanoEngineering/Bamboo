@@ -47,12 +47,12 @@ To protect cold-start economics, Bamboo mandates only three load-bearing concept
 
 1.  **Knobs ⭐**: The unit of change. Every meaningful state transition earns a dated, narrative entry in the orientation log. We log the "Why," not just the code.
 2.  **PLTRF 🏗️**: Preventative Long-Term Repo Fragmentation. The binary discipline of structural integrity. One home per concept. Broken pointers are build failures.
-3.  **Tiering ❄️**: Memory preservation via Hot/Warm/Cold classification. Keep working memory lean; archive the rest.
+3.  **Tiering ❄️**: Memory preservation via Hot/Warm/Cold/Ice classification. Keep working memory lean, archive the rest, and freeze files > 6 months old to prevent retrieval drift.
 
 ---
 
 ## 🛡️ Strategic Extensions (Optional)
-- `architecture/`: Advanced memory systems (ADM/RAG/Watchdog).
+- `architecture/`: Advanced memory systems (ADM/RAG/Watchdog/OKI).
 - **BAMBOO-OS**: The private runtime engine (Scripts, Schemas, Multi-agent Topology).
 - `skills/`: Portable AI capabilities and vendor-specific overlays.
 - `design/`: UI/UX standards and component rules.
@@ -73,6 +73,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 ---
 
 ## 🏆 Recent Milestones
+- **2026-07-01**: Formally shakedown-tested the Operational Knowledge Integrity (OKI) and Repository Understanding Health (RUH) frameworks in multi-agent trading environments.
 - **2026-06-13**: Bamboo has a CI gate that fails the build when an agent violates a mandatory rule. Partitioned core discipline and OS into separate repositories. Finalized **Governance Core** and **Session Identity Clause**.
 - **2026-06-03**: Introduced root `Bamboo.md` and separated policy from routing.
 - **2026-05-28**: Added **Memory Watchdog** and **Drift** to the architecture layer.
